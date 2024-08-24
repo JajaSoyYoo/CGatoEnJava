@@ -101,7 +101,47 @@ import java_cup.runtime.*;
 
 /* Simbolos */
 " "  { System.out.println("Espacio"); return symbol(sym.ESPACIO, yytext()); }
+%%
+// Símbolos de asignación
+"="             { return symbol(sym.ASSIGN, yytext()); }
+"+="            { return symbol(sym.PLUS_ASSIGN, yytext()); }
+"-="            { return symbol(sym.MINUS_ASSIGN, yytext()); }
+"*="            { return symbol(sym.MULT_ASSIGN, yytext()); }
+"/="            { return symbol(sym.DIV_ASSIGN, yytext()); }
 
+// Operadores aritméticos
+"+"             { return symbol(sym.PLUS, yytext()); }
+"-"             { return symbol(sym.MINUS, yytext()); }
+"*"             { return symbol(sym.MULT, yytext()); }
+"/"             { return symbol(sym.DIV, yytext()); }
+"%"             { return symbol(sym.MOD, yytext()); }
+
+// Operadores relacionales
+"<"             { return symbol(sym.LT, yytext()); }
+"<="            { return symbol(sym.LTE, yytext()); }
+">"             { return symbol(sym.GT, yytext()); }
+">="            { return symbol(sym.GTE, yytext()); }
+"=="            { return symbol(sym.EQ, yytext()); }
+"!="            { return symbol(sym.NEQ, yytext()); }
+
+// Operadores lógicos
+"&&"            { return symbol(sym.AND, yytext()); }
+"||"            { return symbol(sym.OR, yytext()); }
+"!"             { return symbol(sym.NOT, yytext()); }
+
+// Símbolos de agrupación
+"("             { return symbol(sym.LPAREN, yytext()); }
+")"             { return symbol(sym.RPAREN, yytext()); }
+"["             { return symbol(sym.LBRACKET, yytext()); }
+"]"             { return symbol(sym.RBRACKET, yytext()); }
+"{"             { return symbol(sym.LBRACE, yytext()); }
+"}"             { return symbol(sym.RBRACE, yytext()); }
+
+// Otros símbolos
+","             { return symbol(sym.COMMA, yytext()); }
+";"             { return symbol(sym.SEMICOLON, yytext()); }
+":"             { return symbol(sym.COLON, yytext()); }
+"."             { return symbol(sym.DOT, yytext()); }
 
 
 
