@@ -1,2 +1,2 @@
-int long float double char boolean byte
-if else switch
+int long float double char bool byte
+if ( int == 0 ){ int = 1; }
