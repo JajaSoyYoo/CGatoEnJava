@@ -17,7 +17,7 @@ public class AnalisisLexico {
         System.out.println("NOMBRES COMPLETOS ORDENADOS POR PRIMER APELLIDO \n");
          
          
-        String test = "src/act_1_lexico/prueba_palabras_reservadas.txt";
+        String test = "src/act1/prueba_palabras_reservadas.txt";
 
         try (Reader reader = new FileReader(test)) {
             // Crear la instancia del lexer directamente
