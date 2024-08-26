@@ -51,6 +51,36 @@ byte       {
                 System.out.println(yytext()+" -> Tipo de dato byte ");                
                 return TokensTL24B.BYTE; 
             }
+do          { 
+                System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                System.out.println(yytext()+" ->  Palabra para iteracion do");                
+                return TokensTL24B.DO; 
+            }
+while       { 
+                System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                System.out.println(yytext()+" ->  Palabra para iteracion while");                
+                return TokensTL24B.WHILE; 
+            }
+for         { 
+                System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                System.out.println(yytext()+" ->  Palabra para iteracion for");                
+                return TokensTL24B.FOR; 
+            }
+if          { 
+                System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                System.out.println(yytext()+" ->  Palabra de control de flujo if");                
+                return TokensTL24B.IF; 
+            }
+else        { 
+                System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                System.out.println(yytext()+" ->  Palabra de control de flujo else");                
+                return TokensTL24B.ELSE; 
+            }
+switch      { 
+                System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                System.out.println(yytext()+" ->  Palabra de control de flujo switch");                
+                return TokensTL24B.SWITCH; 
+            }
 
 
 
