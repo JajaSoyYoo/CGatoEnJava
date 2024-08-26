@@ -103,10 +103,10 @@ public class ScannerCS implements java_cup.runtime.Scanner {
   private static final String ZZ_ACTION_PACKED_0 =
     "\1\0\1\1\1\2\1\3\1\4\1\1\1\5\1\6"+
     "\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16"+
-    "\1\17\1\1\1\20\1\21\1\22\22\1\1\23\1\1"+
-    "\1\24\1\25\1\0\1\26\1\27\1\30\1\31\1\32"+
-    "\1\33\1\34\1\35\1\0\1\36\7\0\1\37\11\0"+
-    "\1\40\1\0\1\41\1\42\32\0\1\43\1\44\25\0"+
+    "\1\17\1\20\1\21\1\22\1\23\22\1\1\24\1\1"+
+    "\1\25\1\26\1\0\1\27\1\30\1\31\1\32\1\33"+
+    "\1\34\1\35\1\36\1\0\1\37\7\0\1\40\11\0"+
+    "\1\41\1\0\1\42\1\43\32\0\1\44\1\20\25\0"+
     "\1\45\2\0\1\46\2\0\1\47\3\0\1\50\5\0"+
     "\1\51\12\0\1\52\12\0\1\53\1\0\1\54\1\0"+
     "\1\55\10\0\1\56\1\57\7\0\1\60\2\0\1\61"+
@@ -870,27 +870,27 @@ public class ScannerCS implements java_cup.runtime.Scanner {
           // fall through
           case 101: break;
           case 4:
-            { System.out.println("Signo módulo"); return symbol(sym.MOD, yytext());
+            { System.out.println("Signo modulo"); return symbol(sym.MOD, yytext());
             }
           // fall through
           case 102: break;
           case 5:
-            { System.out.println("Signo paréntesis de apertura"); return symbol(sym.LPAREN, yytext());
+            { System.out.println("Signo parentesis de apertura"); return symbol(sym.LPAREN, yytext());
             }
           // fall through
           case 103: break;
           case 6:
-            { System.out.println("Signo paréntesis de cierre"); return symbol(sym.RPAREN, yytext());
+            { System.out.println("Signo parentesis de cierre"); return symbol(sym.RPAREN, yytext());
             }
           // fall through
           case 104: break;
           case 7:
-            { System.out.println("Signo multiplicación"); return symbol(sym.MULT, yytext());
+            { System.out.println("Signo multiplicacion"); return symbol(sym.MULT, yytext());
             }
           // fall through
           case 105: break;
           case 8:
-            { System.out.println("Signo más"); return symbol(sym.PLUS, yytext());
+            { System.out.println("Signo mas"); return symbol(sym.PLUS, yytext());
             }
           // fall through
           case 106: break;
@@ -910,7 +910,7 @@ public class ScannerCS implements java_cup.runtime.Scanner {
           // fall through
           case 109: break;
           case 12:
-            { System.out.println("Signo división"); return symbol(sym.DIV, yytext());
+            { System.out.println("Signo division"); return symbol(sym.DIV, yytext());
             }
           // fall through
           case 110: break;
@@ -930,112 +930,112 @@ public class ScannerCS implements java_cup.runtime.Scanner {
           // fall through
           case 113: break;
           case 16:
-            { System.out.println("Signo mayor que"); return symbol(sym.GT, yytext());
+            { System.out.println("Signo igual"); return symbol(sym.ASSING, yytext());
             }
           // fall through
           case 114: break;
           case 17:
-            { System.out.println("Signo corchete de apertura"); return symbol(sym.LBRACKET, yytext());
+            { System.out.println("Signo mayor que"); return symbol(sym.GT, yytext());
             }
           // fall through
           case 115: break;
           case 18:
-            { System.out.println("Signo corchete de cierre"); return symbol(sym.RBRACKET, yytext());
+            { System.out.println("Signo corchete de apertura"); return symbol(sym.LBRACKET, yytext());
             }
           // fall through
           case 116: break;
           case 19:
-            { System.out.println("Signo llave de apertura"); return symbol(sym.LBRACE, yytext());
+            { System.out.println("Signo corchete de cierre"); return symbol(sym.RBRACKET, yytext());
             }
           // fall through
           case 117: break;
           case 20:
-            { System.out.println("Signo llave de cierre"); return symbol(sym.RBRACE, yytext());
+            { System.out.println("Signo llave de apertura"); return symbol(sym.LBRACE, yytext());
             }
           // fall through
           case 118: break;
           case 21:
-            { System.out.println("Signo diferente de"); return symbol(sym.NEQ, yytext());
+            { System.out.println("Signo llave de cierre"); return symbol(sym.RBRACE, yytext());
             }
           // fall through
           case 119: break;
           case 22:
-            { System.out.println("Signo and"); return symbol(sym.AND, yytext());
+            { System.out.println("Signo diferente de"); return symbol(sym.NEQ, yytext());
             }
           // fall through
           case 120: break;
           case 23:
-            { System.out.println("Signo multiplicación igual"); return symbol(sym.MULT_ASSIGN, yytext());
+            { System.out.println("Signo and"); return symbol(sym.AND, yytext());
             }
           // fall through
           case 121: break;
           case 24:
-            { System.out.println("Signo más igual"); return symbol(sym.PLUS_ASSIGN, yytext());
+            { System.out.println("Signo multiplicacion igual"); return symbol(sym.MULT_ASSIGN, yytext());
             }
           // fall through
           case 122: break;
           case 25:
-            { System.out.println("Signo menos igual"); return symbol(sym.MINUS_ASSIGN, yytext());
+            { System.out.println("Signo mas igual"); return symbol(sym.PLUS_ASSIGN, yytext());
             }
           // fall through
           case 123: break;
           case 26:
-            { System.out.println("Signo división igual"); return symbol(sym.DIV_ASSIGN, yytext());
+            { System.out.println("Signo menos igual"); return symbol(sym.MINUS_ASSIGN, yytext());
             }
           // fall through
           case 124: break;
           case 27:
-            { System.out.println("Signo menor o igual que"); return symbol(sym.LTE, yytext());
+            { System.out.println("Signo division igual"); return symbol(sym.DIV_ASSIGN, yytext());
             }
           // fall through
           case 125: break;
           case 28:
-            { System.out.println("Signo igual igual"); return symbol(sym.EQ, yytext());
+            { System.out.println("Signo menor o igual que"); return symbol(sym.LTE, yytext());
             }
           // fall through
           case 126: break;
           case 29:
-            { System.out.println("Signo mayor o igual que"); return symbol(sym.GTE, yytext());
+            { System.out.println("Signo igual igual"); return symbol(sym.EQ, yytext());
             }
           // fall through
           case 127: break;
           case 30:
-            { System.out.println("Es una palabra clave de conversión"); return symbol(sym.AS, yytext());
+            { System.out.println("Signo mayor o igual que"); return symbol(sym.GTE, yytext());
             }
           // fall through
           case 128: break;
           case 31:
-            { System.out.println("Es una instrucción de bucle do-while"); return symbol(sym.DO, yytext());
+            { System.out.println("Es una palabra clave de conversion"); return symbol(sym.AS, yytext());
             }
           // fall through
           case 129: break;
           case 32:
-            { System.out.println("Es una estructura de control de flujo"); return symbol(sym.IF, yytext());
+            { System.out.println("Es una instruccion de bucle do-while"); return symbol(sym.DO, yytext());
             }
           // fall through
           case 130: break;
           case 33:
-            { System.out.println("Es una palabra clave utilizada en expresiones de consulta LINQ"); return symbol(sym.IN, yytext());
+            { System.out.println("Es una estructura de control de flujo"); return symbol(sym.IF, yytext());
             }
           // fall through
           case 131: break;
           case 34:
-            { System.out.println("Es una palabra clave para verificar el tipo"); return symbol(sym.IS, yytext());
+            { System.out.println("Es una palabra clave utilizada en expresiones de consulta LINQ"); return symbol(sym.IN, yytext());
             }
           // fall through
           case 132: break;
           case 35:
-            { System.out.println("Signo or"); return symbol(sym.OR, yytext());
+            { System.out.println("Es una palabra clave para verificar el tipo"); return symbol(sym.IS, yytext());
             }
           // fall through
           case 133: break;
           case 36:
-            { System.out.println("Signo igual"); return symbol(sym.ASSING, yytext());
+            { System.out.println("Signo or"); return symbol(sym.OR, yytext());
             }
           // fall through
           case 134: break;
           case 37:
-            { System.out.println("Es una instrucción de bucle for"); return symbol(sym.FOR, yytext());
+            { System.out.println("Es una instruccion de bucle for"); return symbol(sym.FOR, yytext());
             }
           // fall through
           case 135: break;
@@ -1055,12 +1055,12 @@ public class ScannerCS implements java_cup.runtime.Scanner {
           // fall through
           case 138: break;
           case 41:
-            { System.out.println("Es una palabra clave para pasar parámetros por referencia"); return symbol(sym.REF, yytext());
+            { System.out.println("Es una palabra clave para pasar parametros por referencia"); return symbol(sym.REF, yytext());
             }
           // fall through
           case 139: break;
           case 42:
-            { System.out.println("Es una cláusula para intentar ejecutar código con manejo de excepciones"); return symbol(sym.TRY, yytext());
+            { System.out.println("Es una clausula para intentar ejecutar código con manejo de excepciones"); return symbol(sym.TRY, yytext());
             }
           // fall through
           case 140: break;
@@ -1070,27 +1070,27 @@ public class ScannerCS implements java_cup.runtime.Scanner {
           // fall through
           case 141: break;
           case 44:
-            { System.out.println("Es una etiqueta en una instrucción switch"); return symbol(sym.CASE, yytext());
+            { System.out.println("Es una etiqueta en una instruccion switch"); return symbol(sym.CASE, yytext());
             }
           // fall through
           case 142: break;
           case 45:
-            { System.out.println("Es un tipo de dato carácter"); return symbol(sym.CHAR, yytext());
+            { System.out.println("Es un tipo de dato caracter"); return symbol(sym.CHAR, yytext());
             }
           // fall through
           case 143: break;
           case 46:
-            { System.out.println("Es una instrucción alternativa en una estructura if"); return symbol(sym.ELSE, yytext());
+            { System.out.println("Es una instruccion alternativa en una estructura if"); return symbol(sym.ELSE, yytext());
             }
           // fall through
           case 144: break;
           case 47:
-            { System.out.println("Es una definición de un tipo enumerado"); return symbol(sym.ENUM, yytext());
+            { System.out.println("Es una definicion de un tipo enumerado"); return symbol(sym.ENUM, yytext());
             }
           // fall through
           case 145: break;
           case 48:
-            { System.out.println("Es una instrucción para saltar a una etiqueta"); return symbol(sym.GOTO, yytext());
+            { System.out.println("Es una instruccion para saltar a una etiqueta"); return symbol(sym.GOTO, yytext());
             }
           // fall through
           case 146: break;
@@ -1120,22 +1120,22 @@ public class ScannerCS implements java_cup.runtime.Scanner {
           // fall through
           case 151: break;
           case 54:
-            { System.out.println("Es un tipo de dato vacío"); return symbol(sym.VOID, yytext());
+            { System.out.println("Es un tipo de dato vacio"); return symbol(sym.VOID, yytext());
             }
           // fall through
           case 152: break;
           case 55:
-            { System.out.println("Es una instrucción para salir de un bucle"); return symbol(sym.BREAK, yytext());
+            { System.out.println("Es una instruccion para salir de un bucle"); return symbol(sym.BREAK, yytext());
             }
           // fall through
           case 153: break;
           case 56:
-            { System.out.println("Es una cláusula para capturar excepciones"); return symbol(sym.CATCH, yytext());
+            { System.out.println("Es una clausula para capturar excepciones"); return symbol(sym.CATCH, yytext());
             }
           // fall through
           case 154: break;
           case 57:
-            { System.out.println("Es una definición de una clase"); return symbol(sym.CLASS, yytext());
+            { System.out.println("Es una definicion de una clase"); return symbol(sym.CLASS, yytext());
             }
           // fall through
           case 155: break;
@@ -1185,17 +1185,17 @@ public class ScannerCS implements java_cup.runtime.Scanner {
           // fall through
           case 164: break;
           case 67:
-            { System.out.println("Es un bucle de repetición"); return symbol(sym.WHILE, yytext());
+            { System.out.println("Es un bucle de repeticion"); return symbol(sym.WHILE, yytext());
             }
           // fall through
           case 165: break;
           case 68:
-            { System.out.println("Es un tipo de dato de punto flotante de doble precisión"); return symbol(sym.DOUBLE, yytext());
+            { System.out.println("Es un tipo de dato de punto flotante de doble precision"); return symbol(sym.DOUBLE, yytext());
             }
           // fall through
           case 166: break;
           case 69:
-            { System.out.println("Es una declaración de método externo"); return symbol(sym.EXTERN, yytext());
+            { System.out.println("Es una declaracion de metodo externo"); return symbol(sym.EXTERN, yytext());
             }
           // fall through
           case 167: break;
@@ -1205,17 +1205,17 @@ public class ScannerCS implements java_cup.runtime.Scanner {
           // fall through
           case 168: break;
           case 71:
-            { System.out.println("Es una palabra clave para parámetros variables"); return symbol(sym.PARAMS, yytext());
+            { System.out.println("Es una palabra clave para parametros variables"); return symbol(sym.PARAMS, yytext());
             }
           // fall through
           case 169: break;
           case 72:
-            { System.out.println("Es un modificador de acceso público"); return symbol(sym.PUBLIC, yytext());
+            { System.out.println("Es un modificador de acceso publico"); return symbol(sym.PUBLIC, yytext());
             }
           // fall through
           case 170: break;
           case 73:
-            { System.out.println("Es una declaración para devolver un valor"); return symbol(sym.RETURN, yytext());
+            { System.out.println("Es una declaracion para devolver un valor"); return symbol(sym.RETURN, yytext());
             }
           // fall through
           case 171: break;
@@ -1225,7 +1225,7 @@ public class ScannerCS implements java_cup.runtime.Scanner {
           // fall through
           case 172: break;
           case 75:
-            { System.out.println("Es una operación que devuelve el tamaño de un tipo"); return symbol(sym.SIZEOF, yytext());
+            { System.out.println("Es una operación que devuelve la medida de un tipo"); return symbol(sym.SIZEOF, yytext());
             }
           // fall through
           case 173: break;
@@ -1245,7 +1245,7 @@ public class ScannerCS implements java_cup.runtime.Scanner {
           // fall through
           case 176: break;
           case 79:
-            { System.out.println("Es una estructura de control de flujo de múltiples opciones"); return symbol(sym.SWITCH, yytext());
+            { System.out.println("Es una estructura de control de flujo de multiples opciones"); return symbol(sym.SWITCH, yytext());
             }
           // fall through
           case 177: break;
@@ -1265,22 +1265,22 @@ public class ScannerCS implements java_cup.runtime.Scanner {
           // fall through
           case 180: break;
           case 83:
-            { System.out.println("Es una etiqueta por defecto en una instrucción switch"); return symbol(sym.DEFAULT, yytext());
+            { System.out.println("Es una etiqueta por defecto en una instruccion switch"); return symbol(sym.DEFAULT, yytext());
             }
           // fall through
           case 181: break;
           case 84:
-            { System.out.println("Es un tipo de dato dinámico"); return symbol(sym.DYNAMIC, yytext());
+            { System.out.println("Es un tipo de dato dinamico"); return symbol(sym.DYNAMIC, yytext());
             }
           // fall through
           case 182: break;
           case 85:
-            { System.out.println("Es una cláusula que se ejecuta después de una excepción"); return symbol(sym.FINALLY, yytext());
+            { System.out.println("Es una clausula que se ejecuta despues de una excepcion"); return symbol(sym.FINALLY, yytext());
             }
           // fall through
           case 183: break;
           case 86:
-            { System.out.println("Es una instrucción de bucle foreach"); return symbol(sym.FOREACH, yytext());
+            { System.out.println("Es una instruccion de bucle foreach"); return symbol(sym.FOREACH, yytext());
             }
           // fall through
           case 184: break;
@@ -1300,22 +1300,22 @@ public class ScannerCS implements java_cup.runtime.Scanner {
           // fall through
           case 187: break;
           case 90:
-            { System.out.println("Es una instrucción para continuar con la siguiente iteración"); return symbol(sym.CONTINUE, yytext());
+            { System.out.println("Es una instruccion para continuar con la siguiente iteracion"); return symbol(sym.CONTINUE, yytext());
             }
           // fall through
           case 188: break;
           case 91:
-            { System.out.println("Es un tipo de dato que representa un método"); return symbol(sym.DELEGATE, yytext());
+            { System.out.println("Es un tipo de dato que representa un metodo"); return symbol(sym.DELEGATE, yytext());
             }
           // fall through
           case 189: break;
           case 92:
-            { System.out.println("Es una conversión explícita de tipos"); return symbol(sym.EXPLICIT, yytext());
+            { System.out.println("Es una conversion explicita de tipos"); return symbol(sym.EXPLICIT, yytext());
             }
           // fall through
           case 190: break;
           case 93:
-            { System.out.println("Es una conversión implícita de tipos"); return symbol(sym.IMPLICIT, yytext());
+            { System.out.println("Es una conversion implicita de tipos"); return symbol(sym.IMPLICIT, yytext());
             }
           // fall through
           case 191: break;
@@ -1325,12 +1325,12 @@ public class ScannerCS implements java_cup.runtime.Scanner {
           // fall through
           case 192: break;
           case 95:
-            { System.out.println("Es una definición de operador"); return symbol(sym.OPERATOR, yytext());
+            { System.out.println("Es una definicion de operador"); return symbol(sym.OPERATOR, yytext());
             }
           // fall through
           case 193: break;
           case 96:
-            { System.out.println("Es una palabra clave para sobrescribir métodos"); return symbol(sym.OVERRIDE, yytext());
+            { System.out.println("Es una palabra clave para sobrescribir metodos"); return symbol(sym.OVERRIDE, yytext());
             }
           // fall through
           case 194: break;
