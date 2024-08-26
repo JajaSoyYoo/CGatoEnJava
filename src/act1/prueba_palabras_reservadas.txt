@@ -1,2 +1,3 @@
-int long float double char bool byte
-if ( int == 0 ){ int = 1; }
+
+
+double mivariable = 1500

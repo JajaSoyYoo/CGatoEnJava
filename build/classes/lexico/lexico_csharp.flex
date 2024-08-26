@@ -183,6 +183,8 @@ import java_cup.runtime.*;
 "."             { System.out.println("Signo punto"); return symbol(sym.DOT, yytext()); }
 
 
+[0-9]{1,10}*\.[0-9]{1,2}     { System.out.println("Numero decimal"); return symbol(sym.NDECIMAL, yytext()); }
+
 /* Todo lo que no esta reconocido */
 
 . { System.out.println("ERROR Esto no es un token del lenguaje "+yytext()); }

@@ -60,4 +60,9 @@ public class TokensTL24B {
     public static final int SIGNO_DIVISION = 50;
     public static final int SIGNO_MODULO = 51;
     public static final int PUNTO = 52;
+    
+    public static final int NDECIMAL = 53;
+    public static final int IDENTIFICADOR = 54;
+    public static final int NENTERO = 55;
+    
 }

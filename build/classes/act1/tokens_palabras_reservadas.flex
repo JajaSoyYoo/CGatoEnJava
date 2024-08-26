@@ -290,9 +290,31 @@ string      {
 
 
 
-
-
 [ \t\n\r]+  { /* Ignorar espacios en blanco */ }
+
+
+/* EXPRESIONES */
+
+[_a-zA-Z]{1}[0-9a-zA-Z]{0,31}   {
+                                System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                                System.out.println(yytext()+" -> Identificador ");
+                                return TokensTL24B.IDENTIFICADOR;
+                                }
+
+[0-9]{1,10}*\.[0-9]{1,2}     {
+                                System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                                System.out.println(yytext()+" -> Decimal ");
+                                return TokensTL24B.NDECIMAL;
+                                }
+
+[0-9]{1,10}                      {
+                                System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                                System.out.println(yytext()+" -> Numero entero");
+                                return TokensTL24B.NENTERO;
+                                }
+
+
+
 
 .           { 
                 System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");

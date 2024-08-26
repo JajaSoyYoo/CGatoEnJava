@@ -108,6 +108,7 @@ public class sym {
   public static final int BYTE = 6;
   public static final int AND = 91;
   public static final int PRIVATE = 47;
+  public static final int NDECIMAL = 104;
   public static final int STATIC = 58;
   public static final int LBRACKET = 96;
   public static final int IMPLICIT = 31;
@@ -216,7 +217,8 @@ public class sym {
   "COMMA",
   "SEMICOLON",
   "COLON",
-  "DOT"
+  "DOT",
+  "NDECIMAL"
   };
 }
 
