@@ -67,11 +67,14 @@ public class ScannerCS implements java_cup.runtime.Scanner {
   private static final int [] ZZ_CMAP_BLOCKS = zzUnpackcmap_blocks();
 
   private static final String ZZ_CMAP_BLOCKS_PACKED_0 =
-    "\12\0\4\1\22\0\1\2\100\0\1\3\1\4\1\5"+
-    "\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15"+
-    "\1\16\1\17\1\20\1\21\1\22\1\0\1\23\1\24"+
-    "\1\25\1\26\1\27\1\30\1\31\1\32\1\33\12\0"+
-    "\1\1\u01a2\0\2\1\326\0\u0100\1";
+    "\12\0\4\1\22\0\1\2\1\3\3\0\1\4\1\5"+
+    "\1\0\1\6\1\7\1\10\1\11\1\12\1\13\1\14"+
+    "\1\15\12\0\1\16\1\17\1\20\1\21\1\22\34\0"+
+    "\1\23\1\0\1\24\3\0\1\25\1\26\1\27\1\30"+
+    "\1\31\1\32\1\33\1\34\1\35\1\36\1\37\1\40"+
+    "\1\41\1\42\1\43\1\44\1\0\1\45\1\46\1\47"+
+    "\1\50\1\51\1\52\1\53\1\54\1\55\1\56\1\57"+
+    "\1\60\7\0\1\1\u01a2\0\2\1\326\0\u0100\1";
 
   private static int [] zzUnpackcmap_blocks() {
     int [] result = new int[1024];
@@ -98,23 +101,28 @@ public class ScannerCS implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\0\1\1\1\2\22\1\1\0\1\3\7\0\1\4"+
-    "\11\0\1\5\1\0\1\6\1\7\57\0\1\10\2\0"+
-    "\1\11\2\0\1\12\3\0\1\13\5\0\1\14\12\0"+
-    "\1\15\12\0\1\16\1\0\1\17\1\0\1\20\10\0"+
-    "\1\21\1\22\7\0\1\23\2\0\1\24\1\25\1\26"+
-    "\20\0\1\27\2\0\1\30\4\0\1\31\3\0\1\32"+
-    "\1\33\1\34\1\35\6\0\1\36\3\0\1\37\1\40"+
-    "\13\0\1\41\1\0\1\42\5\0\1\43\1\0\1\44"+
-    "\1\0\1\45\2\0\1\46\5\0\1\47\2\0\1\50"+
-    "\4\0\1\51\2\0\1\52\1\0\1\53\1\0\1\54"+
-    "\1\55\1\56\1\57\1\60\1\61\1\62\1\63\1\64"+
-    "\4\0\1\65\1\66\1\0\1\67\1\0\1\70\1\71"+
-    "\4\0\1\72\1\0\1\73\1\0\1\74\1\75\1\76"+
-    "\1\77\1\100\1\101\1\102\1\103\1\104\1\105";
+    "\1\0\1\1\1\2\1\3\1\4\1\1\1\5\1\6"+
+    "\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16"+
+    "\1\17\1\1\1\20\1\21\1\22\22\1\1\23\1\1"+
+    "\1\24\1\25\1\0\1\26\1\27\1\30\1\31\1\32"+
+    "\1\33\1\34\1\35\1\0\1\36\7\0\1\37\11\0"+
+    "\1\40\1\0\1\41\1\42\32\0\1\43\1\44\25\0"+
+    "\1\45\2\0\1\46\2\0\1\47\3\0\1\50\5\0"+
+    "\1\51\12\0\1\52\12\0\1\53\1\0\1\54\1\0"+
+    "\1\55\10\0\1\56\1\57\7\0\1\60\2\0\1\61"+
+    "\1\62\1\63\20\0\1\64\2\0\1\65\4\0\1\66"+
+    "\3\0\1\67\1\70\1\71\1\72\6\0\1\73\3\0"+
+    "\1\74\1\75\13\0\1\76\1\0\1\77\5\0\1\100"+
+    "\1\0\1\101\1\0\1\102\2\0\1\103\5\0\1\104"+
+    "\2\0\1\105\4\0\1\106\2\0\1\107\1\0\1\110"+
+    "\1\0\1\111\1\112\1\113\1\114\1\115\1\116\1\117"+
+    "\1\120\1\121\4\0\1\122\1\123\1\0\1\124\1\0"+
+    "\1\125\1\126\4\0\1\127\1\0\1\130\1\0\1\131"+
+    "\1\132\1\133\1\134\1\135\1\136\1\137\1\140\1\141"+
+    "\1\142";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[286];
+    int [] result = new int[319];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -139,45 +147,49 @@ public class ScannerCS implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\34\0\34\0\70\0\124\0\160\0\214\0\250"+
-    "\0\304\0\340\0\374\0\u0118\0\u0134\0\u0150\0\u016c\0\u0188"+
-    "\0\u01a4\0\u01c0\0\u01dc\0\u01f8\0\u0214\0\u0230\0\34\0\u024c"+
-    "\0\u0268\0\u0284\0\u02a0\0\u02bc\0\u02d8\0\u02f4\0\u0310\0\u032c"+
-    "\0\u0348\0\u0364\0\u0380\0\u039c\0\u03b8\0\u03d4\0\u03f0\0\u040c"+
-    "\0\34\0\u0428\0\u0444\0\34\0\u0460\0\u047c\0\u0498\0\u04b4"+
-    "\0\u04d0\0\u04ec\0\u0508\0\u0524\0\u0540\0\u055c\0\u0578\0\u0594"+
-    "\0\u05b0\0\u05cc\0\u05e8\0\u0604\0\u0620\0\u063c\0\u0658\0\u0674"+
-    "\0\u0690\0\u06ac\0\u06c8\0\u06e4\0\u0700\0\u071c\0\u0738\0\u0754"+
-    "\0\u0770\0\u078c\0\u07a8\0\u07c4\0\u07e0\0\u07fc\0\u0818\0\u0834"+
-    "\0\u0850\0\u086c\0\u0888\0\u08a4\0\u08c0\0\u08dc\0\u08f8\0\u0914"+
-    "\0\u0930\0\u094c\0\u0968\0\u0984\0\u09a0\0\u09bc\0\u09d8\0\u09f4"+
-    "\0\u0a10\0\34\0\u0a2c\0\u0a48\0\u0a64\0\34\0\u0a80\0\u0a9c"+
-    "\0\u0ab8\0\u0ad4\0\u0af0\0\34\0\u0b0c\0\u0b28\0\u0b44\0\u0b60"+
-    "\0\u0b7c\0\u0b98\0\u0bb4\0\u0bd0\0\u0bec\0\u0c08\0\34\0\u0c24"+
-    "\0\u0c40\0\u0c5c\0\u0c78\0\u0c94\0\u0cb0\0\u0ccc\0\u0ce8\0\u0d04"+
-    "\0\u0d20\0\34\0\u0d3c\0\34\0\u0d58\0\34\0\u0d74\0\u0d90"+
-    "\0\u0dac\0\u0dc8\0\u0de4\0\u0e00\0\u0e1c\0\u0e38\0\34\0\34"+
-    "\0\u0e54\0\u0e70\0\u0e8c\0\u0ea8\0\u0ec4\0\u0ee0\0\u0efc\0\34"+
-    "\0\u0f18\0\u0f34\0\34\0\34\0\34\0\u0f50\0\u0f6c\0\u0f88"+
-    "\0\u0fa4\0\u0fc0\0\u0fdc\0\u0ff8\0\u1014\0\u1030\0\u104c\0\u1068"+
-    "\0\u1084\0\u10a0\0\u10bc\0\u10d8\0\u10f4\0\34\0\u1110\0\u112c"+
-    "\0\34\0\u1148\0\u1164\0\u1180\0\u119c\0\34\0\u11b8\0\u11d4"+
-    "\0\u11f0\0\34\0\34\0\34\0\34\0\u120c\0\u1228\0\u1244"+
-    "\0\u1260\0\u127c\0\u1298\0\34\0\u12b4\0\u12d0\0\u12ec\0\34"+
-    "\0\34\0\u1308\0\u1324\0\u1340\0\u135c\0\u1378\0\u1394\0\u13b0"+
-    "\0\u13cc\0\u13e8\0\u1404\0\u1420\0\34\0\u143c\0\34\0\u1458"+
-    "\0\u1474\0\u1490\0\u14ac\0\u14c8\0\34\0\u14e4\0\34\0\u1500"+
-    "\0\34\0\u151c\0\u1538\0\34\0\u1554\0\u1570\0\u158c\0\u15a8"+
-    "\0\u15c4\0\34\0\u15e0\0\u15fc\0\34\0\u1618\0\u1634\0\u1650"+
-    "\0\u166c\0\34\0\u1688\0\u16a4\0\34\0\u16c0\0\34\0\u16dc"+
-    "\0\34\0\34\0\34\0\34\0\34\0\34\0\34\0\34"+
-    "\0\34\0\u16f8\0\u1714\0\u1730\0\u174c\0\34\0\34\0\u1768"+
-    "\0\34\0\u1784\0\34\0\34\0\u17a0\0\u17bc\0\u17d8\0\u17f4"+
-    "\0\34\0\u1810\0\34\0\u182c\0\34\0\34\0\34\0\34"+
-    "\0\34\0\34\0\34\0\34\0\34\0\34";
+    "\0\0\0\61\0\61\0\142\0\223\0\304\0\61\0\61"+
+    "\0\365\0\u0126\0\61\0\u0157\0\61\0\u0188\0\61\0\61"+
+    "\0\u01b9\0\u01ea\0\u021b\0\61\0\61\0\u024c\0\u027d\0\u02ae"+
+    "\0\u02df\0\u0310\0\u0341\0\u0372\0\u03a3\0\u03d4\0\u0405\0\u0436"+
+    "\0\u0467\0\u0498\0\u04c9\0\u04fa\0\u052b\0\u055c\0\u058d\0\61"+
+    "\0\u05be\0\61\0\61\0\u05ef\0\61\0\61\0\61\0\61"+
+    "\0\61\0\61\0\61\0\61\0\u0620\0\61\0\u0651\0\u0682"+
+    "\0\u06b3\0\u06e4\0\u0715\0\u0746\0\u0777\0\u07a8\0\u07d9\0\u080a"+
+    "\0\u083b\0\u086c\0\u089d\0\u08ce\0\u08ff\0\u0930\0\u0961\0\61"+
+    "\0\u0992\0\u09c3\0\61\0\u09f4\0\u0a25\0\u0a56\0\u0a87\0\u0ab8"+
+    "\0\u0ae9\0\u0b1a\0\u0b4b\0\u0b7c\0\u0bad\0\u0bde\0\u0c0f\0\u0c40"+
+    "\0\u0c71\0\u0ca2\0\u0cd3\0\u0d04\0\u0d35\0\u0d66\0\u0d97\0\u0dc8"+
+    "\0\u0df9\0\u0e2a\0\u0e5b\0\u0e8c\0\u0ebd\0\61\0\61\0\u0eee"+
+    "\0\u0f1f\0\u0f50\0\u0f81\0\u0fb2\0\u0fe3\0\u1014\0\u1045\0\u1076"+
+    "\0\u10a7\0\u10d8\0\u1109\0\u113a\0\u116b\0\u119c\0\u11cd\0\u11fe"+
+    "\0\u122f\0\u1260\0\u1291\0\u12c2\0\u12f3\0\u1324\0\u1355\0\u1386"+
+    "\0\u13b7\0\u13e8\0\61\0\u1419\0\u144a\0\u147b\0\61\0\u14ac"+
+    "\0\u14dd\0\u150e\0\u153f\0\u1570\0\61\0\u15a1\0\u15d2\0\u1603"+
+    "\0\u1634\0\u1665\0\u1696\0\u16c7\0\u16f8\0\u1729\0\u175a\0\61"+
+    "\0\u178b\0\u17bc\0\u17ed\0\u181e\0\u184f\0\u1880\0\u18b1\0\u18e2"+
+    "\0\u1913\0\u1944\0\61\0\u1975\0\61\0\u19a6\0\61\0\u19d7"+
+    "\0\u1a08\0\u1a39\0\u1a6a\0\u1a9b\0\u1acc\0\u1afd\0\u1b2e\0\61"+
+    "\0\61\0\u1b5f\0\u1b90\0\u1bc1\0\u1bf2\0\u1c23\0\u1c54\0\u1c85"+
+    "\0\61\0\u1cb6\0\u1ce7\0\61\0\61\0\61\0\u1d18\0\u1d49"+
+    "\0\u1d7a\0\u1dab\0\u1ddc\0\u1e0d\0\u1e3e\0\u1e6f\0\u1ea0\0\u1ed1"+
+    "\0\u1f02\0\u1f33\0\u1f64\0\u1f95\0\u1fc6\0\u1ff7\0\61\0\u2028"+
+    "\0\u2059\0\61\0\u208a\0\u20bb\0\u20ec\0\u211d\0\61\0\u214e"+
+    "\0\u217f\0\u21b0\0\61\0\61\0\61\0\61\0\u21e1\0\u2212"+
+    "\0\u2243\0\u2274\0\u22a5\0\u22d6\0\61\0\u2307\0\u2338\0\u2369"+
+    "\0\61\0\61\0\u239a\0\u23cb\0\u23fc\0\u242d\0\u245e\0\u248f"+
+    "\0\u24c0\0\u24f1\0\u2522\0\u2553\0\u2584\0\61\0\u25b5\0\61"+
+    "\0\u25e6\0\u2617\0\u2648\0\u2679\0\u26aa\0\61\0\u26db\0\61"+
+    "\0\u270c\0\61\0\u273d\0\u276e\0\61\0\u279f\0\u27d0\0\u2801"+
+    "\0\u2832\0\u2863\0\61\0\u2894\0\u28c5\0\61\0\u28f6\0\u2927"+
+    "\0\u2958\0\u2989\0\61\0\u29ba\0\u29eb\0\61\0\u2a1c\0\61"+
+    "\0\u2a4d\0\61\0\61\0\61\0\61\0\61\0\61\0\61"+
+    "\0\61\0\61\0\u2a7e\0\u2aaf\0\u2ae0\0\u2b11\0\61\0\61"+
+    "\0\u2b42\0\61\0\u2b73\0\61\0\61\0\u2ba4\0\u2bd5\0\u2c06"+
+    "\0\u2c37\0\61\0\u2c68\0\61\0\u2c99\0\61\0\61\0\61"+
+    "\0\61\0\61\0\61\0\61\0\61\0\61\0\61";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[286];
+    int [] result = new int[319];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -201,77 +213,83 @@ public class ScannerCS implements java_cup.runtime.Scanner {
 
   private static final String ZZ_TRANS_PACKED_0 =
     "\1\2\1\0\1\3\1\4\1\5\1\6\1\7\1\10"+
-    "\1\11\1\12\1\2\1\13\2\2\1\14\1\2\1\15"+
-    "\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25"+
-    "\3\2\40\0\1\26\17\0\1\27\30\0\1\30\1\0"+
-    "\1\31\13\0\1\32\6\0\1\33\3\0\1\34\2\0"+
-    "\1\35\21\0\1\36\11\0\1\37\10\0\1\40\17\0"+
-    "\1\41\1\0\1\42\6\0\1\43\1\0\1\44\15\0"+
-    "\1\45\2\0\1\46\2\0\1\47\33\0\1\50\22\0"+
-    "\1\51\6\0\1\52\1\53\3\0\1\54\30\0\1\55"+
-    "\21\0\1\56\16\0\1\57\11\0\1\60\15\0\1\61"+
-    "\3\0\1\62\1\63\7\0\1\64\17\0\1\65\2\0"+
-    "\1\66\14\0\1\67\30\0\1\70\2\0\1\71\2\0"+
-    "\1\72\1\73\11\0\1\74\2\0\1\75\15\0\1\76"+
-    "\10\0\1\77\6\0\1\100\14\0\1\101\2\0\1\102"+
-    "\5\0\1\103\22\0\1\104\5\0\1\105\24\0\1\106"+
-    "\45\0\1\107\30\0\1\110\21\0\1\111\50\0\1\112"+
-    "\1\113\11\0\1\114\33\0\1\115\50\0\1\116\20\0"+
-    "\1\117\2\0\1\120\5\0\1\121\43\0\1\122\25\0"+
-    "\1\123\37\0\1\124\35\0\1\125\14\0\1\126\46\0"+
-    "\1\127\2\0\1\130\26\0\1\131\10\0\1\132\23\0"+
-    "\1\133\35\0\1\134\35\0\1\135\30\0\1\136\36\0"+
-    "\1\137\13\0\1\140\12\0\1\141\43\0\1\142\21\0"+
-    "\1\143\31\0\1\144\26\0\1\145\51\0\1\146\15\0"+
-    "\1\147\47\0\1\150\23\0\1\151\24\0\1\152\32\0"+
-    "\1\153\4\0\1\154\14\0\1\155\40\0\1\156\4\0"+
-    "\1\157\51\0\1\160\45\0\1\161\3\0\1\162\17\0"+
-    "\1\163\23\0\1\164\33\0\1\165\7\0\1\166\42\0"+
-    "\1\167\23\0\1\170\31\0\1\171\34\0\1\172\24\0"+
-    "\1\173\1\174\43\0\1\175\23\0\1\176\2\0\1\177"+
-    "\30\0\1\200\45\0\1\201\24\0\1\202\20\0\1\203"+
-    "\37\0\1\204\31\0\1\205\51\0\1\206\34\0\1\207"+
-    "\33\0\1\210\1\211\21\0\1\212\23\0\1\213\37\0"+
-    "\1\214\30\0\1\215\32\0\1\216\37\0\1\217\43\0"+
-    "\1\220\34\0\1\221\31\0\1\222\24\0\1\223\27\0"+
-    "\1\224\37\0\1\225\27\0\1\226\37\0\1\227\45\0"+
-    "\1\230\30\0\1\231\24\0\1\232\41\0\1\233\27\0"+
-    "\1\234\40\0\1\235\24\0\1\236\47\0\1\237\33\0"+
-    "\1\240\13\0\1\241\57\0\1\242\22\0\1\243\23\0"+
-    "\1\244\53\0\1\245\32\0\1\246\24\0\1\247\40\0"+
-    "\1\250\17\0\1\251\51\0\1\252\21\0\1\253\12\0"+
-    "\1\254\32\0\1\255\32\0\1\256\30\0\1\257\21\0"+
-    "\1\260\51\0\1\261\26\0\1\262\34\0\1\263\32\0"+
-    "\1\264\40\0\1\265\14\0\1\266\30\0\1\267\46\0"+
-    "\1\270\40\0\1\271\25\0\1\272\30\0\1\273\45\0"+
-    "\1\274\34\0\1\275\21\0\1\276\37\0\1\277\42\0"+
-    "\1\300\16\0\1\301\40\0\1\302\34\0\1\303\41\0"+
-    "\1\304\21\0\1\305\43\0\1\306\26\0\1\307\23\0"+
-    "\1\310\52\0\1\311\11\0\1\312\43\0\1\313\43\0"+
-    "\1\314\15\0\1\315\31\0\1\316\53\0\1\317\27\0"+
-    "\1\320\17\0\1\321\43\0\1\322\41\0\1\323\35\0"+
-    "\1\324\17\0\1\325\33\0\1\326\51\0\1\327\27\0"+
-    "\1\330\25\0\1\331\40\0\1\332\20\0\1\333\33\0"+
-    "\1\334\56\0\1\335\24\0\1\336\23\0\1\337\45\0"+
-    "\1\340\21\0\1\341\50\0\1\342\32\0\1\343\15\0"+
-    "\1\344\27\0\1\345\50\0\1\346\16\0\1\347\46\0"+
-    "\1\350\20\0\1\351\37\0\1\352\37\0\1\353\25\0"+
-    "\1\354\46\0\1\355\31\0\1\356\22\0\1\357\33\0"+
-    "\1\360\46\0\1\361\40\0\1\362\33\0\1\363\21\0"+
-    "\1\364\44\0\1\365\34\0\1\366\13\0\1\367\46\0"+
-    "\1\370\33\0\1\371\21\0\1\372\35\0\1\373\30\0"+
-    "\1\374\37\0\1\375\47\0\1\376\20\0\1\377\31\0"+
-    "\1\u0100\50\0\1\u0101\11\0\1\u0102\43\0\1\u0103\25\0"+
-    "\1\u0104\54\0\1\u0105\23\0\1\u0106\42\0\1\u0107\33\0"+
-    "\1\u0108\13\0\1\u0109\41\0\1\u010a\52\0\1\u010b\13\0"+
-    "\1\u010c\34\0\1\u010d\23\0\1\u010e\51\0\1\u010f\20\0"+
-    "\1\u0110\34\0\1\u0111\42\0\1\u0112\33\0\1\u0113\33\0"+
-    "\1\u0114\42\0\1\u0115\15\0\1\u0116\33\0\1\u0117\51\0"+
-    "\1\u0118\33\0\1\u0119\24\0\1\u011a\40\0\1\u011b\17\0"+
-    "\1\u011c\56\0\1\u011d\10\0\1\u011e\24\0";
+    "\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20"+
+    "\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30"+
+    "\1\31\1\32\1\33\1\34\1\2\1\35\2\2\1\36"+
+    "\1\2\1\37\1\40\1\41\1\42\1\43\1\44\1\45"+
+    "\1\46\1\47\3\2\1\50\1\51\1\52\102\0\1\53"+
+    "\43\0\1\54\61\0\1\55\74\0\1\56\60\0\1\57"+
+    "\60\0\1\60\60\0\1\61\60\0\1\62\60\0\1\63"+
+    "\60\0\1\64\65\0\1\65\17\0\1\66\55\0\1\67"+
+    "\1\0\1\70\40\0\1\71\6\0\1\72\3\0\1\73"+
+    "\2\0\1\74\46\0\1\75\11\0\1\76\10\0\1\77"+
+    "\44\0\1\100\1\0\1\101\6\0\1\102\1\0\1\103"+
+    "\42\0\1\104\2\0\1\105\2\0\1\106\60\0\1\107"+
+    "\47\0\1\110\6\0\1\111\1\112\3\0\1\113\55\0"+
+    "\1\114\46\0\1\115\16\0\1\116\36\0\1\117\15\0"+
+    "\1\120\3\0\1\121\1\122\34\0\1\123\17\0\1\124"+
+    "\2\0\1\125\41\0\1\126\55\0\1\127\2\0\1\130"+
+    "\2\0\1\131\1\132\11\0\1\133\2\0\1\134\42\0"+
+    "\1\135\10\0\1\136\6\0\1\137\41\0\1\140\2\0"+
+    "\1\141\5\0\1\142\47\0\1\143\5\0\1\144\51\0"+
+    "\1\145\103\0\1\146\22\0\1\147\105\0\1\150\55\0"+
+    "\1\151\46\0\1\152\75\0\1\153\1\154\36\0\1\155"+
+    "\60\0\1\156\75\0\1\157\45\0\1\160\2\0\1\161"+
+    "\5\0\1\162\70\0\1\163\52\0\1\164\64\0\1\165"+
+    "\62\0\1\166\41\0\1\167\73\0\1\170\2\0\1\171"+
+    "\53\0\1\172\10\0\1\173\50\0\1\174\62\0\1\175"+
+    "\62\0\1\176\55\0\1\177\63\0\1\200\40\0\1\201"+
+    "\12\0\1\202\70\0\1\203\46\0\1\204\56\0\1\205"+
+    "\53\0\1\206\76\0\1\207\42\0\1\210\74\0\1\211"+
+    "\50\0\1\212\51\0\1\213\57\0\1\214\4\0\1\215"+
+    "\14\0\1\216\65\0\1\217\31\0\1\220\76\0\1\221"+
+    "\72\0\1\222\30\0\1\223\17\0\1\224\50\0\1\225"+
+    "\60\0\1\226\7\0\1\227\67\0\1\230\50\0\1\231"+
+    "\56\0\1\232\61\0\1\233\51\0\1\234\1\235\70\0"+
+    "\1\236\50\0\1\237\2\0\1\240\55\0\1\241\72\0"+
+    "\1\242\51\0\1\243\45\0\1\244\64\0\1\245\56\0"+
+    "\1\246\76\0\1\247\61\0\1\250\60\0\1\251\1\252"+
+    "\46\0\1\253\50\0\1\254\64\0\1\255\55\0\1\256"+
+    "\57\0\1\257\64\0\1\260\70\0\1\261\61\0\1\262"+
+    "\56\0\1\263\51\0\1\264\54\0\1\265\64\0\1\266"+
+    "\54\0\1\267\64\0\1\270\72\0\1\271\55\0\1\272"+
+    "\51\0\1\273\66\0\1\274\54\0\1\275\65\0\1\276"+
+    "\51\0\1\277\74\0\1\300\60\0\1\301\40\0\1\302"+
+    "\104\0\1\303\47\0\1\304\50\0\1\305\100\0\1\306"+
+    "\57\0\1\307\51\0\1\310\65\0\1\311\44\0\1\312"+
+    "\76\0\1\313\46\0\1\314\12\0\1\315\57\0\1\316"+
+    "\57\0\1\317\55\0\1\320\46\0\1\321\76\0\1\322"+
+    "\53\0\1\323\61\0\1\324\57\0\1\325\65\0\1\326"+
+    "\41\0\1\327\55\0\1\330\73\0\1\331\65\0\1\332"+
+    "\52\0\1\333\55\0\1\334\72\0\1\335\61\0\1\336"+
+    "\46\0\1\337\64\0\1\340\67\0\1\341\43\0\1\342"+
+    "\65\0\1\343\61\0\1\344\66\0\1\345\46\0\1\346"+
+    "\70\0\1\347\53\0\1\350\50\0\1\351\77\0\1\352"+
+    "\36\0\1\353\70\0\1\354\70\0\1\355\42\0\1\356"+
+    "\56\0\1\357\100\0\1\360\54\0\1\361\44\0\1\362"+
+    "\70\0\1\363\66\0\1\364\62\0\1\365\44\0\1\366"+
+    "\60\0\1\367\76\0\1\370\54\0\1\371\52\0\1\372"+
+    "\65\0\1\373\45\0\1\374\60\0\1\375\103\0\1\376"+
+    "\51\0\1\377\50\0\1\u0100\72\0\1\u0101\46\0\1\u0102"+
+    "\75\0\1\u0103\57\0\1\u0104\42\0\1\u0105\54\0\1\u0106"+
+    "\75\0\1\u0107\43\0\1\u0108\73\0\1\u0109\45\0\1\u010a"+
+    "\64\0\1\u010b\64\0\1\u010c\52\0\1\u010d\73\0\1\u010e"+
+    "\56\0\1\u010f\47\0\1\u0110\60\0\1\u0111\73\0\1\u0112"+
+    "\65\0\1\u0113\60\0\1\u0114\46\0\1\u0115\71\0\1\u0116"+
+    "\61\0\1\u0117\40\0\1\u0118\73\0\1\u0119\60\0\1\u011a"+
+    "\46\0\1\u011b\62\0\1\u011c\55\0\1\u011d\64\0\1\u011e"+
+    "\74\0\1\u011f\45\0\1\u0120\56\0\1\u0121\75\0\1\u0122"+
+    "\36\0\1\u0123\70\0\1\u0124\52\0\1\u0125\101\0\1\u0126"+
+    "\50\0\1\u0127\67\0\1\u0128\60\0\1\u0129\40\0\1\u012a"+
+    "\66\0\1\u012b\77\0\1\u012c\40\0\1\u012d\61\0\1\u012e"+
+    "\50\0\1\u012f\76\0\1\u0130\45\0\1\u0131\61\0\1\u0132"+
+    "\67\0\1\u0133\60\0\1\u0134\60\0\1\u0135\67\0\1\u0136"+
+    "\42\0\1\u0137\60\0\1\u0138\76\0\1\u0139\60\0\1\u013a"+
+    "\51\0\1\u013b\65\0\1\u013c\44\0\1\u013d\103\0\1\u013e"+
+    "\35\0\1\u013f\27\0";
 
   private static int [] zzUnpacktrans() {
-    int [] result = new int[6216];
+    int [] result = new int[11466];
     int offset = 0;
     offset = zzUnpacktrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -314,20 +332,22 @@ public class ScannerCS implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\2\11\22\1\1\0\1\11\7\0\1\1\11\0"+
-    "\1\11\1\0\1\1\1\11\57\0\1\1\2\0\1\1"+
-    "\2\0\1\11\3\0\1\11\5\0\1\11\12\0\1\11"+
-    "\12\0\1\11\1\0\1\11\1\0\1\11\10\0\2\11"+
-    "\7\0\1\11\2\0\3\11\20\0\1\11\2\0\1\11"+
-    "\4\0\1\11\3\0\4\11\6\0\1\11\3\0\2\11"+
-    "\13\0\1\11\1\0\1\11\5\0\1\11\1\0\1\11"+
-    "\1\0\1\11\2\0\1\11\5\0\1\11\2\0\1\11"+
-    "\4\0\1\11\2\0\1\11\1\0\1\11\1\0\11\11"+
-    "\4\0\2\11\1\0\1\11\1\0\2\11\4\0\1\11"+
-    "\1\0\1\11\1\0\12\11";
+    "\1\0\2\11\3\1\2\11\2\1\1\11\1\1\1\11"+
+    "\1\1\2\11\3\1\2\11\22\1\1\11\1\1\2\11"+
+    "\1\0\10\11\1\0\1\11\7\0\1\1\11\0\1\11"+
+    "\1\0\1\1\1\11\32\0\2\11\25\0\1\1\2\0"+
+    "\1\1\2\0\1\11\3\0\1\11\5\0\1\11\12\0"+
+    "\1\11\12\0\1\11\1\0\1\11\1\0\1\11\10\0"+
+    "\2\11\7\0\1\11\2\0\3\11\20\0\1\11\2\0"+
+    "\1\11\4\0\1\11\3\0\4\11\6\0\1\11\3\0"+
+    "\2\11\13\0\1\11\1\0\1\11\5\0\1\11\1\0"+
+    "\1\11\1\0\1\11\2\0\1\11\5\0\1\11\2\0"+
+    "\1\11\4\0\1\11\2\0\1\11\1\0\1\11\1\0"+
+    "\11\11\4\0\2\11\1\0\1\11\1\0\2\11\4\0"+
+    "\1\11\1\0\1\11\1\0\12\11";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[286];
+    int [] result = new int[319];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -835,350 +855,495 @@ public class ScannerCS implements java_cup.runtime.Scanner {
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1:
-            { System.out.println("ERROR Esto no es un token del lenguaje"+yytext());
+            { System.out.println("ERROR Esto no es un token del lenguaje "+yytext());
             }
           // fall through
-          case 70: break;
+          case 99: break;
           case 2:
             { System.out.println("Espacio"); return symbol(sym.ESPACIO, yytext());
             }
           // fall through
-          case 71: break;
-          case 3:
-            { System.out.println("Es una palabra clave de conversión"); return symbol(sym.AS, yytext());
-            }
-          // fall through
-          case 72: break;
-          case 4:
-            { System.out.println("Es una instrucción de bucle do-while"); return symbol(sym.DO, yytext());
-            }
-          // fall through
-          case 73: break;
-          case 5:
-            { System.out.println("Es una estructura de control de flujo"); return symbol(sym.IF, yytext());
-            }
-          // fall through
-          case 74: break;
-          case 6:
-            { System.out.println("Es una palabra clave utilizada en expresiones de consulta LINQ"); return symbol(sym.IN, yytext());
-            }
-          // fall through
-          case 75: break;
-          case 7:
-            { System.out.println("Es una palabra clave para verificar el tipo"); return symbol(sym.IS, yytext());
-            }
-          // fall through
-          case 76: break;
-          case 8:
-            { System.out.println("Es una instrucción de bucle for"); return symbol(sym.FOR, yytext());
-            }
-          // fall through
-          case 77: break;
-          case 9:
-            { System.out.println("Es un tipo de dato entero"); return symbol(sym.INT, yytext());
-            }
-          // fall through
-          case 78: break;
-          case 10:
-            { System.out.println("Es una palabra clave para crear nuevas instancias"); return symbol(sym.NEW, yytext());
-            }
-          // fall through
-          case 79: break;
-          case 11:
-            { System.out.println("Es una palabra clave para redireccionar la salida"); return symbol(sym.OUT, yytext());
-            }
-          // fall through
-          case 80: break;
-          case 12:
-            { System.out.println("Es una palabra clave para pasar parámetros por referencia"); return symbol(sym.REF, yytext());
-            }
-          // fall through
-          case 81: break;
-          case 13:
-            { System.out.println("Es una cláusula para intentar ejecutar código con manejo de excepciones"); return symbol(sym.TRY, yytext());
-            }
-          // fall through
-          case 82: break;
-          case 14:
-            { System.out.println("Es un tipo de dato booleano"); return symbol(sym.BOOL, yytext());
-            }
-          // fall through
-          case 83: break;
-          case 15:
-            { System.out.println("Es una etiqueta en una instrucción switch"); return symbol(sym.CASE, yytext());
-            }
-          // fall through
-          case 84: break;
-          case 16:
-            { System.out.println("Es un tipo de dato carácter"); return symbol(sym.CHAR, yytext());
-            }
-          // fall through
-          case 85: break;
-          case 17:
-            { System.out.println("Es una instrucción alternativa en una estructura if"); return symbol(sym.ELSE, yytext());
-            }
-          // fall through
-          case 86: break;
-          case 18:
-            { System.out.println("Es una definición de un tipo enumerado"); return symbol(sym.ENUM, yytext());
-            }
-          // fall through
-          case 87: break;
-          case 19:
-            { System.out.println("Es una instrucción para saltar a una etiqueta"); return symbol(sym.GOTO, yytext());
-            }
-          // fall through
-          case 88: break;
-          case 20:
-            { System.out.println("Es una palabra clave para sincronización de hilos"); return symbol(sym.LOCK, yytext());
-            }
-          // fall through
-          case 89: break;
-          case 21:
-            { System.out.println("Es un tipo de dato entero de 64 bits"); return symbol(sym.LONG, yytext());
-            }
-          // fall through
-          case 90: break;
-          case 22:
-            { System.out.println("Es un valor nulo"); return symbol(sym.NULL, yytext());
-            }
-          // fall through
-          case 91: break;
-          case 23:
-            { System.out.println("Es una referencia a la instancia actual de la clase"); return symbol(sym.THIS, yytext());
-            }
-          // fall through
-          case 92: break;
-          case 24:
-            { System.out.println("Es un tipo de dato entero sin signo de 32 bits"); return symbol(sym.UINT, yytext());
-            }
-          // fall through
-          case 93: break;
-          case 25:
-            { System.out.println("Es un tipo de dato vacío"); return symbol(sym.VOID, yytext());
-            }
-          // fall through
-          case 94: break;
-          case 26:
-            { System.out.println("Es una instrucción para salir de un bucle"); return symbol(sym.BREAK, yytext());
-            }
-          // fall through
-          case 95: break;
-          case 27:
-            { System.out.println("Es una cláusula para capturar excepciones"); return symbol(sym.CATCH, yytext());
-            }
-          // fall through
-          case 96: break;
-          case 28:
-            { System.out.println("Es una definición de una clase"); return symbol(sym.CLASS, yytext());
-            }
-          // fall through
-          case 97: break;
-          case 29:
-            { System.out.println("Es una constante de valor fijo"); return symbol(sym.CONST, yytext());
-            }
-          // fall through
-          case 98: break;
-          case 30:
-            { System.out.println("Es un tipo de dato que representa un evento"); return symbol(sym.EVENT, yytext());
-            }
-          // fall through
-          case 99: break;
-          case 31:
-            { System.out.println("Es una palabra clave para trabajar con memoria fija"); return symbol(sym.FIXED, yytext());
-            }
-          // fall through
           case 100: break;
-          case 32:
-            { System.out.println("Es un tipo de dato de punto flotante"); return symbol(sym.FLOAT, yytext());
+          case 3:
+            { System.out.println("Signo not"); return symbol(sym.NOT, yytext());
             }
           // fall through
           case 101: break;
-          case 33:
-            { System.out.println("Es un tipo de dato entero con signo de 8 bits"); return symbol(sym.SBYTE, yytext());
+          case 4:
+            { System.out.println("Signo módulo"); return symbol(sym.MOD, yytext());
             }
           // fall through
           case 102: break;
-          case 34:
-            { System.out.println("Es un tipo de dato entero de 16 bits"); return symbol(sym.SHORT, yytext());
+          case 5:
+            { System.out.println("Signo paréntesis de apertura"); return symbol(sym.LPAREN, yytext());
             }
           // fall through
           case 103: break;
-          case 35:
-            { System.out.println("Es una instrucción para lanzar una excepción"); return symbol(sym.THROW, yytext());
+          case 6:
+            { System.out.println("Signo paréntesis de cierre"); return symbol(sym.RPAREN, yytext());
             }
           // fall through
           case 104: break;
-          case 36:
-            { System.out.println("Es un tipo de dato entero sin signo de 64 bits"); return symbol(sym.ULONG, yytext());
+          case 7:
+            { System.out.println("Signo multiplicación"); return symbol(sym.MULT, yytext());
             }
           // fall through
           case 105: break;
-          case 37:
-            { System.out.println("Es una palabra clave para importar espacios de nombres"); return symbol(sym.USING, yytext());
+          case 8:
+            { System.out.println("Signo más"); return symbol(sym.PLUS, yytext());
             }
           // fall through
           case 106: break;
-          case 38:
-            { System.out.println("Es un bucle de repetición"); return symbol(sym.WHILE, yytext());
+          case 9:
+            { System.out.println("Signo coma"); return symbol(sym.COMMA, yytext());
             }
           // fall through
           case 107: break;
-          case 39:
-            { System.out.println("Es un tipo de dato de punto flotante de doble precisión"); return symbol(sym.DOUBLE, yytext());
+          case 10:
+            { System.out.println("Signo menos"); return symbol(sym.MINUS, yytext());
             }
           // fall through
           case 108: break;
-          case 40:
-            { System.out.println("Es una declaración de método externo"); return symbol(sym.EXTERN, yytext());
+          case 11:
+            { System.out.println("Signo punto"); return symbol(sym.DOT, yytext());
             }
           // fall through
           case 109: break;
-          case 41:
-            { System.out.println("Es el tipo base de todos los tipos"); return symbol(sym.OBJECT, yytext());
+          case 12:
+            { System.out.println("Signo división"); return symbol(sym.DIV, yytext());
             }
           // fall through
           case 110: break;
-          case 42:
-            { System.out.println("Es una palabra clave para parámetros variables"); return symbol(sym.PARAMS, yytext());
+          case 13:
+            { System.out.println("Signo dos puntos"); return symbol(sym.COLON, yytext());
             }
           // fall through
           case 111: break;
-          case 43:
-            { System.out.println("Es un modificador de acceso público"); return symbol(sym.PUBLIC, yytext());
+          case 14:
+            { System.out.println("Signo punto y coma"); return symbol(sym.SEMICOLON, yytext());
             }
           // fall through
           case 112: break;
-          case 44:
-            { System.out.println("Es una declaración para devolver un valor"); return symbol(sym.RETURN, yytext());
+          case 15:
+            { System.out.println("Signo menor que"); return symbol(sym.LT, yytext());
             }
           // fall through
           case 113: break;
-          case 45:
-            { System.out.println("Es un modificador que indica que una clase no puede ser heredada"); return symbol(sym.SEALED, yytext());
+          case 16:
+            { System.out.println("Signo mayor que"); return symbol(sym.GT, yytext());
             }
           // fall through
           case 114: break;
-          case 46:
-            { System.out.println("Es una operación que devuelve el tamaño de un tipo"); return symbol(sym.SIZEOF, yytext());
+          case 17:
+            { System.out.println("Signo corchete de apertura"); return symbol(sym.LBRACKET, yytext());
             }
           // fall through
           case 115: break;
-          case 47:
-            { System.out.println("Es un modificador que indica que el miembro pertenece a la clase"); return symbol(sym.STATIC, yytext());
+          case 18:
+            { System.out.println("Signo corchete de cierre"); return symbol(sym.RBRACKET, yytext());
             }
           // fall through
           case 116: break;
-          case 48:
-            { System.out.println("Es un tipo de dato cadena de caracteres"); return symbol(sym.STRING, yytext());
+          case 19:
+            { System.out.println("Signo llave de apertura"); return symbol(sym.LBRACE, yytext());
             }
           // fall through
           case 117: break;
-          case 49:
-            { System.out.println("Es una definición de una estructura"); return symbol(sym.STRUCT, yytext());
+          case 20:
+            { System.out.println("Signo llave de cierre"); return symbol(sym.RBRACE, yytext());
             }
           // fall through
           case 118: break;
-          case 50:
-            { System.out.println("Es una estructura de control de flujo de múltiples opciones"); return symbol(sym.SWITCH, yytext());
+          case 21:
+            { System.out.println("Signo diferente de"); return symbol(sym.NEQ, yytext());
             }
           // fall through
           case 119: break;
-          case 51:
-            { System.out.println("Es una operación que devuelve el tipo de un objeto"); return symbol(sym.TYPEOF, yytext());
+          case 22:
+            { System.out.println("Signo and"); return symbol(sym.AND, yytext());
             }
           // fall through
           case 120: break;
-          case 52:
-            { System.out.println("Es un tipo de dato entero sin signo de 16 bits"); return symbol(sym.USHORT, yytext());
+          case 23:
+            { System.out.println("Signo multiplicación igual"); return symbol(sym.MULT_ASSIGN, yytext());
             }
           // fall through
           case 121: break;
-          case 53:
-            { System.out.println("Es un tipo de dato decimal"); return symbol(sym.DECIMAL, yytext());
+          case 24:
+            { System.out.println("Signo más igual"); return symbol(sym.PLUS_ASSIGN, yytext());
             }
           // fall through
           case 122: break;
-          case 54:
-            { System.out.println("Es una etiqueta por defecto en una instrucción switch"); return symbol(sym.DEFAULT, yytext());
+          case 25:
+            { System.out.println("Signo menos igual"); return symbol(sym.MINUS_ASSIGN, yytext());
             }
           // fall through
           case 123: break;
-          case 55:
-            { System.out.println("Es un tipo de dato dinámico"); return symbol(sym.DYNAMIC, yytext());
+          case 26:
+            { System.out.println("Signo división igual"); return symbol(sym.DIV_ASSIGN, yytext());
             }
           // fall through
           case 124: break;
-          case 56:
-            { System.out.println("Es una cláusula que se ejecuta después de una excepción"); return symbol(sym.FINALLY, yytext());
+          case 27:
+            { System.out.println("Signo menor o igual que"); return symbol(sym.LTE, yytext());
             }
           // fall through
           case 125: break;
-          case 57:
-            { System.out.println("Es una instrucción de bucle foreach"); return symbol(sym.FOREACH, yytext());
+          case 28:
+            { System.out.println("Signo igual igual"); return symbol(sym.EQ, yytext());
             }
           // fall through
           case 126: break;
-          case 58:
-            { System.out.println("Es un modificador de acceso privado"); return symbol(sym.PRIVATE, yytext());
+          case 29:
+            { System.out.println("Signo mayor o igual que"); return symbol(sym.GTE, yytext());
             }
           // fall through
           case 127: break;
-          case 59:
-            { System.out.println("Es un modificador que permite que un método sea sobrescrito"); return symbol(sym.VIRTUAL, yytext());
+          case 30:
+            { System.out.println("Es una palabra clave de conversión"); return symbol(sym.AS, yytext());
             }
           // fall through
           case 128: break;
-          case 60:
-            { System.out.println("Es una palabra clave abstracta"); return symbol(sym.ABSTRACT, yytext());
+          case 31:
+            { System.out.println("Es una instrucción de bucle do-while"); return symbol(sym.DO, yytext());
             }
           // fall through
           case 129: break;
-          case 61:
-            { System.out.println("Es una instrucción para continuar con la siguiente iteración"); return symbol(sym.CONTINUE, yytext());
+          case 32:
+            { System.out.println("Es una estructura de control de flujo"); return symbol(sym.IF, yytext());
             }
           // fall through
           case 130: break;
-          case 62:
-            { System.out.println("Es un tipo de dato que representa un método"); return symbol(sym.DELEGATE, yytext());
+          case 33:
+            { System.out.println("Es una palabra clave utilizada en expresiones de consulta LINQ"); return symbol(sym.IN, yytext());
             }
           // fall through
           case 131: break;
-          case 63:
-            { System.out.println("Es una conversión explícita de tipos"); return symbol(sym.EXPLICIT, yytext());
+          case 34:
+            { System.out.println("Es una palabra clave para verificar el tipo"); return symbol(sym.IS, yytext());
             }
           // fall through
           case 132: break;
-          case 64:
-            { System.out.println("Es una conversión implícita de tipos"); return symbol(sym.IMPLICIT, yytext());
+          case 35:
+            { System.out.println("Signo or"); return symbol(sym.OR, yytext());
             }
           // fall through
           case 133: break;
-          case 65:
-            { System.out.println("Es un modificador de acceso interno"); return symbol(sym.INTERNAL, yytext());
+          case 36:
+            { System.out.println("Signo igual"); return symbol(sym.ASSING, yytext());
             }
           // fall through
           case 134: break;
-          case 66:
-            { System.out.println("Es una definición de operador"); return symbol(sym.OPERATOR, yytext());
+          case 37:
+            { System.out.println("Es una instrucción de bucle for"); return symbol(sym.FOR, yytext());
             }
           // fall through
           case 135: break;
-          case 67:
-            { System.out.println("Es una palabra clave para sobrescribir métodos"); return symbol(sym.OVERRIDE, yytext());
+          case 38:
+            { System.out.println("Es un tipo de dato entero"); return symbol(sym.INT, yytext());
             }
           // fall through
           case 136: break;
-          case 68:
-            { System.out.println("Es un modificador que indica que el valor es de solo lectura"); return symbol(sym.READONLY, yytext());
+          case 39:
+            { System.out.println("Es una palabra clave para crear nuevas instancias"); return symbol(sym.NEW, yytext());
             }
           // fall through
           case 137: break;
-          case 69:
-            { System.out.println("Es un modificador que indica que el valor puede ser cambiado por otros hilos"); return symbol(sym.VOLATILE, yytext());
+          case 40:
+            { System.out.println("Es una palabra clave para redireccionar la salida"); return symbol(sym.OUT, yytext());
             }
           // fall through
           case 138: break;
+          case 41:
+            { System.out.println("Es una palabra clave para pasar parámetros por referencia"); return symbol(sym.REF, yytext());
+            }
+          // fall through
+          case 139: break;
+          case 42:
+            { System.out.println("Es una cláusula para intentar ejecutar código con manejo de excepciones"); return symbol(sym.TRY, yytext());
+            }
+          // fall through
+          case 140: break;
+          case 43:
+            { System.out.println("Es un tipo de dato booleano"); return symbol(sym.BOOL, yytext());
+            }
+          // fall through
+          case 141: break;
+          case 44:
+            { System.out.println("Es una etiqueta en una instrucción switch"); return symbol(sym.CASE, yytext());
+            }
+          // fall through
+          case 142: break;
+          case 45:
+            { System.out.println("Es un tipo de dato carácter"); return symbol(sym.CHAR, yytext());
+            }
+          // fall through
+          case 143: break;
+          case 46:
+            { System.out.println("Es una instrucción alternativa en una estructura if"); return symbol(sym.ELSE, yytext());
+            }
+          // fall through
+          case 144: break;
+          case 47:
+            { System.out.println("Es una definición de un tipo enumerado"); return symbol(sym.ENUM, yytext());
+            }
+          // fall through
+          case 145: break;
+          case 48:
+            { System.out.println("Es una instrucción para saltar a una etiqueta"); return symbol(sym.GOTO, yytext());
+            }
+          // fall through
+          case 146: break;
+          case 49:
+            { System.out.println("Es una palabra clave para sincronización de hilos"); return symbol(sym.LOCK, yytext());
+            }
+          // fall through
+          case 147: break;
+          case 50:
+            { System.out.println("Es un tipo de dato entero de 64 bits"); return symbol(sym.LONG, yytext());
+            }
+          // fall through
+          case 148: break;
+          case 51:
+            { System.out.println("Es un valor nulo"); return symbol(sym.NULL, yytext());
+            }
+          // fall through
+          case 149: break;
+          case 52:
+            { System.out.println("Es una referencia a la instancia actual de la clase"); return symbol(sym.THIS, yytext());
+            }
+          // fall through
+          case 150: break;
+          case 53:
+            { System.out.println("Es un tipo de dato entero sin signo de 32 bits"); return symbol(sym.UINT, yytext());
+            }
+          // fall through
+          case 151: break;
+          case 54:
+            { System.out.println("Es un tipo de dato vacío"); return symbol(sym.VOID, yytext());
+            }
+          // fall through
+          case 152: break;
+          case 55:
+            { System.out.println("Es una instrucción para salir de un bucle"); return symbol(sym.BREAK, yytext());
+            }
+          // fall through
+          case 153: break;
+          case 56:
+            { System.out.println("Es una cláusula para capturar excepciones"); return symbol(sym.CATCH, yytext());
+            }
+          // fall through
+          case 154: break;
+          case 57:
+            { System.out.println("Es una definición de una clase"); return symbol(sym.CLASS, yytext());
+            }
+          // fall through
+          case 155: break;
+          case 58:
+            { System.out.println("Es una constante de valor fijo"); return symbol(sym.CONST, yytext());
+            }
+          // fall through
+          case 156: break;
+          case 59:
+            { System.out.println("Es un tipo de dato que representa un evento"); return symbol(sym.EVENT, yytext());
+            }
+          // fall through
+          case 157: break;
+          case 60:
+            { System.out.println("Es una palabra clave para trabajar con memoria fija"); return symbol(sym.FIXED, yytext());
+            }
+          // fall through
+          case 158: break;
+          case 61:
+            { System.out.println("Es un tipo de dato de punto flotante"); return symbol(sym.FLOAT, yytext());
+            }
+          // fall through
+          case 159: break;
+          case 62:
+            { System.out.println("Es un tipo de dato entero con signo de 8 bits"); return symbol(sym.SBYTE, yytext());
+            }
+          // fall through
+          case 160: break;
+          case 63:
+            { System.out.println("Es un tipo de dato entero de 16 bits"); return symbol(sym.SHORT, yytext());
+            }
+          // fall through
+          case 161: break;
+          case 64:
+            { System.out.println("Es una instrucción para lanzar una excepción"); return symbol(sym.THROW, yytext());
+            }
+          // fall through
+          case 162: break;
+          case 65:
+            { System.out.println("Es un tipo de dato entero sin signo de 64 bits"); return symbol(sym.ULONG, yytext());
+            }
+          // fall through
+          case 163: break;
+          case 66:
+            { System.out.println("Es una palabra clave para importar espacios de nombres"); return symbol(sym.USING, yytext());
+            }
+          // fall through
+          case 164: break;
+          case 67:
+            { System.out.println("Es un bucle de repetición"); return symbol(sym.WHILE, yytext());
+            }
+          // fall through
+          case 165: break;
+          case 68:
+            { System.out.println("Es un tipo de dato de punto flotante de doble precisión"); return symbol(sym.DOUBLE, yytext());
+            }
+          // fall through
+          case 166: break;
+          case 69:
+            { System.out.println("Es una declaración de método externo"); return symbol(sym.EXTERN, yytext());
+            }
+          // fall through
+          case 167: break;
+          case 70:
+            { System.out.println("Es el tipo base de todos los tipos"); return symbol(sym.OBJECT, yytext());
+            }
+          // fall through
+          case 168: break;
+          case 71:
+            { System.out.println("Es una palabra clave para parámetros variables"); return symbol(sym.PARAMS, yytext());
+            }
+          // fall through
+          case 169: break;
+          case 72:
+            { System.out.println("Es un modificador de acceso público"); return symbol(sym.PUBLIC, yytext());
+            }
+          // fall through
+          case 170: break;
+          case 73:
+            { System.out.println("Es una declaración para devolver un valor"); return symbol(sym.RETURN, yytext());
+            }
+          // fall through
+          case 171: break;
+          case 74:
+            { System.out.println("Es un modificador que indica que una clase no puede ser heredada"); return symbol(sym.SEALED, yytext());
+            }
+          // fall through
+          case 172: break;
+          case 75:
+            { System.out.println("Es una operación que devuelve el tamaño de un tipo"); return symbol(sym.SIZEOF, yytext());
+            }
+          // fall through
+          case 173: break;
+          case 76:
+            { System.out.println("Es un modificador que indica que el miembro pertenece a la clase"); return symbol(sym.STATIC, yytext());
+            }
+          // fall through
+          case 174: break;
+          case 77:
+            { System.out.println("Es un tipo de dato cadena de caracteres"); return symbol(sym.STRING, yytext());
+            }
+          // fall through
+          case 175: break;
+          case 78:
+            { System.out.println("Es una definición de una estructura"); return symbol(sym.STRUCT, yytext());
+            }
+          // fall through
+          case 176: break;
+          case 79:
+            { System.out.println("Es una estructura de control de flujo de múltiples opciones"); return symbol(sym.SWITCH, yytext());
+            }
+          // fall through
+          case 177: break;
+          case 80:
+            { System.out.println("Es una operación que devuelve el tipo de un objeto"); return symbol(sym.TYPEOF, yytext());
+            }
+          // fall through
+          case 178: break;
+          case 81:
+            { System.out.println("Es un tipo de dato entero sin signo de 16 bits"); return symbol(sym.USHORT, yytext());
+            }
+          // fall through
+          case 179: break;
+          case 82:
+            { System.out.println("Es un tipo de dato decimal"); return symbol(sym.DECIMAL, yytext());
+            }
+          // fall through
+          case 180: break;
+          case 83:
+            { System.out.println("Es una etiqueta por defecto en una instrucción switch"); return symbol(sym.DEFAULT, yytext());
+            }
+          // fall through
+          case 181: break;
+          case 84:
+            { System.out.println("Es un tipo de dato dinámico"); return symbol(sym.DYNAMIC, yytext());
+            }
+          // fall through
+          case 182: break;
+          case 85:
+            { System.out.println("Es una cláusula que se ejecuta después de una excepción"); return symbol(sym.FINALLY, yytext());
+            }
+          // fall through
+          case 183: break;
+          case 86:
+            { System.out.println("Es una instrucción de bucle foreach"); return symbol(sym.FOREACH, yytext());
+            }
+          // fall through
+          case 184: break;
+          case 87:
+            { System.out.println("Es un modificador de acceso privado"); return symbol(sym.PRIVATE, yytext());
+            }
+          // fall through
+          case 185: break;
+          case 88:
+            { System.out.println("Es un modificador que permite que un método sea sobrescrito"); return symbol(sym.VIRTUAL, yytext());
+            }
+          // fall through
+          case 186: break;
+          case 89:
+            { System.out.println("Es una palabra clave abstracta"); return symbol(sym.ABSTRACT, yytext());
+            }
+          // fall through
+          case 187: break;
+          case 90:
+            { System.out.println("Es una instrucción para continuar con la siguiente iteración"); return symbol(sym.CONTINUE, yytext());
+            }
+          // fall through
+          case 188: break;
+          case 91:
+            { System.out.println("Es un tipo de dato que representa un método"); return symbol(sym.DELEGATE, yytext());
+            }
+          // fall through
+          case 189: break;
+          case 92:
+            { System.out.println("Es una conversión explícita de tipos"); return symbol(sym.EXPLICIT, yytext());
+            }
+          // fall through
+          case 190: break;
+          case 93:
+            { System.out.println("Es una conversión implícita de tipos"); return symbol(sym.IMPLICIT, yytext());
+            }
+          // fall through
+          case 191: break;
+          case 94:
+            { System.out.println("Es un modificador de acceso interno"); return symbol(sym.INTERNAL, yytext());
+            }
+          // fall through
+          case 192: break;
+          case 95:
+            { System.out.println("Es una definición de operador"); return symbol(sym.OPERATOR, yytext());
+            }
+          // fall through
+          case 193: break;
+          case 96:
+            { System.out.println("Es una palabra clave para sobrescribir métodos"); return symbol(sym.OVERRIDE, yytext());
+            }
+          // fall through
+          case 194: break;
+          case 97:
+            { System.out.println("Es un modificador que indica que el valor es de solo lectura"); return symbol(sym.READONLY, yytext());
+            }
+          // fall through
+          case 195: break;
+          case 98:
+            { System.out.println("Es un modificador que indica que el valor puede ser cambiado por otros hilos"); return symbol(sym.VOLATILE, yytext());
+            }
+          // fall through
+          case 196: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }

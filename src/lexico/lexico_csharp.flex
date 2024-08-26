@@ -103,48 +103,49 @@ import java_cup.runtime.*;
 " "  { System.out.println("Espacio"); return symbol(sym.ESPACIO, yytext()); }
 %%
 // Símbolos de asignación
-"="             { return symbol(sym.ASSIGN, yytext()); }
-"+="            { return symbol(sym.PLUS_ASSIGN, yytext()); }
-"-="            { return symbol(sym.MINUS_ASSIGN, yytext()); }
-"*="            { return symbol(sym.MULT_ASSIGN, yytext()); }
-"/="            { return symbol(sym.DIV_ASSIGN, yytext()); }
+
+"="         { System.out.println("Signo igual"); return symbol(sym.ASSING, yytext()); }
+"+="            { System.out.println("Signo más igual"); return symbol(sym.PLUS_ASSIGN, yytext()); }
+"-="            { System.out.println("Signo menos igual"); return symbol(sym.MINUS_ASSIGN, yytext()); }
+"*="            { System.out.println("Signo multiplicación igual"); return symbol(sym.MULT_ASSIGN, yytext()); }
+"/="            { System.out.println("Signo división igual"); return symbol(sym.DIV_ASSIGN, yytext()); }
 
 // Operadores aritméticos
-"+"             { return symbol(sym.PLUS, yytext()); }
-"-"             { return symbol(sym.MINUS, yytext()); }
-"*"             { return symbol(sym.MULT, yytext()); }
-"/"             { return symbol(sym.DIV, yytext()); }
-"%"             { return symbol(sym.MOD, yytext()); }
+"+"             { System.out.println("Signo más"); return symbol(sym.PLUS, yytext()); }
+"-"             { System.out.println("Signo menos"); return symbol(sym.MINUS, yytext()); }
+"*"             { System.out.println("Signo multiplicación"); return symbol(sym.MULT, yytext()); }
+"/"             { System.out.println("Signo división"); return symbol(sym.DIV, yytext()); }
+"%"             { System.out.println("Signo módulo"); return symbol(sym.MOD, yytext()); }
 
 // Operadores relacionales
-"<"             { return symbol(sym.LT, yytext()); }
-"<="            { return symbol(sym.LTE, yytext()); }
-">"             { return symbol(sym.GT, yytext()); }
-">="            { return symbol(sym.GTE, yytext()); }
-"=="            { return symbol(sym.EQ, yytext()); }
-"!="            { return symbol(sym.NEQ, yytext()); }
+"<"             { System.out.println("Signo menor que"); return symbol(sym.LT, yytext()); }
+"<="            { System.out.println("Signo menor o igual que"); return symbol(sym.LTE, yytext()); }
+">"             { System.out.println("Signo mayor que"); return symbol(sym.GT, yytext()); }
+">="            { System.out.println("Signo mayor o igual que"); return symbol(sym.GTE, yytext()); }
+"=="            { System.out.println("Signo igual igual"); return symbol(sym.EQ, yytext()); }
+"!="            { System.out.println("Signo diferente de"); return symbol(sym.NEQ, yytext()); }
 
 // Operadores lógicos
-"&&"            { return symbol(sym.AND, yytext()); }
-"||"            { return symbol(sym.OR, yytext()); }
-"!"             { return symbol(sym.NOT, yytext()); }
+"&&"            { System.out.println("Signo and"); return symbol(sym.AND, yytext()); }
+"||"            { System.out.println("Signo or"); return symbol(sym.OR, yytext()); }
+"!"             { System.out.println("Signo not"); return symbol(sym.NOT, yytext()); }
 
 // Símbolos de agrupación
-"("             { return symbol(sym.LPAREN, yytext()); }
-")"             { return symbol(sym.RPAREN, yytext()); }
-"["             { return symbol(sym.LBRACKET, yytext()); }
-"]"             { return symbol(sym.RBRACKET, yytext()); }
-"{"             { return symbol(sym.LBRACE, yytext()); }
-"}"             { return symbol(sym.RBRACE, yytext()); }
+"("             { System.out.println("Signo paréntesis de apertura"); return symbol(sym.LPAREN, yytext()); }
+")"             { System.out.println("Signo paréntesis de cierre"); return symbol(sym.RPAREN, yytext()); }
+"["             { System.out.println("Signo corchete de apertura"); return symbol(sym.LBRACKET, yytext()); }
+"]"             { System.out.println("Signo corchete de cierre"); return symbol(sym.RBRACKET, yytext()); }
+"{"             { System.out.println("Signo llave de apertura"); return symbol(sym.LBRACE, yytext()); }
+"}"             { System.out.println("Signo llave de cierre"); return symbol(sym.RBRACE, yytext()); }
 
 // Otros símbolos
-","             { return symbol(sym.COMMA, yytext()); }
-";"             { return symbol(sym.SEMICOLON, yytext()); }
-":"             { return symbol(sym.COLON, yytext()); }
-"."             { return symbol(sym.DOT, yytext()); }
+","             { System.out.println("Signo coma"); return symbol(sym.COMMA, yytext()); }
+";"             { System.out.println("Signo punto y coma"); return symbol(sym.SEMICOLON, yytext()); }
+":"             { System.out.println("Signo dos puntos"); return symbol(sym.COLON, yytext()); }
+"."             { System.out.println("Signo punto"); return symbol(sym.DOT, yytext()); }
 
 
 
 /* Todo lo que no esta reconocido */
 
-. { System.out.println("ERROR Esto no es un token del lenguaje"+yytext()); }
+. { System.out.println("ERROR Esto no es un token del lenguaje "+yytext()); }

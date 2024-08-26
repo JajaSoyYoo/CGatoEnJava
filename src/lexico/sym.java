@@ -12,6 +12,7 @@ public class sym {
   public static final int AS = 3;
   public static final int INTERNAL = 35;
   public static final int BOOL = 4;
+  public static final int GT = 87;
   public static final int TYPEOF = 65;
   public static final int CONST = 11;
   public static final int DYNAMIC = 18;
@@ -20,26 +21,37 @@ public class sym {
   public static final int ENUM = 20;
   public static final int SIZEOF = 56;
   public static final int READONLY = 50;
+  public static final int COMMA = 100;
   public static final int CATCH = 8;
   public static final int EXPLICIT = 22;
   public static final int VIRTUAL = 70;
+  public static final int RBRACE = 99;
   public static final int THROW = 63;
+  public static final int RPAREN = 95;
+  public static final int LT = 85;
   public static final int LOCK = 37;
   public static final int USHORT = 68;
   public static final int DOUBLE = 17;
+  public static final int LBRACE = 98;
   public static final int STRUCT = 60;
+  public static final int LPAREN = 94;
   public static final int PROTECTED = 48;
   public static final int OUT = 44;
+  public static final int NOT = 93;
   public static final int SBYTE = 53;
   public static final int OBJECT = 42;
   public static final int OVERRIDE = 45;
   public static final int FLOAT = 26;
   public static final int GOTO = 29;
   public static final int PARAMS = 46;
+  public static final int EQ = 89;
   public static final int FIXED = 25;
+  public static final int MOD = 84;
+  public static final int ASSING = 75;
   public static final int CLASS = 10;
   public static final int ABSTRACT = 2;
   public static final int ULONG = 67;
+  public static final int PLUS = 80;
   public static final int LONG = 38;
   public static final int WHILE = 73;
   public static final int STACKALLOC = 57;
@@ -49,38 +61,55 @@ public class sym {
   public static final int SWITCH = 61;
   public static final int DO = 16;
   public static final int FOR = 27;
+  public static final int MINUS_ASSIGN = 77;
+  public static final int DIV = 83;
   public static final int VOID = 71;
   public static final int EXTERN = 23;
+  public static final int MULT = 82;
   public static final int PUBLIC = 49;
   public static final int RETURN = 52;
   public static final int ELSE = 19;
   public static final int TRY = 64;
   public static final int BREAK = 5;
+  public static final int DOT = 103;
   public static final int INT = 33;
+  public static final int LTE = 86;
   public static final int NULL = 41;
+  public static final int SEMICOLON = 101;
   public static final int EOF = 0;
+  public static final int MULT_ASSIGN = 78;
   public static final int THIS = 62;
   public static final int DEFAULT = 14;
   public static final int SEALED = 54;
   public static final int OPERATOR = 43;
+  public static final int MINUS = 81;
   public static final int IS = 36;
   public static final int IN = 32;
+  public static final int OR = 92;
   public static final int error = 1;
+  public static final int GTE = 88;
   public static final int FINALLY = 24;
   public static final int CONTINUE = 12;
   public static final int IF = 30;
+  public static final int DIV_ASSIGN = 79;
+  public static final int PLUS_ASSIGN = 76;
+  public static final int COLON = 102;
   public static final int USING = 69;
   public static final int UINT = 66;
   public static final int FOREACH = 28;
+  public static final int RBRACKET = 97;
   public static final int REF = 51;
   public static final int VOLATILE = 72;
   public static final int CASE = 7;
   public static final int NEW = 40;
   public static final int STRING = 59;
   public static final int ESPACIO = 74;
+  public static final int NEQ = 90;
   public static final int BYTE = 6;
+  public static final int AND = 91;
   public static final int PRIVATE = 47;
   public static final int STATIC = 58;
+  public static final int LBRACKET = 96;
   public static final int IMPLICIT = 31;
   public static final int EVENT = 21;
   public static final String[] terminalNames = new String[] {
@@ -158,7 +187,36 @@ public class sym {
   "VOID",
   "VOLATILE",
   "WHILE",
-  "ESPACIO"
+  "ESPACIO",
+  "ASSING",
+  "PLUS_ASSIGN",
+  "MINUS_ASSIGN",
+  "MULT_ASSIGN",
+  "DIV_ASSIGN",
+  "PLUS",
+  "MINUS",
+  "MULT",
+  "DIV",
+  "MOD",
+  "LT",
+  "LTE",
+  "GT",
+  "GTE",
+  "EQ",
+  "NEQ",
+  "AND",
+  "OR",
+  "NOT",
+  "LPAREN",
+  "RPAREN",
+  "LBRACKET",
+  "RBRACKET",
+  "LBRACE",
+  "RBRACE",
+  "COMMA",
+  "SEMICOLON",
+  "COLON",
+  "DOT"
   };
 }
 
