@@ -314,7 +314,11 @@ string      {
                                 }
 
 
-
+\"([^\"\\]|\\.)*\"              {
+                                System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                                System.out.println(yytext()+" -> Cadena ");
+                                return TokensTL24B.CADENA;
+                                }
 
 .           { 
                 System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");

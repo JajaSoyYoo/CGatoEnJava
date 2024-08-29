@@ -64,5 +64,6 @@ public class TokensTL24B {
     public static final int NDECIMAL = 53;
     public static final int IDENTIFICADOR = 54;
     public static final int NENTERO = 55;
+    public static final int CADENA = 56;
     
 }
