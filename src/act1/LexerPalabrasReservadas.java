@@ -106,17 +106,17 @@ public class LexerPalabrasReservadas {
     "\1\16\1\17\1\20\1\21\1\22\1\23\16\21\1\24"+
     "\1\25\1\26\1\0\1\27\1\0\1\30\1\31\1\32"+
     "\1\0\1\14\1\33\1\34\1\35\6\21\1\36\4\21"+
-    "\1\37\13\21\1\32\1\14\12\21\1\40\1\41\12\21"+
-    "\1\42\2\21\1\14\1\21\1\43\1\44\1\45\4\21"+
-    "\1\46\3\21\1\47\10\21\1\50\2\21\1\14\2\21"+
-    "\1\51\2\21\1\52\1\53\12\21\1\54\1\14\1\21"+
-    "\1\55\1\21\1\56\4\21\1\57\1\60\1\61\1\62"+
-    "\1\63\1\21\1\14\1\21\1\40\1\64\1\21\1\65"+
-    "\1\21\1\66\1\14\1\21\1\67\1\21\1\14\1\21"+
-    "\1\70\1\14\1\21\1\0\26\21";
+    "\1\37\14\21\1\32\1\14\12\21\1\40\1\41\12\21"+
+    "\1\42\3\21\1\14\1\21\1\43\1\44\1\45\4\21"+
+    "\1\46\3\21\1\47\10\21\1\50\1\21\1\51\1\21"+
+    "\1\14\2\21\1\52\2\21\1\53\1\54\12\21\1\55"+
+    "\1\14\1\21\1\56\1\21\1\57\4\21\1\60\1\61"+
+    "\1\62\1\63\1\64\1\21\1\14\1\21\1\40\1\65"+
+    "\1\21\1\66\1\21\1\67\1\14\1\21\1\70\1\21"+
+    "\1\14\1\21\1\71\1\14\1\21\1\0\26\21";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[200];
+    int [] result = new int[203];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -150,25 +150,26 @@ public class LexerPalabrasReservadas {
     "\0\57\0\57\0\57\0\u0582\0\u05b1\0\u05e0\0\u060f\0\u063e"+
     "\0\u066d\0\u069c\0\u06cb\0\u06fa\0\u0729\0\u0758\0\u0582\0\u0787"+
     "\0\u07b6\0\u07e5\0\u0814\0\u0843\0\u0872\0\u08a1\0\u08d0\0\u08ff"+
-    "\0\u092e\0\u095d\0\57\0\u098c\0\u09bb\0\u09ea\0\u0a19\0\u0a48"+
-    "\0\u0a77\0\u0aa6\0\u0ad5\0\u0b04\0\u0b33\0\u0b62\0\u0b91\0\u09bb"+
-    "\0\u0bc0\0\u0bef\0\u0c1e\0\u0c4d\0\u0c7c\0\u0cab\0\u0cda\0\u0d09"+
-    "\0\u0d38\0\u0d67\0\u09bb\0\u0d96\0\u0dc5\0\u0df4\0\u0e23\0\u0e23"+
-    "\0\u0e23\0\u0e23\0\u0e52\0\u0e81\0\u0eb0\0\u0edf\0\u0e23\0\u0f0e"+
-    "\0\u0f3d\0\u0f6c\0\u0e23\0\u0f9b\0\u0fca\0\u0ff9\0\u1028\0\u1057"+
-    "\0\u1086\0\u10b5\0\u10e4\0\u0e23\0\u1113\0\u1142\0\u1171\0\u11a0"+
-    "\0\u11cf\0\u11a0\0\u11fe\0\u122d\0\u11a0\0\u11a0\0\u125c\0\u128b"+
-    "\0\u12ba\0\u12e9\0\u1318\0\u1347\0\u1376\0\u13a5\0\u13d4\0\u1403"+
-    "\0\u11a0\0\u1432\0\u1461\0\u1461\0\u1490\0\u1461\0\u14bf\0\u14ee"+
-    "\0\u151d\0\u154c\0\u1461\0\u1461\0\u1461\0\u1461\0\u1461\0\u157b"+
-    "\0\u15aa\0\u15d9\0\u15d9\0\u15d9\0\u1608\0\u15d9\0\u1637\0\u15d9"+
-    "\0\u1666\0\u1695\0\u1695\0\u16c4\0\u16f3\0\u1722\0\u1722\0\u1751"+
-    "\0\u1780\0\u1751\0\u17af\0\u17de\0\u180d\0\u183c\0\u186b\0\u189a"+
-    "\0\u18c9\0\u18f8\0\u1927\0\u1956\0\u1985\0\u19b4\0\u19e3\0\u1a12"+
-    "\0\u1a41\0\u1a70\0\u1a9f\0\u1ace\0\u1afd\0\u1b2c\0\u1b5b\0\57";
+    "\0\u092e\0\u095d\0\u098c\0\57\0\u09bb\0\u09ea\0\u0a19\0\u0a48"+
+    "\0\u0a77\0\u0aa6\0\u0ad5\0\u0b04\0\u0b33\0\u0b62\0\u0b91\0\u0bc0"+
+    "\0\u09ea\0\u0bef\0\u0c1e\0\u0c4d\0\u0c7c\0\u0cab\0\u0cda\0\u0d09"+
+    "\0\u0d38\0\u0d67\0\u0d96\0\u09ea\0\u0dc5\0\u0df4\0\u0e23\0\u0e52"+
+    "\0\u0e81\0\u0e81\0\u0e81\0\u0e81\0\u0eb0\0\u0edf\0\u0f0e\0\u0f3d"+
+    "\0\u0e81\0\u0f6c\0\u0f9b\0\u0fca\0\u0e81\0\u0ff9\0\u1028\0\u1057"+
+    "\0\u1086\0\u10b5\0\u10e4\0\u1113\0\u1142\0\u0e81\0\u1171\0\u0e81"+
+    "\0\u11a0\0\u11cf\0\u11fe\0\u122d\0\u11fe\0\u125c\0\u128b\0\u11fe"+
+    "\0\u11fe\0\u12ba\0\u12e9\0\u1318\0\u1347\0\u1376\0\u13a5\0\u13d4"+
+    "\0\u1403\0\u1432\0\u1461\0\u11fe\0\u1490\0\u14bf\0\u14bf\0\u14ee"+
+    "\0\u14bf\0\u151d\0\u154c\0\u157b\0\u15aa\0\u14bf\0\u14bf\0\u14bf"+
+    "\0\u14bf\0\u14bf\0\u15d9\0\u1608\0\u1637\0\u1637\0\u1637\0\u1666"+
+    "\0\u1637\0\u1695\0\u1637\0\u16c4\0\u16f3\0\u16f3\0\u1722\0\u1751"+
+    "\0\u1780\0\u1780\0\u17af\0\u17de\0\u17af\0\u180d\0\u183c\0\u186b"+
+    "\0\u189a\0\u18c9\0\u18f8\0\u1927\0\u1956\0\u1985\0\u19b4\0\u19e3"+
+    "\0\u1a12\0\u1a41\0\u1a70\0\u1a9f\0\u1ace\0\u1afd\0\u1b2c\0\u1b5b"+
+    "\0\u1b8a\0\u1bb9\0\57";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[200];
+    int [] result = new int[203];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -215,103 +216,103 @@ public class LexerPalabrasReservadas {
     "\21\0\1\64\4\0\1\64\4\0\17\64\1\106\2\64"+
     "\1\107\1\64\21\0\1\64\4\0\1\64\4\0\15\64"+
     "\1\110\6\64\21\0\1\64\4\0\1\64\4\0\10\64"+
-    "\1\111\13\64\21\0\1\64\4\0\1\64\4\0\7\64"+
-    "\1\112\14\64\2\0\2\51\2\0\53\51\17\0\1\113"+
-    "\54\0\1\57\1\0\1\114\56\0\1\115\4\0\1\115"+
-    "\4\0\24\115\21\0\1\115\4\0\1\115\4\0\13\115"+
-    "\1\116\10\115\21\0\1\115\4\0\1\115\4\0\17\115"+
-    "\1\117\4\115\21\0\1\115\4\0\1\115\4\0\1\120"+
-    "\23\115\21\0\1\115\4\0\1\115\4\0\1\121\23\115"+
-    "\21\0\1\115\4\0\1\115\4\0\5\115\1\122\16\115"+
-    "\21\0\1\115\4\0\1\115\4\0\20\115\1\123\3\115"+
-    "\21\0\1\115\4\0\1\115\4\0\16\115\1\124\5\115"+
-    "\21\0\1\115\4\0\1\115\4\0\11\115\1\125\12\115"+
-    "\21\0\1\115\4\0\1\115\4\0\13\115\1\126\10\115"+
-    "\21\0\1\115\4\0\1\115\4\0\15\115\1\127\6\115"+
-    "\21\0\1\115\4\0\1\115\4\0\17\115\1\130\4\115"+
-    "\21\0\1\115\4\0\1\115\4\0\12\115\1\131\11\115"+
-    "\21\0\1\115\4\0\1\115\4\0\4\115\1\132\17\115"+
-    "\21\0\1\115\4\0\1\115\4\0\10\115\1\133\2\115"+
-    "\1\134\10\115\21\0\1\115\4\0\1\115\4\0\1\115"+
-    "\1\135\22\115\21\0\1\115\4\0\1\115\4\0\17\115"+
-    "\1\136\4\115\21\0\1\115\4\0\1\115\4\0\1\137"+
-    "\14\115\1\140\6\115\21\0\1\115\4\0\1\115\4\0"+
-    "\10\115\1\141\13\115\21\0\1\115\4\0\1\115\4\0"+
-    "\20\115\1\142\2\115\1\143\21\0\1\115\4\0\1\115"+
-    "\4\0\15\115\1\144\6\115\21\0\1\115\4\0\1\115"+
-    "\4\0\10\115\1\145\13\115\17\0\1\57\1\0\1\146"+
-    "\56\0\1\147\4\0\1\147\4\0\24\147\21\0\1\147"+
-    "\4\0\1\147\4\0\11\147\1\150\12\147\21\0\1\147"+
-    "\4\0\1\147\4\0\4\147\1\151\17\147\21\0\1\147"+
-    "\4\0\1\147\4\0\15\147\1\152\1\147\1\153\4\147"+
-    "\21\0\1\147\4\0\1\147\4\0\16\147\1\154\5\147"+
-    "\21\0\1\147\4\0\1\147\4\0\1\155\23\147\21\0"+
-    "\1\147\4\0\1\147\4\0\1\147\1\156\22\147\21\0"+
-    "\1\147\4\0\1\147\4\0\4\147\1\157\17\147\21\0"+
-    "\1\147\4\0\1\147\4\0\16\147\1\160\5\147\21\0"+
-    "\1\147\4\0\1\147\4\0\1\161\23\147\21\0\1\147"+
-    "\4\0\1\147\4\0\4\147\1\162\17\147\21\0\1\147"+
-    "\4\0\1\147\4\0\6\147\1\163\15\147\21\0\1\147"+
-    "\4\0\1\147\4\0\15\147\1\164\6\147\21\0\1\147"+
-    "\4\0\1\147\4\0\21\147\1\165\2\147\21\0\1\147"+
-    "\4\0\1\147\4\0\17\147\1\166\4\147\21\0\1\147"+
-    "\4\0\1\147\4\0\11\147\1\167\12\147\21\0\1\147"+
-    "\4\0\1\147\4\0\20\147\1\170\3\147\21\0\1\147"+
-    "\4\0\1\147\4\0\17\147\1\171\4\147\21\0\1\147"+
-    "\4\0\1\147\4\0\10\147\1\172\13\147\21\0\1\147"+
-    "\4\0\1\147\4\0\17\147\1\173\4\147\21\0\1\147"+
-    "\4\0\1\147\4\0\4\147\1\174\17\147\21\0\1\147"+
-    "\4\0\1\147\4\0\17\147\1\175\4\147\21\0\1\147"+
-    "\4\0\1\147\4\0\11\147\1\176\12\147\17\0\1\57"+
-    "\1\0\1\177\56\0\1\200\4\0\1\200\4\0\24\200"+
-    "\21\0\1\200\4\0\1\200\4\0\2\200\1\201\21\200"+
-    "\21\0\1\200\4\0\1\200\4\0\16\200\1\202\5\200"+
-    "\21\0\1\200\4\0\1\200\4\0\20\200\1\203\3\200"+
-    "\21\0\1\200\4\0\1\200\4\0\11\200\1\204\12\200"+
-    "\21\0\1\200\4\0\1\200\4\0\4\200\1\205\17\200"+
-    "\21\0\1\200\4\0\1\200\4\0\17\200\1\206\4\200"+
-    "\21\0\1\200\4\0\1\200\4\0\1\207\23\200\21\0"+
-    "\1\200\4\0\1\200\4\0\15\200\1\210\6\200\21\0"+
-    "\1\200\4\0\1\200\4\0\1\211\23\200\21\0\1\200"+
-    "\4\0\1\200\4\0\4\200\1\212\17\200\21\0\1\200"+
-    "\4\0\1\200\4\0\10\200\1\213\13\200\21\0\1\200"+
-    "\4\0\1\200\4\0\15\200\1\214\6\200\21\0\1\200"+
-    "\4\0\1\200\4\0\10\200\1\215\13\200\21\0\1\200"+
-    "\4\0\1\200\4\0\12\200\1\216\11\200\21\0\1\200"+
-    "\4\0\1\200\4\0\2\200\1\217\21\200\21\0\1\200"+
-    "\4\0\1\200\4\0\20\200\1\220\3\200\21\0\1\200"+
-    "\4\0\1\200\4\0\4\200\1\221\17\200\17\0\1\57"+
-    "\1\0\1\222\56\0\1\223\4\0\1\223\4\0\24\223"+
-    "\21\0\1\223\4\0\1\223\4\0\7\223\1\224\14\223"+
-    "\21\0\1\223\4\0\1\223\4\0\11\223\1\225\12\223"+
-    "\21\0\1\223\4\0\1\223\4\0\4\223\1\226\17\223"+
-    "\21\0\1\223\4\0\1\223\4\0\2\223\1\227\21\223"+
-    "\21\0\1\223\4\0\1\223\4\0\10\223\1\230\13\223"+
-    "\21\0\1\223\4\0\1\223\4\0\17\223\1\231\4\223"+
-    "\21\0\1\223\4\0\1\223\4\0\2\223\1\232\21\223"+
-    "\21\0\1\223\4\0\1\223\4\0\2\223\1\233\21\223"+
-    "\21\0\1\223\4\0\1\223\4\0\12\223\1\234\11\223"+
-    "\21\0\1\223\4\0\1\223\4\0\2\223\1\235\21\223"+
-    "\21\0\1\223\4\0\1\223\4\0\6\223\1\236\15\223"+
-    "\21\0\1\223\4\0\1\223\4\0\7\223\1\237\14\223"+
-    "\21\0\1\223\4\0\1\223\4\0\1\240\23\223\17\0"+
-    "\1\57\1\0\1\241\56\0\1\242\4\0\1\242\4\0"+
-    "\24\242\21\0\1\242\4\0\1\242\4\0\17\242\1\243"+
-    "\4\242\21\0\1\242\4\0\1\242\4\0\7\242\1\244"+
-    "\14\242\21\0\1\242\4\0\1\242\4\0\3\242\1\245"+
-    "\20\242\21\0\1\242\4\0\1\242\4\0\4\242\1\246"+
-    "\17\242\21\0\1\242\4\0\1\242\4\0\17\242\1\247"+
-    "\4\242\21\0\1\242\4\0\1\242\4\0\11\242\1\250"+
-    "\12\242\17\0\1\57\1\0\1\251\56\0\1\252\4\0"+
-    "\1\252\4\0\24\252\21\0\1\252\4\0\1\252\4\0"+
-    "\4\252\1\253\17\252\21\0\1\252\4\0\1\252\4\0"+
-    "\4\252\1\254\17\252\17\0\1\57\1\0\1\255\56\0"+
-    "\1\256\4\0\1\256\4\0\24\256\21\0\1\256\4\0"+
-    "\1\256\4\0\3\256\1\257\20\256\17\0\1\57\1\0"+
-    "\1\260\56\0\1\261\4\0\1\261\4\0\24\261\17\0"+
-    "\1\57\1\0\1\262\56\0\1\263\4\0\1\263\4\0"+
-    "\24\263\21\0\1\264\4\0\1\264\4\0\24\264\21\0"+
-    "\1\265\4\0\1\265\4\0\24\265\21\0\1\266\4\0"+
+    "\1\111\2\64\1\112\10\64\21\0\1\64\4\0\1\64"+
+    "\4\0\7\64\1\113\14\64\2\0\2\51\2\0\53\51"+
+    "\17\0\1\114\54\0\1\57\1\0\1\115\56\0\1\116"+
+    "\4\0\1\116\4\0\24\116\21\0\1\116\4\0\1\116"+
+    "\4\0\13\116\1\117\10\116\21\0\1\116\4\0\1\116"+
+    "\4\0\17\116\1\120\4\116\21\0\1\116\4\0\1\116"+
+    "\4\0\1\121\23\116\21\0\1\116\4\0\1\116\4\0"+
+    "\1\122\23\116\21\0\1\116\4\0\1\116\4\0\5\116"+
+    "\1\123\16\116\21\0\1\116\4\0\1\116\4\0\20\116"+
+    "\1\124\3\116\21\0\1\116\4\0\1\116\4\0\16\116"+
+    "\1\125\5\116\21\0\1\116\4\0\1\116\4\0\11\116"+
+    "\1\126\12\116\21\0\1\116\4\0\1\116\4\0\13\116"+
+    "\1\127\10\116\21\0\1\116\4\0\1\116\4\0\15\116"+
+    "\1\130\6\116\21\0\1\116\4\0\1\116\4\0\17\116"+
+    "\1\131\4\116\21\0\1\116\4\0\1\116\4\0\12\116"+
+    "\1\132\11\116\21\0\1\116\4\0\1\116\4\0\4\116"+
+    "\1\133\17\116\21\0\1\116\4\0\1\116\4\0\10\116"+
+    "\1\134\2\116\1\135\10\116\21\0\1\116\4\0\1\116"+
+    "\4\0\1\116\1\136\22\116\21\0\1\116\4\0\1\116"+
+    "\4\0\17\116\1\137\4\116\21\0\1\116\4\0\1\116"+
+    "\4\0\1\140\14\116\1\141\6\116\21\0\1\116\4\0"+
+    "\1\116\4\0\10\116\1\142\13\116\21\0\1\116\4\0"+
+    "\1\116\4\0\20\116\1\143\2\116\1\144\21\0\1\116"+
+    "\4\0\1\116\4\0\15\116\1\145\6\116\21\0\1\116"+
+    "\4\0\1\116\4\0\10\116\1\146\13\116\21\0\1\116"+
+    "\4\0\1\116\4\0\10\116\1\147\13\116\17\0\1\57"+
+    "\1\0\1\150\56\0\1\151\4\0\1\151\4\0\24\151"+
+    "\21\0\1\151\4\0\1\151\4\0\11\151\1\152\12\151"+
+    "\21\0\1\151\4\0\1\151\4\0\4\151\1\153\17\151"+
+    "\21\0\1\151\4\0\1\151\4\0\15\151\1\154\1\151"+
+    "\1\155\4\151\21\0\1\151\4\0\1\151\4\0\16\151"+
+    "\1\156\5\151\21\0\1\151\4\0\1\151\4\0\1\157"+
+    "\23\151\21\0\1\151\4\0\1\151\4\0\1\151\1\160"+
+    "\22\151\21\0\1\151\4\0\1\151\4\0\4\151\1\161"+
+    "\17\151\21\0\1\151\4\0\1\151\4\0\16\151\1\162"+
+    "\5\151\21\0\1\151\4\0\1\151\4\0\1\163\23\151"+
+    "\21\0\1\151\4\0\1\151\4\0\4\151\1\164\17\151"+
+    "\21\0\1\151\4\0\1\151\4\0\6\151\1\165\15\151"+
+    "\21\0\1\151\4\0\1\151\4\0\15\151\1\166\6\151"+
+    "\21\0\1\151\4\0\1\151\4\0\21\151\1\167\2\151"+
+    "\21\0\1\151\4\0\1\151\4\0\17\151\1\170\4\151"+
+    "\21\0\1\151\4\0\1\151\4\0\11\151\1\171\12\151"+
+    "\21\0\1\151\4\0\1\151\4\0\20\151\1\172\3\151"+
+    "\21\0\1\151\4\0\1\151\4\0\17\151\1\173\4\151"+
+    "\21\0\1\151\4\0\1\151\4\0\10\151\1\174\13\151"+
+    "\21\0\1\151\4\0\1\151\4\0\17\151\1\175\4\151"+
+    "\21\0\1\151\4\0\1\151\4\0\4\151\1\176\17\151"+
+    "\21\0\1\151\4\0\1\151\4\0\17\151\1\177\4\151"+
+    "\21\0\1\151\4\0\1\151\4\0\3\151\1\200\20\151"+
+    "\21\0\1\151\4\0\1\151\4\0\11\151\1\201\12\151"+
+    "\17\0\1\57\1\0\1\202\56\0\1\203\4\0\1\203"+
+    "\4\0\24\203\21\0\1\203\4\0\1\203\4\0\2\203"+
+    "\1\204\21\203\21\0\1\203\4\0\1\203\4\0\16\203"+
+    "\1\205\5\203\21\0\1\203\4\0\1\203\4\0\20\203"+
+    "\1\206\3\203\21\0\1\203\4\0\1\203\4\0\11\203"+
+    "\1\207\12\203\21\0\1\203\4\0\1\203\4\0\4\203"+
+    "\1\210\17\203\21\0\1\203\4\0\1\203\4\0\17\203"+
+    "\1\211\4\203\21\0\1\203\4\0\1\203\4\0\1\212"+
+    "\23\203\21\0\1\203\4\0\1\203\4\0\15\203\1\213"+
+    "\6\203\21\0\1\203\4\0\1\203\4\0\1\214\23\203"+
+    "\21\0\1\203\4\0\1\203\4\0\4\203\1\215\17\203"+
+    "\21\0\1\203\4\0\1\203\4\0\10\203\1\216\13\203"+
+    "\21\0\1\203\4\0\1\203\4\0\15\203\1\217\6\203"+
+    "\21\0\1\203\4\0\1\203\4\0\10\203\1\220\13\203"+
+    "\21\0\1\203\4\0\1\203\4\0\12\203\1\221\11\203"+
+    "\21\0\1\203\4\0\1\203\4\0\2\203\1\222\21\203"+
+    "\21\0\1\203\4\0\1\203\4\0\20\203\1\223\3\203"+
+    "\21\0\1\203\4\0\1\203\4\0\4\203\1\224\17\203"+
+    "\17\0\1\57\1\0\1\225\56\0\1\226\4\0\1\226"+
+    "\4\0\24\226\21\0\1\226\4\0\1\226\4\0\7\226"+
+    "\1\227\14\226\21\0\1\226\4\0\1\226\4\0\11\226"+
+    "\1\230\12\226\21\0\1\226\4\0\1\226\4\0\4\226"+
+    "\1\231\17\226\21\0\1\226\4\0\1\226\4\0\2\226"+
+    "\1\232\21\226\21\0\1\226\4\0\1\226\4\0\10\226"+
+    "\1\233\13\226\21\0\1\226\4\0\1\226\4\0\17\226"+
+    "\1\234\4\226\21\0\1\226\4\0\1\226\4\0\2\226"+
+    "\1\235\21\226\21\0\1\226\4\0\1\226\4\0\2\226"+
+    "\1\236\21\226\21\0\1\226\4\0\1\226\4\0\12\226"+
+    "\1\237\11\226\21\0\1\226\4\0\1\226\4\0\2\226"+
+    "\1\240\21\226\21\0\1\226\4\0\1\226\4\0\6\226"+
+    "\1\241\15\226\21\0\1\226\4\0\1\226\4\0\7\226"+
+    "\1\242\14\226\21\0\1\226\4\0\1\226\4\0\1\243"+
+    "\23\226\17\0\1\57\1\0\1\244\56\0\1\245\4\0"+
+    "\1\245\4\0\24\245\21\0\1\245\4\0\1\245\4\0"+
+    "\17\245\1\246\4\245\21\0\1\245\4\0\1\245\4\0"+
+    "\7\245\1\247\14\245\21\0\1\245\4\0\1\245\4\0"+
+    "\3\245\1\250\20\245\21\0\1\245\4\0\1\245\4\0"+
+    "\4\245\1\251\17\245\21\0\1\245\4\0\1\245\4\0"+
+    "\17\245\1\252\4\245\21\0\1\245\4\0\1\245\4\0"+
+    "\11\245\1\253\12\245\17\0\1\57\1\0\1\254\56\0"+
+    "\1\255\4\0\1\255\4\0\24\255\21\0\1\255\4\0"+
+    "\1\255\4\0\4\255\1\256\17\255\21\0\1\255\4\0"+
+    "\1\255\4\0\4\255\1\257\17\255\17\0\1\57\1\0"+
+    "\1\260\56\0\1\261\4\0\1\261\4\0\24\261\21\0"+
+    "\1\261\4\0\1\261\4\0\3\261\1\262\20\261\17\0"+
+    "\1\57\1\0\1\263\56\0\1\264\4\0\1\264\4\0"+
+    "\24\264\17\0\1\57\1\0\1\265\56\0\1\266\4\0"+
     "\1\266\4\0\24\266\21\0\1\267\4\0\1\267\4\0"+
     "\24\267\21\0\1\270\4\0\1\270\4\0\24\270\21\0"+
     "\1\271\4\0\1\271\4\0\24\271\21\0\1\272\4\0"+
@@ -325,10 +326,13 @@ public class LexerPalabrasReservadas {
     "\24\303\21\0\1\304\4\0\1\304\4\0\24\304\21\0"+
     "\1\305\4\0\1\305\4\0\24\305\21\0\1\306\4\0"+
     "\1\306\4\0\24\306\21\0\1\307\4\0\1\307\4\0"+
-    "\24\307\21\0\1\310\4\0\1\310\4\0\24\310\2\0";
+    "\24\307\21\0\1\310\4\0\1\310\4\0\24\310\21\0"+
+    "\1\311\4\0\1\311\4\0\24\311\21\0\1\312\4\0"+
+    "\1\312\4\0\24\312\21\0\1\313\4\0\1\313\4\0"+
+    "\24\313\2\0";
 
   private static int [] zzUnpacktrans() {
-    int [] result = new int[7050];
+    int [] result = new int[7144];
     int offset = 0;
     offset = zzUnpacktrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -374,10 +378,10 @@ public class LexerPalabrasReservadas {
     "\1\0\1\11\1\1\1\11\2\1\4\11\1\1\1\11"+
     "\2\1\1\11\1\1\1\11\4\1\2\11\16\1\3\11"+
     "\1\0\1\11\1\0\2\11\1\1\1\0\1\1\3\11"+
-    "\27\1\1\11\146\1\1\0\25\1\1\11";
+    "\30\1\1\11\150\1\1\0\25\1\1\11";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[200];
+    int [] result = new int[203];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -870,388 +874,395 @@ public class LexerPalabrasReservadas {
                 System.out.println(yytext()+" -> ERROR Token no reconocido");
             }
           // fall through
-          case 57: break;
+          case 58: break;
           case 2:
             { /* Ignorar espacios en blanco */
             }
           // fall through
-          case 58: break;
+          case 59: break;
           case 3:
             { System.out.print(yytext());
             }
           // fall through
-          case 59: break;
+          case 60: break;
           case 4:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Signo modulo ");
                 return TokensTL24B.SIGNO_MODULO;
             }
           // fall through
-          case 60: break;
+          case 61: break;
           case 5:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Parentesis de apertura ");
                 return TokensTL24B.PARENTESIS_APERTURA;
             }
           // fall through
-          case 61: break;
+          case 62: break;
           case 6:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Parentesis de cierre ");
                 return TokensTL24B.PARENTESIS_CIERRE;
             }
           // fall through
-          case 62: break;
+          case 63: break;
           case 7:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Signo multiplicacion ");
                 return TokensTL24B.SIGNO_MULTIPLICACION;
             }
           // fall through
-          case 63: break;
+          case 64: break;
           case 8:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Signo mas ");
                 return TokensTL24B.SIGNO_MAS;
             }
           // fall through
-          case 64: break;
+          case 65: break;
           case 9:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Coma ");
                 return TokensTL24B.COMA;
             }
           // fall through
-          case 65: break;
+          case 66: break;
           case 10:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Punto ");
                 return TokensTL24B.PUNTO;
             }
           // fall through
-          case 66: break;
+          case 67: break;
           case 11:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Signo division ");
                 return TokensTL24B.SIGNO_DIVISION;
             }
           // fall through
-          case 67: break;
+          case 68: break;
           case 12:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                                 System.out.println(yytext()+" -> Numero entero");
                                 return TokensTL24B.NENTERO;
             }
           // fall through
-          case 68: break;
+          case 69: break;
           case 13:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Punto y coma ");
                  return TokensTL24B.PUNTO_COMA;
             }
           // fall through
-          case 69: break;
+          case 70: break;
           case 14:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Signo menor que ");
                 return TokensTL24B.SIGNO_MENOR_QUE;
             }
           // fall through
-          case 70: break;
+          case 71: break;
           case 15:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Signo asignacion ");
                 return TokensTL24B.SIGNO_ASIGNACION;
             }
           // fall through
-          case 71: break;
+          case 72: break;
           case 16:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Signo mayor que ");
                 return TokensTL24B.SIGNO_MAYOR_QUE;
             }
           // fall through
-          case 72: break;
+          case 73: break;
           case 17:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                                 System.out.println(yytext()+" -> Identificador ");
                                 return TokensTL24B.IDENTIFICADOR;
             }
           // fall through
-          case 73: break;
+          case 74: break;
           case 18:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Corchete de apertura ");
                 return TokensTL24B.CORCHETE_APERTURA;
             }
           // fall through
-          case 74: break;
+          case 75: break;
           case 19:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Corchete de cierre ");
                 return TokensTL24B.CORCHETE_CIERRE;
             }
           // fall through
-          case 75: break;
+          case 76: break;
           case 20:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Llave de apertura ");                
                 return TokensTL24B.LLAVE_APERTURA;
             }
           // fall through
-          case 76: break;
+          case 77: break;
           case 21:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Llave de cierre ");
                 return TokensTL24B.LLAVE_CIERRE;
             }
           // fall through
-          case 77: break;
+          case 78: break;
           case 22:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Signo diferente ");
                 return TokensTL24B.SIGNO_DIFERENTE;
             }
           // fall through
-          case 78: break;
+          case 79: break;
           case 23:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                                 System.out.println(yytext()+" -> Cadena ");
                                 return TokensTL24B.CADENA;
             }
           // fall through
-          case 79: break;
+          case 80: break;
           case 24:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Signo incremento ");
                 return TokensTL24B.SIGNO_INCREMENTO;
             }
           // fall through
-          case 80: break;
+          case 81: break;
           case 25:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Signo decremento ");
                 return TokensTL24B.SIGNO_DECREMENTO;
             }
           // fall through
-          case 81: break;
+          case 82: break;
           case 26:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                                 System.out.println(yytext()+" -> Decimal ");
                                 return TokensTL24B.NDECIMAL;
             }
           // fall through
-          case 82: break;
+          case 83: break;
           case 27:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Signo menor o igual que ");
                 return TokensTL24B.SIGNO_MENOR_IGUAL_QUE;
             }
           // fall through
-          case 83: break;
+          case 84: break;
           case 28:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Signo igual igual ");
                 return TokensTL24B.SIGNO_IGUAL_IGUAL;
             }
           // fall through
-          case 84: break;
+          case 85: break;
           case 29:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Signo mayor o igual que ");
                 return TokensTL24B.SIGNO_MAYOR_IGUAL_QUE;
             }
           // fall through
-          case 85: break;
+          case 86: break;
           case 30:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" ->  Palabra para iteracion do");                
                 return TokensTL24B.DO;
             }
           // fall through
-          case 86: break;
+          case 87: break;
           case 31:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" ->  Palabra de control de flujo if");                
                 return TokensTL24B.IF;
             }
           // fall through
-          case 87: break;
+          case 88: break;
           case 32:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" ->  Palabra para iteracion for");                
                 return TokensTL24B.FOR;
             }
           // fall through
-          case 88: break;
+          case 89: break;
           case 33:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Tipo de dato int ");
                 return TokensTL24B.INT;
             }
           // fall through
-          case 89: break;
+          case 90: break;
           case 34:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" ->  Palabra para una excepcion try");                
                 return TokensTL24B.TRY;
             }
           // fall through
-          case 90: break;
+          case 91: break;
           case 35:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Tipo de dato boolean ");                
                 return TokensTL24B.BOOL;
             }
           // fall through
-          case 91: break;
+          case 92: break;
           case 36:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Tipo de dato byte ");                
                 return TokensTL24B.BYTE;
             }
           // fall through
-          case 92: break;
+          case 93: break;
           case 37:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Tipo de dato char ");
                 return TokensTL24B.CHAR;
             }
           // fall through
-          case 93: break;
+          case 94: break;
           case 38:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" ->  Palabra de control de flujo else");                
                 return TokensTL24B.ELSE;
             }
           // fall through
-          case 94: break;
+          case 95: break;
           case 39:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Tipo de dato long ");                
                 return TokensTL24B.LONG;
             }
           // fall through
-          case 95: break;
+          case 96: break;
           case 40:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" ->  Valor booleano verdadero");                
                 return TokensTL24B.TRUE;
             }
           // fall through
-          case 96: break;
+          case 97: break;
           case 41:
+            { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                System.out.println(yytext()+" -> Tipo de dato vacio ");
+                return TokensTL24B.VOID;
+            }
+          // fall through
+          case 98: break;
+          case 42:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" ->  Palabra para definir clases");                
                 return TokensTL24B.CLASS;
             }
           // fall through
-          case 97: break;
-          case 42:
+          case 99: break;
+          case 43:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" ->  Valor booleano falso");                
                 return TokensTL24B.FALSE;
             }
           // fall through
-          case 98: break;
-          case 43:
+          case 100: break;
+          case 44:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Tipo de dato float ");                
                 return TokensTL24B.FLOAT;
             }
           // fall through
-          case 99: break;
-          case 44:
+          case 101: break;
+          case 45:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" ->  Palabra para iteracion while");                
                 return TokensTL24B.WHILE;
             }
           // fall through
-          case 100: break;
-          case 45:
+          case 102: break;
+          case 46:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" ->  Palabra para manejar excepcion catch");                
                 return TokensTL24B.CATCH;
             }
           // fall through
-          case 101: break;
-          case 46:
+          case 103: break;
+          case 47:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Tipo de dato double ");                
                 return TokensTL24B.DOUBLE;
             }
           // fall through
-          case 102: break;
-          case 47:
+          case 104: break;
+          case 48:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" ->  Palabra de visibilidad public");                
                 return TokensTL24B.PUBLIC;
             }
           // fall through
-          case 103: break;
-          case 48:
+          case 105: break;
+          case 49:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" ->  Palabra devolver valores return");                
                 return TokensTL24B.RETURN;
             }
           // fall through
-          case 104: break;
-          case 49:
+          case 106: break;
+          case 50:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" ->  Palabra de comportamineto static");                
                 return TokensTL24B.STATIC;
             }
           // fall through
-          case 105: break;
-          case 50:
+          case 107: break;
+          case 51:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" ->  Tipo de dato cadena");                
                 return TokensTL24B.STRING;
             }
           // fall through
-          case 106: break;
-          case 51:
+          case 108: break;
+          case 52:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" ->  Palabra de control de flujo switch");                
                 return TokensTL24B.SWITCH;
             }
           // fall through
-          case 107: break;
-          case 52:
+          case 109: break;
+          case 53:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" ->  Palabra para iteracion foreach");                
                 return TokensTL24B.FOR;
             }
           // fall through
-          case 108: break;
-          case 53:
+          case 110: break;
+          case 54:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" ->  Palabra de visibilidad private");                
                 return TokensTL24B.PRIVATE;
             }
           // fall through
-          case 109: break;
-          case 54:
+          case 111: break;
+          case 55:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" ->  Palabra de comportamiento virtual");                
                 return TokensTL24B.VIRTUAL;
             }
           // fall through
-          case 110: break;
-          case 55:
+          case 112: break;
+          case 56:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" ->  Palabra de comportamiento override");                
                 return TokensTL24B.OVERRIDE;
             }
           // fall through
-          case 111: break;
-          case 56:
+          case 113: break;
+          case 57:
             { System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" ->  Palabra de visibilidad protected");                
                 return TokensTL24B.PROTECTED;
             }
           // fall through
-          case 112: break;
+          case 114: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }

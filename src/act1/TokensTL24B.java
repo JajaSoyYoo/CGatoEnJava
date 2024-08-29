@@ -36,6 +36,7 @@ public class TokensTL24B {
     public static final int TRUE = 25;
     public static final int FALSE = 26;
     public static final int STRING = 27;
+    public static final int VOID = 28;
     
     
     public static final int LLAVE_APERTURA=30;

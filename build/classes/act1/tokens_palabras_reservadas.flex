@@ -16,6 +16,11 @@ package act1;
 
 %%
 /* PALABRAS RESERVADAS */
+void        { 
+                System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                System.out.println(yytext()+" -> Tipo de dato vacio ");
+                return TokensTL24B.VOID; 
+            }
 int        { 
                 System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> Tipo de dato int ");
