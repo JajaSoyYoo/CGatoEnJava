@@ -14,7 +14,7 @@ import java.io.Reader;
  */
 public class AnalisisLexico {
      public static void main(String[] args) {
-        System.out.println("NOMBRES COMPLETOS ORDENADOS POR PRIMER APELLIDO Hernandez Cristobal Alan \n");
+        System.out.println("Covarrubias Olivares Jose Refugio \n Hernandez Cristobal Alan \n Tovar Zavaleta Isaac Aaron");
          
          
         String test = "src/act1/prueba_palabras_reservadas.txt";
@@ -35,7 +35,7 @@ public class AnalisisLexico {
         }
         
         
-        System.out.println("\n NOMBRES COMPLETOS ORDENADOS POR PRIMER APELLIDO Hernandez Cristobal Alan");
+        System.out.println("Covarrubias Olivares Jose Refugio \n Hernandez Cristobal Alan \n Tovar Zavaleta Isaac Aaron");
     }
 
     
