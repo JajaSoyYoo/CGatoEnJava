@@ -338,7 +338,11 @@ string      {
                                 return TokensTL24B.COMENTARIOLINEA;
                                 }
 
-
+"/*"[^*]*("*"[^/]*)*"*/"        {
+                                System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                                System.out.println(yytext()+" -> Comentario de bloque");
+                                return TokensTL24B.MULTICOMENTARIO;
+                                }
 
 
 
@@ -346,4 +350,3 @@ string      {
                 System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                 System.out.println(yytext()+" -> ERROR Token no reconocido");                 
             }
-
