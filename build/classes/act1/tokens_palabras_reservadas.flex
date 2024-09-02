@@ -13,8 +13,9 @@ package act1;
 %line
 %column
 %standalone
-
 %%
+
+
 /* PALABRAS RESERVADAS */
 void        { 
                 System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
@@ -324,6 +325,22 @@ string      {
                                 System.out.println(yytext()+" -> Cadena ");
                                 return TokensTL24B.CADENA;
                                 }
+
+'(.)'                           {
+                                System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                                System.out.println(yytext()+" -> Caracter");
+                                return TokensTL24B.CARACTER;
+                                }
+
+(\/\/)(.*)                      {
+                                System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                                System.out.println(yytext()+" -> Comentario una linea");
+                                return TokensTL24B.COMENTARIOLINEA;
+                                }
+
+
+
+
 
 .           { 
                 System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");

@@ -66,5 +66,8 @@ public class TokensTL24B {
     public static final int IDENTIFICADOR = 54;
     public static final int NENTERO = 55;
     public static final int CADENA = 56;
+    public static final int CARACTER = 57;
+    public static final int COMENTARIOLINEA = 58;
+    public static final int MULTICOMENTARIO = 59;
     
 }

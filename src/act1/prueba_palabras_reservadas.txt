@@ -1,11 +1,7 @@
-class Program
-{
-    static void Main()
-    {
-        Console.WriteLine("Buenas noches");
-    }
-}
-ñ 
-!
+"Hola mundo
+5.
+.6
 
-double mivariable = "\  " "cadena"
+6..6
+
+6.6.6
