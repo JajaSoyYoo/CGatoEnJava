@@ -307,7 +307,7 @@ string      {
                                 return TokensTL24B.IDENTIFICADOR;
                                 }
 
-[0-9]{1,10}*\.[0-9]{1,2}     {
+[0-9]{1,10}+\.[0-9]{1,2}+     {
                                 System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                                 System.out.println(yytext()+" -> Decimal ");
                                 return TokensTL24B.NDECIMAL;
@@ -338,7 +338,11 @@ string      {
                                 return TokensTL24B.COMENTARIOLINEA;
                                 }
 
-
+"/*"[^*]*("*"[^/]*)*"*/"        {
+                                System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                                System.out.println(yytext()+" -> Comentario de bloque");
+                                return TokensTL24B.MULTICOMENTARIO;
+                                }
 
 
 
@@ -347,3 +351,82 @@ string      {
                 System.out.println(yytext()+" -> ERROR Token no reconocido");                 
             }
 
+/* REGLAS PARA MANEJO DE ERRORES */
+
+/* Cadena no cerrada */
+\"([^\"\\\n]|\\.)*\n            {
+                                System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                                System.out.println(yytext()+" -> ERROR: Cadena no cerrado");
+                                return TokensTL24B.ERROR;
+                                }
+
+
+/* Caracter mal formado (más de un carácter o no cerrado) */
+'([^'\n]|\\.)*'                  {
+                                System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                                System.out.println(yytext()+" -> ERROR: Caracter no cerrado o mal formado");
+                                return TokensTL24B.ERROR;
+                                }
+
+/* Caracter no cerrado con salto de línea */
+'([^'\n]|\\.)*\n                {
+                                System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                                System.out.println(yytext()+" -> ERROR: Caracter no cerrado o mal formado");
+                                return TokensTL24B.ERROR;
+                                }
+
+/* Decimal mal formado: sin dígitos antes del punto */
+\.[0-9]+       {
+                 System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                 System.out.println(yytext()+" -> ERROR: Decimal mal formado (sin digitos antes del punto)");
+                 return TokensTL24B.ERROR;
+             }
+
+/* Decimal mal formado: sin dígitos después del punto */
+[0-9]+\.[^0-9] {
+                 System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                 System.out.println(yytext()+" -> ERROR: Decimal mal formado (sin digitos despues del punto)");
+                 return TokensTL24B.ERROR;
+             }
+
+/* Decimal mal formado: más de un punto */
+[0-9]*\.[0-9]*\.[0-9.]*    {
+                 System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                 System.out.println(yytext()+" -> ERROR: Decimal mal formado (mas de un punto en el numero)");
+                 return TokensTL24B.ERROR;
+             }
+
+/* Regla para comentarios de bloque no cerrados */
+\/\*([^*]|\*+[^/])* {
+                        System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                        System.out.println(yytext()+" -> ERROR: Comentario de bloque no cerrado ");
+                        return TokensTL24B.ERROR;
+                    }
+
+/* Comentarios de línea no cerrados */
+\/\/[^/\n]*            {
+                            System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                            System.out.println(yytext()+" -> ERROR: Comentario de linea no cerrado ");
+                            return TokensTL24B.ERROR;
+                        }
+
+/* Detección de un solo '/' como error */
+\/[^\/\n]*                {
+                            System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                            System.out.println(yytext()+" -> ERROR: Comentario no bien formado ");
+                            return TokensTL24B.ERROR;
+                        }
+
+/* Detección de un solo '*' como error */
+\*[^\/\n]*                {
+                            System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                            System.out.println(yytext()+" -> ERROR: Comentario no bien formado ");
+                            return TokensTL24B.ERROR;
+                        }
+
+/* Números enteros mal formados */
+[0-9]+[^0-9\s]+          {
+                            System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                            System.out.println(yytext()+" -> ERROR: Numero entero mal formado");
+                            return TokensTL24B.ERROR;
+                        }

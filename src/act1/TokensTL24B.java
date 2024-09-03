@@ -70,4 +70,5 @@ public class TokensTL24B {
     public static final int COMENTARIOLINEA = 58;
     public static final int MULTICOMENTARIO = 59;
     
+    public static final int ERROR = 59;
 }
