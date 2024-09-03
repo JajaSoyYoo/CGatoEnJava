@@ -320,7 +320,7 @@ string      {
                                 }
 
 
-\"([^\"\\]|\\.)*\"              {
+\"([^\"\\\n]|\\.)*\"            {
                                 System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
                                 System.out.println(yytext()+" -> Cadena ");
                                 return TokensTL24B.CADENA;
@@ -346,17 +346,12 @@ string      {
 
 
 
-.           { 
-                System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
-                System.out.println(yytext()+" -> ERROR Token no reconocido");                 
-            }
-
 /* REGLAS PARA MANEJO DE ERRORES */
 
 /* Cadena no cerrada */
-\"([^\"\\\n]|\\.)*\n            {
+\"([^\"\\\n]|\\.)*              {
                                 System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
-                                System.out.println(yytext()+" -> ERROR: Cadena no cerrado");
+                                System.out.println(yytext()+" -> ERROR: Cadena no cerrada");
                                 return TokensTL24B.ERROR;
                                 }
 
@@ -403,12 +398,6 @@ string      {
                         return TokensTL24B.ERROR;
                     }
 
-/* Comentarios de línea no cerrados */
-\/\/[^/\n]*            {
-                            System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
-                            System.out.println(yytext()+" -> ERROR: Comentario de linea no cerrado ");
-                            return TokensTL24B.ERROR;
-                        }
 
 /* Detección de un solo '/' como error */
 \/[^\/\n]*                {
@@ -430,3 +419,8 @@ string      {
                             System.out.println(yytext()+" -> ERROR: Numero entero mal formado");
                             return TokensTL24B.ERROR;
                         }
+
+.           { 
+                System.out.print("Linea:"+(yyline+1)+", Columna:"+(yycolumn+1)+"\t");
+                System.out.println(yytext()+" -> ERROR Token no reconocido");                 
+            }

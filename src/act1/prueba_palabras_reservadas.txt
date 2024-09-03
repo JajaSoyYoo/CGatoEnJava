@@ -1,26 +1,18 @@
-"hello
-'H'
 
-5.
-.6
+void funcion ()
+{
+string pedro = "pedro
+string pablo = "pablo";
+char h = 'h'
+'h
+'pedro'
+}
 
-6..6
-
-6.6.6
-
-1 23 45
-123abc 2a
-
-//Hola
-
-'H
-
-'Hola'
-
-/* Hola
-
-Como stas*/
-
-/ Hola soy un comentario
-
-/* Este es un comentario de bloque sin cierre
+1
+1.1
+.1
+0.1
+1.
+/
+//fdfdf
+/* fgfdgfg 
