@@ -3,12 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/nanon/OneDrive/Documentos/NetBeansProjects/javaensharp/src/act1/Generador.java</file>
-            <file>file:/C:/Users/nanon/OneDrive/Documentos/NetBeansProjects/javaensharp/src/act1/tokens_palabras_reservadas.flex</file>
-            <file>file:/C:/Users/nanon/OneDrive/Documentos/NetBeansProjects/javaensharp/src/act1/TokensTL24B.java</file>
-            <file>file:/C:/Users/nanon/OneDrive/Documentos/NetBeansProjects/javaensharp/src/act1/prueba_palabras_reservadas.txt</file>
-            <file>file:/C:/Users/nanon/OneDrive/Documentos/NetBeansProjects/javaensharp/src/act1/LexerPalabrasReservadas.java</file>
-            <file>file:/C:/Users/nanon/OneDrive/Documentos/NetBeansProjects/javaensharp/src/act1/AnalisisLexico.java</file>
+            <file>file:/C:/Users/Isaac/Documents/GitHub/CGatoEnJava/src/demo_cup/LexerCSharp.java</file>
+            <file>file:/C:/Users/Isaac/Documents/GitHub/CGatoEnJava/src/demo_cup/AnalisisSinctactico.java</file>
+            <file>file:/C:/Users/Isaac/Documents/GitHub/CGatoEnJava/src/demo_cup/CSharp.cup</file>
+            <file>file:/C:/Users/Isaac/Documents/GitHub/CGatoEnJava/src/demo_cup/Generador.java</file>
+            <file>file:/C:/Users/Isaac/Documents/GitHub/CGatoEnJava/src/demo_cup/pruebas.txt</file>
+            <file>file:/C:/Users/Isaac/Documents/GitHub/CGatoEnJava/src/demo_cup/CSharp.flex</file>
         </group>
     </open-files>
 </project-private>
