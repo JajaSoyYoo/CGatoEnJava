@@ -1,0 +1,1 @@
+int variable,var2 = 1;

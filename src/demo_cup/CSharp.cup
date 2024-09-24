@@ -1,0 +1,23 @@
+/* NOMBRES
+*/
+
+package demo_cup;
+
+import java_cup.runtime.*;
+
+terminal INT, LONG, BYTE, CHAR, DOUBLE, BOOLEAN;
+terminal ASIGNACION, COMA, PUNTO_COMA;
+terminal ID, ENTERO;
+
+non terminal sentencias, declaraciones, instrucciones, dec_variables, dec_constantes, tipo_dato;
+
+start with sentencias;
+
+sentencias ::= declaraciones | instrucciones;
+
+declaraciones ::= dec_variables | dec_constantes;
+
+dec_variables ::= tipo_dato ID PUNTO_COMA
+                | tipo_dato ID COMA ID PUNTO_COMA;
+
+tipo_dato ::= BYTE | INT | LONG | CHAR | DOUBLE | BOOLEAN;
