@@ -1,0 +1,39 @@
+package act2;
+import java_cup.runtime.*;
+
+parser code
+{:
+    public void syntax_error(Symbol s)
+    {
+        report_error("Error de sintaxis en linea: " + (s.left)+" , columna: "+(s.right+1)+", simbolo: "+s.value, null);
+    }
+    public void unrecovered_syntax_error(Symbol s) throws java.lang.Exception
+    {
+        report_fatal_error("",null);
+    }
+:}
+
+
+//reservadas terminales//
+terminal PACKAGE;
+
+//simbolos terminales//
+terminal PUNTO_COMA, PUNTO;
+
+//otros terminales//
+terminal IDENTIFICADOR;
+
+
+//No terminales//
+non terminal sentencia, declaracion, dec_paquetes;
+
+
+//Reglas gramaticales//
+start with sentencia;
+
+sentencia::= declaracion;
+declaracion::= dec_paquetes;
+dec_paquetes::= PACKAGE IDENTIFICADOR PUNTO_COMA
+    {:
+        System.out.println(" Declaracion de paquete simple");
+    :};
