@@ -21,7 +21,7 @@ public class AnalizadorSintactico {
             System.out.println(parser.parse());
             System.out.println("Analisis realizado correctamente");
         }catch (Exception ex){
-            System.out.println("Error durante en el analisis \n"+ex.getMessage());
+            System.out.println("Error durante el analisis \n"+ex.getMessage());
         }
     }
     

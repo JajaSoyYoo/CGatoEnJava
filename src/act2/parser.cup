@@ -14,26 +14,103 @@ parser code
 :}
 
 
-//reservadas terminales//
-terminal PACKAGE;
+// Reservadas terminales //
+terminal PACKAGE, USING, NAMESPACE, CLASS;
+terminal PUBLIC, PRIVATE, PROTECTED, INTERNAL;
+terminal VOID, INT, STRING, BOOL, FLOAT, CHAR, TRUE, FALSE;
+terminal IF, ELSE, FOR, WHILE, RETURN;
+terminal STATIC, NEW;
 
 //simbolos terminales//
-terminal PUNTO_COMA, PUNTO;
+terminal PUNTO_COMA, PUNTO, COMA, PARENTESIS_IZQUIERDO, PARENTESIS_DERECHO;
+terminal LLAVE_IZQUIERDA, LLAVE_DERECHA, CORCHETE_IZQUIERDO, CORCHETE_DERECHO;
+terminal SUMA, RESTA, MULTIPLICACION, DIVISION;
+terminal ASIGNACION, IGUALDAD, DESIGUALDAD;
+terminal MENOR_QUE, MAYOR_QUE, MENOR_O_IGUAL_QUE, MAYOR_O_IGUAL_QUE;
+terminal Y_LOGICO, O_LOGICO, NEGACION;
 
 //otros terminales//
-terminal IDENTIFICADOR;
+terminal IDENTIFICADOR, NDECIMAL, NENTERO, CADENA, CARACTER;
 
 
-//No terminales//
-non terminal sentencia, declaracion, dec_paquetes;
+// No terminales //
+non terminal programa, declaraciones, declaracion, dec_namespace, dec_using, dec_clase, expresiones, dec_variable, tipo_bool, tipo_int, tipo_string, tipo_char, tipo_float,
+            expresion, boleano
+            ;
 
 
-//Reglas gramaticales//
-start with sentencia;
+// Reglas gramaticales //
+start with programa;
 
-sentencia::= declaracion;
-declaracion::= dec_paquetes;
-dec_paquetes::= PACKAGE IDENTIFICADOR PUNTO_COMA
-    {:
-        System.out.println(" Declaracion de paquete simple");
-    :};
+programa ::=declaraciones;
+
+declaraciones ::= declaracion
+    | declaracion declaraciones
+    ;
+
+declaracion ::= dec_using dec_namespace
+                | dec_using dec_clase
+                ;
+
+dec_using ::= USING IDENTIFICADOR PUNTO_COMA 
+            {:
+                System.out.println("---Declaracion de uso---");
+            :};
+
+dec_namespace ::= NAMESPACE IDENTIFICADOR LLAVE_IZQUIERDA dec_clase LLAVE_DERECHA 
+                {:
+                    System.out.println("---Declaracion de espacio de nombre---");
+                :}
+                ;
+
+dec_clase ::= CLASS IDENTIFICADOR LLAVE_IZQUIERDA expresiones LLAVE_DERECHA 
+            {:
+                System.out.println("---Declaracion de clase---");
+            :}
+            ;
+
+expresiones ::= dec_variable expresiones
+                | expresion
+                | dec_variable
+                ;
+
+dec_variable ::= tipo_bool 
+                | tipo_int 
+                | tipo_string 
+                | tipo_char
+                | tipo_float
+                ;
+
+tipo_bool ::= BOOL IDENTIFICADOR ASIGNACION boleano PUNTO_COMA 
+            {:
+                System.out.println("--Variable boleana--");
+            :}
+            ;
+
+boleano ::= TRUE 
+            | FALSE 
+            ;
+
+tipo_int ::= INT IDENTIFICADOR ASIGNACION NENTERO PUNTO_COMA 
+            {:
+                System.out.println("--Variable entera--");
+            :}
+            ;
+
+tipo_float ::= FLOAT IDENTIFICADOR ASIGNACION NDECIMAL PUNTO_COMA 
+            {:
+                System.out.println("--Variable flotante--");
+            :}
+            ;
+
+tipo_string ::= STRING IDENTIFICADOR ASIGNACION CADENA PUNTO_COMA 
+            {:
+                System.out.println("--Variable cadena--");
+            :}
+            ;
+
+tipo_char ::= CHAR IDENTIFICADOR ASIGNACION CARACTER PUNTO_COMA 
+            {:
+                System.out.println("--Variable caracter--");
+            :}
+            ;

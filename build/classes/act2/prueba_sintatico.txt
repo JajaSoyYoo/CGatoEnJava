@@ -1,1 +1,11 @@
-package act4;
+using System;
+
+namespace hola{
+    class hola{
+        bool hola = true;
+        int pa = 1;
+        float pedro = 2.1;
+        string cadena = "hola jaja";
+        char caracter = 'a';
+    }
+}
