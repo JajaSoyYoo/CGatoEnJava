@@ -1,6 +1,3 @@
-/* NOMBRES
-*/
-
 package demo_cup;
 
 import java_cup.runtime.*;
@@ -15,9 +12,27 @@ start with sentencias;
 
 sentencias ::= declaraciones | instrucciones;
 
-declaraciones ::= dec_variables | dec_constantes;
+declaraciones ::= dec_variables 
+                | dec_constantes;
 
 dec_variables ::= tipo_dato ID PUNTO_COMA
-                | tipo_dato ID COMA ID PUNTO_COMA;
+                | tipo_dato ID COMA ID PUNTO_COMA
+                | tipo_dato error PUNTO_COMA
+                {: 
+                  System.err.println("Error: Identificador inválido en la línea " + ((Symbol) $error).left + ", columna " + ((Symbol) $error).right + ". Un identificador debe comenzar con una letra o guion bajo."); 
+                :}
+                | tipo_dato ID error
+                {: 
+                  System.err.println("Error: Se esperaba ';' al final de la declaración en la línea " + ((Symbol) $error).left + ", columna " + ((Symbol) $error).right + "."); 
+                :};
 
-tipo_dato ::= BYTE | INT | LONG | CHAR | DOUBLE | BOOLEAN;
+tipo_dato ::= BYTE
+            | INT
+            | LONG
+            | CHAR
+            | DOUBLE
+            | BOOLEAN
+            | error
+            {: 
+               System.err.println("Error: Tipo no válido en la línea " + ((Symbol) $error).left + ", columna " + ((Symbol) $error).right + ". Los tipos válidos son 'entero', 'flotante', 'booleano', y 'cadena'."); 
+            :};
