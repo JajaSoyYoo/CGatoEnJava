@@ -13,6 +13,7 @@ parser code
     }
 :}
 
+
 // Reservadas terminales //
 terminal PACKAGE, USING, NAMESPACE, CLASS;
 terminal PUBLIC, PRIVATE, PROTECTED, INTERNAL;
@@ -20,7 +21,7 @@ terminal VOID, INT, STRING, BOOL, FLOAT, CHAR, TRUE, FALSE;
 terminal IF, ELSE, FOR, WHILE, RETURN;
 terminal STATIC, NEW;
 
-// Simbolos terminales //
+//simbolos terminales//
 terminal PUNTO_COMA, PUNTO, COMA, PARENTESIS_IZQUIERDO, PARENTESIS_DERECHO;
 terminal LLAVE_IZQUIERDA, LLAVE_DERECHA, CORCHETE_IZQUIERDO, CORCHETE_DERECHO;
 terminal SUMA, RESTA, MULTIPLICACION, DIVISION;
@@ -28,25 +29,25 @@ terminal ASIGNACION, IGUALDAD, DESIGUALDAD;
 terminal MENOR_QUE, MAYOR_QUE, MENOR_O_IGUAL_QUE, MAYOR_O_IGUAL_QUE;
 terminal Y_LOGICO, O_LOGICO, NEGACION;
 
-// Otros terminales //
+//otros terminales//
 terminal IDENTIFICADOR, NDECIMAL, NENTERO, CADENA, CARACTER;
+
 
 // No terminales //
 non terminal programa, declaraciones, declaracion, dec_namespace, dec_using, dec_clase, expresiones, dec_variable, tipo_bool, tipo_int, tipo_string, tipo_char, tipo_float,
-            expresion, boleano
+            expresion, boleano, no_tipo_bool, no_tipo_int, no_tipo_char, no_tipo_string, no_tipo_float
             ;
+
 
 // Reglas gramaticales //
 start with programa;
 
-programa ::= declaraciones;
+programa ::=declaraciones;
 
 declaraciones ::= declaracion
     | declaracion declaraciones
-    | error PUNTO_COMA {: System.out.println("Error: Declaración no cerrada con punto y coma."); :}
     ;
 
-// Declaraciones de `using` y `namespace`
 declaracion ::= dec_using dec_namespace
                 | dec_using dec_clase
                 ;
@@ -68,74 +69,128 @@ dec_clase ::= CLASS IDENTIFICADOR LLAVE_IZQUIERDA expresiones LLAVE_DERECHA
             :}
             ;
 
-expresiones ::= dec_variable PUNTO_COMA expresiones
+expresiones ::= dec_variable expresiones
                 | expresion
-                | dec_variable PUNTO_COMA
-                | error PUNTO_COMA {: System.out.println("Error: Expresión no cerrada correctamente o incompleta."); :}
+                | dec_variable
                 ;
 
-
-// Producciones para declaración de variables
 dec_variable ::= tipo_bool 
                 | tipo_int 
                 | tipo_string 
                 | tipo_char
                 | tipo_float
-                | error IDENTIFICADOR {: System.out.println("Error: No se encuentra el tipo de variable"); :}
+                | tipo_bool error 
+                | tipo_int error 
+                | tipo_string error 
+                | tipo_char error 
+                | tipo_float error 
                 ;
 
-// Declaraciones para tipos específicos con detección de errores
-tipo_bool ::= BOOL IDENTIFICADOR ASIGNACION boleano
+no_tipo_bool ::= tipo_int 
+                | tipo_string 
+                | tipo_char 
+                | tipo_float 
+                ;
+
+no_tipo_int ::= tipo_bool 
+                | tipo_string 
+                | tipo_char 
+                | tipo_float 
+                | error 
+                ;
+
+no_tipo_string ::= tipo_int
+                | tipo_bool
+                | tipo_char 
+                | tipo_float 
+                | error 
+                ;
+
+no_tipo_char ::= tipo_int
+                | tipo_string 
+                | tipo_bool 
+                | tipo_float 
+                | error 
+                ;
+
+no_tipo_float ::= tipo_int 
+                | tipo_string 
+                | tipo_char 
+                | tipo_bool 
+                | error 
+                ;
+
+
+tipo_bool ::= BOOL IDENTIFICADOR ASIGNACION boleano PUNTO_COMA 
             {:
                 System.out.println("--Variable boleana--");
             :}
-            | error PUNTO_COMA
+            | BOOL IDENTIFICADOR ASIGNACION boleano error 
             {:
-                System.out.println("Error: Declaración de variable booleana incorrecta o valor no asignado.");
+                System.err.println("Error: falta punto y coma al final de la declaracion de variable booleana.");
+            :}
+            | BOOL IDENTIFICADOR ASIGNACION no_tipo_bool PUNTO_COMA
+            {:
+                System.err.println(" Error: Se esperaba true o false");
             :}
             ;
 
-tipo_int ::= INT IDENTIFICADOR ASIGNACION NENTERO
+boleano ::= TRUE 
+            | FALSE
+            ;
+
+tipo_int ::= INT IDENTIFICADOR ASIGNACION NENTERO PUNTO_COMA 
             {:
                 System.out.println("--Variable entera--");
             :}
-            | INT error PUNTO_COMA
+            | INT IDENTIFICADOR ASIGNACION NENTERO error 
             {:
-                System.out.println("Error: Declaración de variable entera incorrecta o valor no asignado.");
+                System.err.println("Error: falta punto y coma al final de la declaracion de variable entera.");
+            :}
+            | INT IDENTIFICADOR ASIGNACION no_tipo_int PUNTO_COMA
+            {:
+                System.err.println(" Error: Se esperaba tipo entero");
             :}
             ;
 
-tipo_float ::= FLOAT IDENTIFICADOR ASIGNACION NDECIMAL
+tipo_float ::= FLOAT IDENTIFICADOR ASIGNACION NDECIMAL PUNTO_COMA 
             {:
                 System.out.println("--Variable flotante--");
             :}
-            | FLOAT error PUNTO_COMA
+            | FLOAT IDENTIFICADOR ASIGNACION NDECIMAL error 
             {:
-                System.out.println("Error: Declaración de variable flotante incorrecta o valor no asignado.");
+                System.err.println("Error: falta punto y coma al final de la declaracion de variable flotante.");
+            :}
+            | FLOAT IDENTIFICADOR ASIGNACION no_tipo_float PUNTO_COMA
+            {:
+                System.err.println(" Error: Se esperaba tipo flotante");
             :}
             ;
 
-tipo_string ::= STRING IDENTIFICADOR ASIGNACION CADENA
+tipo_string ::= STRING IDENTIFICADOR ASIGNACION CADENA PUNTO_COMA 
             {:
                 System.out.println("--Variable cadena--");
             :}
-            | STRING error PUNTO_COMA
+            | STRING IDENTIFICADOR ASIGNACION CADENA error 
             {:
-                System.out.println("Error: Declaración de variable de tipo cadena incorrecta o valor no asignado.");
+                System.err.println("Error: falta punto y coma al final de la declaracion de variable cadena.");
+            :}
+            | STRING IDENTIFICADOR ASIGNACION no_tipo_string PUNTO_COMA
+            {:
+                System.err.println(" Error: Se esperaba cadena");
             :}
             ;
 
-tipo_char ::= CHAR IDENTIFICADOR ASIGNACION CARACTER
+tipo_char ::= CHAR IDENTIFICADOR ASIGNACION CARACTER PUNTO_COMA 
             {:
                 System.out.println("--Variable caracter--");
             :}
-            | CHAR error PUNTO_COMA
+            | CHAR IDENTIFICADOR ASIGNACION CARACTER error 
             {:
-                System.out.println("Error: Declaración de variable de tipo caracter incorrecta o valor no asignado.");
+                System.err.println("Error: falta punto y coma al final de la declaracion de variable caracter.");
             :}
-            ;
-
-// Producciones adicionales para valores booleanos
-boleano ::= TRUE 
-            | FALSE 
+            | CHAR IDENTIFICADOR ASIGNACION no_tipo_char PUNTO_COMA
+            {:
+                System.err.println(" Error: Se esperaba true o false");
+            :}
             ;

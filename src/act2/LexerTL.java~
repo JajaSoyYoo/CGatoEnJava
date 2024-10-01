@@ -851,7 +851,7 @@ public class LexerTL implements java_cup.runtime.Scanner {
           // fall through
           case 55: break;
           case 2:
-            { description(yytext(),"Negación"); return symbol(sym.NEGACION, yytext());
+            { description(yytext(),"Negacion"); return symbol(sym.NEGACION, yytext());
             }
           // fall through
           case 56: break;
@@ -861,17 +861,17 @@ public class LexerTL implements java_cup.runtime.Scanner {
           // fall through
           case 57: break;
           case 4:
-            { description(yytext(),"Paréntesis izquierdo"); return symbol(sym.PARENTESIS_IZQUIERDO, yytext());
+            { description(yytext(),"Parentesis izquierdo"); return symbol(sym.PARENTESIS_IZQUIERDO, yytext());
             }
           // fall through
           case 58: break;
           case 5:
-            { description(yytext(),"Paréntesis derecho"); return symbol(sym.PARENTESIS_DERECHO, yytext());
+            { description(yytext(),"Parentesis derecho"); return symbol(sym.PARENTESIS_DERECHO, yytext());
             }
           // fall through
           case 59: break;
           case 6:
-            { description(yytext(),"Multiplicación"); return symbol(sym.MULTIPLICACION, yytext());
+            { description(yytext(),"Multiplicacion"); return symbol(sym.MULTIPLICACION, yytext());
             }
           // fall through
           case 60: break;
@@ -896,7 +896,7 @@ public class LexerTL implements java_cup.runtime.Scanner {
           // fall through
           case 64: break;
           case 11:
-            { description(yytext(),"División"); return symbol(sym.DIVISION, yytext());
+            { description(yytext(),"Division"); return symbol(sym.DIVISION, yytext());
             }
           // fall through
           case 65: break;
@@ -916,7 +916,7 @@ public class LexerTL implements java_cup.runtime.Scanner {
           // fall through
           case 68: break;
           case 15:
-            { description(yytext(),"Asignación"); return symbol(sym.ASIGNACION, yytext());
+            { description(yytext(),"Asignacion"); return symbol(sym.ASIGNACION, yytext());
             }
           // fall through
           case 69: break;
@@ -956,7 +956,7 @@ public class LexerTL implements java_cup.runtime.Scanner {
           // fall through
           case 76: break;
           case 23:
-            { description(yytext(),"Y lógico"); return symbol(sym.Y_LOGICO, yytext());
+            { description(yytext(),"Y logico"); return symbol(sym.Y_LOGICO, yytext());
             }
           // fall through
           case 77: break;
@@ -976,12 +976,12 @@ public class LexerTL implements java_cup.runtime.Scanner {
           // fall through
           case 80: break;
           case 27:
-            { description(yytext(),"Declaración condicional"); return symbol(sym.IF, yytext());
+            { description(yytext(),"Declaracion condicional"); return symbol(sym.IF, yytext());
             }
           // fall through
           case 81: break;
           case 28:
-            { description(yytext(),"O lógico"); return symbol(sym.O_LOGICO, yytext());
+            { description(yytext(),"O logico"); return symbol(sym.O_LOGICO, yytext());
             }
           // fall through
           case 82: break;
@@ -1011,7 +1011,7 @@ public class LexerTL implements java_cup.runtime.Scanner {
           // fall through
           case 87: break;
           case 34:
-            { description(yytext(),"Instanciación de objeto"); return symbol(sym.NEW, yytext());
+            { description(yytext(),"Instanciacion de objeto"); return symbol(sym.NEW, yytext());
             }
           // fall through
           case 88: break;
@@ -1076,12 +1076,12 @@ public class LexerTL implements java_cup.runtime.Scanner {
           // fall through
           case 100: break;
           case 47:
-            { description(yytext(),"Declaración de retorno"); return symbol(sym.RETURN, yytext());
+            { description(yytext(),"Declaracion de retorno"); return symbol(sym.RETURN, yytext());
             }
           // fall through
           case 101: break;
           case 48:
-            { description(yytext(),"Miembro estático"); return symbol(sym.STATIC, yytext());
+            { description(yytext(),"Miembro estatico"); return symbol(sym.STATIC, yytext());
             }
           // fall through
           case 102: break;

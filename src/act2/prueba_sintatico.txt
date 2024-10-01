@@ -2,10 +2,16 @@ using System;
 
 namespace hola{
     class hola{
-        bool hola = true;
-        int pa = 1;
-        float pedro = 2.1;
-        string cadena = "hola jaja";
-        char caracter = 'a';
+        //Validos
+        int x = 1;
+        float y = 2.5;
+        bool activo = true;
+        string cadena = "hola";
+
+        //No validos
+        int entero = 'g';
+        float y = false;
+        char d = "hola";
+        bool gol = true
     }
 }

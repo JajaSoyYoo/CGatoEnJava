@@ -31,14 +31,26 @@ public class ParserTL extends java_cup.runtime.lr_parser {
   /** Production table. */
   protected static final short _production_table[][] = 
     unpackFromStrings(new String[] {
-    "\000\030\000\002\002\004\000\002\002\003\000\002\003" +
+    "\000\077\000\002\002\004\000\002\002\003\000\002\003" +
     "\003\000\002\003\004\000\002\004\004\000\002\004\004" +
     "\000\002\006\005\000\002\005\007\000\002\007\007\000" +
     "\002\010\004\000\002\010\003\000\002\010\003\000\002" +
     "\011\003\000\002\011\003\000\002\011\003\000\002\011" +
-    "\003\000\002\011\003\000\002\012\007\000\002\020\003" +
-    "\000\002\020\003\000\002\013\007\000\002\016\007\000" +
-    "\002\014\007\000\002\015\007" });
+    "\003\000\002\011\003\000\002\011\004\000\002\011\004" +
+    "\000\002\011\004\000\002\011\004\000\002\011\004\000" +
+    "\002\021\003\000\002\021\003\000\002\021\003\000\002" +
+    "\021\003\000\002\022\003\000\002\022\003\000\002\022" +
+    "\003\000\002\022\003\000\002\022\003\000\002\024\003" +
+    "\000\002\024\003\000\002\024\003\000\002\024\003\000" +
+    "\002\024\003\000\002\023\003\000\002\023\003\000\002" +
+    "\023\003\000\002\023\003\000\002\023\003\000\002\025" +
+    "\003\000\002\025\003\000\002\025\003\000\002\025\003" +
+    "\000\002\025\003\000\002\012\007\000\002\012\007\000" +
+    "\002\012\007\000\002\020\003\000\002\020\003\000\002" +
+    "\013\007\000\002\013\007\000\002\013\007\000\002\016" +
+    "\007\000\002\016\007\000\002\016\007\000\002\014\007" +
+    "\000\002\014\007\000\002\014\007\000\002\015\007\000" +
+    "\002\015\007\000\002\015\007" });
 
   /** Access to production table. */
   public short[][] production_table() {return _production_table;}
@@ -46,43 +58,85 @@ public class ParserTL extends java_cup.runtime.lr_parser {
   /** Parse-action table. */
   protected static final short[][] _action_table = 
     unpackFromStrings(new String[] {
-    "\000\071\000\004\005\010\001\002\000\004\002\000\001" +
+    "\000\145\000\004\005\010\001\002\000\004\002\000\001" +
     "\002\000\006\006\015\007\020\001\002\000\004\002\014" +
     "\001\002\000\006\002\uffff\005\010\001\002\000\004\062" +
     "\011\001\002\000\004\033\012\001\002\000\006\006\ufffb" +
     "\007\ufffb\001\002\000\004\002\ufffe\001\002\000\004\002" +
-    "\001\001\002\000\004\062\070\001\002\000\006\002\ufffc" +
+    "\001\001\002\000\004\062\144\001\002\000\006\002\ufffc" +
     "\005\ufffc\001\002\000\006\002\ufffd\005\ufffd\001\002\000" +
     "\004\062\021\001\002\000\004\040\022\001\002\000\014" +
-    "\015\023\016\030\017\026\020\037\021\035\001\002\000" +
-    "\004\062\064\001\002\000\016\015\023\016\030\017\026" +
-    "\020\037\021\035\041\ufff6\001\002\000\016\015\ufff5\016" +
-    "\ufff5\017\ufff5\020\ufff5\021\ufff5\041\ufff5\001\002\000\004" +
-    "\062\055\001\002\000\016\015\ufff3\016\ufff3\017\ufff3\020" +
-    "\ufff3\021\ufff3\041\ufff3\001\002\000\004\062\051\001\002" +
-    "\000\004\041\ufff7\001\002\000\016\015\ufff4\016\ufff4\017" +
-    "\ufff4\020\ufff4\021\ufff4\041\ufff4\001\002\000\004\041\050" +
-    "\001\002\000\016\015\ufff1\016\ufff1\017\ufff1\020\ufff1\021" +
-    "\ufff1\041\ufff1\001\002\000\004\062\044\001\002\000\016" +
-    "\015\ufff2\016\ufff2\017\ufff2\020\ufff2\021\ufff2\041\ufff2\001" +
-    "\002\000\004\062\040\001\002\000\004\050\041\001\002" +
-    "\000\004\063\042\001\002\000\004\033\043\001\002\000" +
-    "\016\015\uffec\016\uffec\017\uffec\020\uffec\021\uffec\041\uffec" +
-    "\001\002\000\004\050\045\001\002\000\004\066\046\001" +
-    "\002\000\004\033\047\001\002\000\016\015\uffea\016\uffea" +
-    "\017\uffea\020\uffea\021\uffea\041\uffea\001\002\000\010\002" +
-    "\ufff9\005\ufff9\041\ufff9\001\002\000\004\050\052\001\002" +
-    "\000\004\065\053\001\002\000\004\033\054\001\002\000" +
-    "\016\015\uffeb\016\uffeb\017\uffeb\020\uffeb\021\uffeb\041\uffeb" +
-    "\001\002\000\004\050\056\001\002\000\006\022\060\023" +
-    "\061\001\002\000\004\033\062\001\002\000\004\033\uffef" +
-    "\001\002\000\004\033\uffee\001\002\000\016\015\ufff0\016" +
-    "\ufff0\017\ufff0\020\ufff0\021\ufff0\041\ufff0\001\002\000\004" +
-    "\041\ufff8\001\002\000\004\050\065\001\002\000\004\064" +
-    "\066\001\002\000\004\033\067\001\002\000\016\015\uffed" +
-    "\016\uffed\017\uffed\020\uffed\021\uffed\041\uffed\001\002\000" +
-    "\004\040\071\001\002\000\004\007\020\001\002\000\004" +
-    "\041\073\001\002\000\006\002\ufffa\005\ufffa\001\002" });
+    "\015\024\016\030\017\026\020\036\021\035\001\002\000" +
+    "\016\015\024\016\030\017\026\020\036\021\035\041\ufff6" +
+    "\001\002\000\004\062\127\001\002\000\020\003\126\015" +
+    "\ufff5\016\ufff5\017\ufff5\020\ufff5\021\ufff5\041\ufff5\001\002" +
+    "\000\004\062\111\001\002\000\020\003\110\015\ufff3\016" +
+    "\ufff3\017\ufff3\020\ufff3\021\ufff3\041\ufff3\001\002\000\004" +
+    "\062\074\001\002\000\004\041\ufff7\001\002\000\020\003" +
+    "\073\015\ufff4\016\ufff4\017\ufff4\020\ufff4\021\ufff4\041\ufff4" +
+    "\001\002\000\020\003\072\015\ufff1\016\ufff1\017\ufff1\020" +
+    "\ufff1\021\ufff1\041\ufff1\001\002\000\004\041\071\001\002" +
+    "\000\004\062\055\001\002\000\004\062\041\001\002\000" +
+    "\020\003\040\015\ufff2\016\ufff2\017\ufff2\020\ufff2\021\ufff2" +
+    "\041\ufff2\001\002\000\016\015\uffed\016\uffed\017\uffed\020" +
+    "\uffed\021\uffed\041\uffed\001\002\000\004\050\042\001\002" +
+    "\000\016\003\046\015\024\016\030\017\026\021\035\063" +
+    "\051\001\002\000\004\033\uffd5\001\002\000\004\033\uffd7" +
+    "\001\002\000\004\033\uffd8\001\002\000\004\033\uffd4\001" +
+    "\002\000\004\033\054\001\002\000\004\033\uffd6\001\002" +
+    "\000\006\003\052\033\053\001\002\000\022\003\uffca\015" +
+    "\uffca\016\uffca\017\uffca\020\uffca\021\uffca\033\uffca\041\uffca" +
+    "\001\002\000\022\003\uffcb\015\uffcb\016\uffcb\017\uffcb\020" +
+    "\uffcb\021\uffcb\033\uffcb\041\uffcb\001\002\000\022\003\uffc9" +
+    "\015\uffc9\016\uffc9\017\uffc9\020\uffc9\021\uffc9\033\uffc9\041" +
+    "\uffc9\001\002\000\004\050\056\001\002\000\016\003\063" +
+    "\015\024\016\030\017\026\020\036\066\065\001\002\000" +
+    "\004\033\uffdb\001\002\000\004\033\uffdc\001\002\000\004" +
+    "\033\070\001\002\000\004\033\uffdd\001\002\000\004\033" +
+    "\uffd9\001\002\000\004\033\uffda\001\002\000\006\003\066" +
+    "\033\067\001\002\000\022\003\uffc4\015\uffc4\016\uffc4\017" +
+    "\uffc4\020\uffc4\021\uffc4\033\uffc4\041\uffc4\001\002\000\022" +
+    "\003\uffc5\015\uffc5\016\uffc5\017\uffc5\020\uffc5\021\uffc5\033" +
+    "\uffc5\041\uffc5\001\002\000\022\003\uffc3\015\uffc3\016\uffc3" +
+    "\017\uffc3\020\uffc3\021\uffc3\033\uffc3\041\uffc3\001\002\000" +
+    "\010\002\ufff9\005\ufff9\041\ufff9\001\002\000\016\015\uffec" +
+    "\016\uffec\017\uffec\020\uffec\021\uffec\041\uffec\001\002\000" +
+    "\016\015\uffef\016\uffef\017\uffef\020\uffef\021\uffef\041\uffef" +
+    "\001\002\000\004\050\075\001\002\000\016\003\101\015" +
+    "\024\017\026\020\036\021\035\065\076\001\002\000\006" +
+    "\003\106\033\107\001\002\000\004\033\uffe1\001\002\000" +
+    "\004\033\uffe2\001\002\000\004\033\uffde\001\002\000\004" +
+    "\033\uffdf\001\002\000\004\033\105\001\002\000\004\033" +
+    "\uffe0\001\002\000\022\003\uffc6\015\uffc6\016\uffc6\017\uffc6" +
+    "\020\uffc6\021\uffc6\033\uffc6\041\uffc6\001\002\000\022\003" +
+    "\uffc7\015\uffc7\016\uffc7\017\uffc7\020\uffc7\021\uffc7\033\uffc7" +
+    "\041\uffc7\001\002\000\022\003\uffc8\015\uffc8\016\uffc8\017" +
+    "\uffc8\020\uffc8\021\uffc8\033\uffc8\041\uffc8\001\002\000\016" +
+    "\015\uffee\016\uffee\017\uffee\020\uffee\021\uffee\041\uffee\001" +
+    "\002\000\004\050\112\001\002\000\016\015\024\016\030" +
+    "\020\036\021\035\022\114\023\117\001\002\000\004\033" +
+    "\uffea\001\002\000\006\003\uffd0\033\uffd0\001\002\000\004" +
+    "\033\125\001\002\000\006\003\123\033\124\001\002\000" +
+    "\006\003\uffcf\033\uffcf\001\002\000\004\033\uffeb\001\002" +
+    "\000\004\033\uffe8\001\002\000\004\033\uffe9\001\002\000" +
+    "\022\003\uffd2\015\uffd2\016\uffd2\017\uffd2\020\uffd2\021\uffd2" +
+    "\033\uffd2\041\uffd2\001\002\000\022\003\uffd3\015\uffd3\016" +
+    "\uffd3\017\uffd3\020\uffd3\021\uffd3\033\uffd3\041\uffd3\001\002" +
+    "\000\022\003\uffd1\015\uffd1\016\uffd1\017\uffd1\020\uffd1\021" +
+    "\uffd1\033\uffd1\041\uffd1\001\002\000\016\015\ufff0\016\ufff0" +
+    "\017\ufff0\020\ufff0\021\ufff0\041\ufff0\001\002\000\004\050" +
+    "\130\001\002\000\016\003\134\016\030\017\026\020\036" +
+    "\021\035\064\136\001\002\000\004\033\uffe7\001\002\000" +
+    "\004\033\uffe6\001\002\000\004\033\142\001\002\000\004" +
+    "\033\uffe3\001\002\000\004\033\uffe4\001\002\000\006\003" +
+    "\140\033\141\001\002\000\004\033\uffe5\001\002\000\022" +
+    "\003\uffcd\015\uffcd\016\uffcd\017\uffcd\020\uffcd\021\uffcd\033" +
+    "\uffcd\041\uffcd\001\002\000\022\003\uffce\015\uffce\016\uffce" +
+    "\017\uffce\020\uffce\021\uffce\033\uffce\041\uffce\001\002\000" +
+    "\022\003\uffcc\015\uffcc\016\uffcc\017\uffcc\020\uffcc\021\uffcc" +
+    "\033\uffcc\041\uffcc\001\002\000\004\041\ufff8\001\002\000" +
+    "\004\040\145\001\002\000\004\007\020\001\002\000\004" +
+    "\041\147\001\002\000\006\002\ufffa\005\ufffa\001\002" });
 
   /** Access to parse-action table. */
   public short[][] action_table() {return _action_table;}
@@ -90,28 +144,46 @@ public class ParserTL extends java_cup.runtime.lr_parser {
   /** <code>reduce_goto</code> table. */
   protected static final short[][] _reduce_table = 
     unpackFromStrings(new String[] {
-    "\000\071\000\012\002\005\003\003\004\006\006\004\001" +
+    "\000\145\000\012\002\005\003\003\004\006\006\004\001" +
     "\001\000\002\001\001\000\006\005\016\007\015\001\001" +
     "\000\002\001\001\000\010\003\012\004\006\006\004\001" +
     "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
     "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
     "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
-    "\001\001\000\022\010\032\011\023\012\024\013\031\014" +
-    "\026\015\035\016\033\017\030\001\001\000\002\001\001" +
-    "\000\022\010\062\011\023\012\024\013\031\014\026\015" +
-    "\035\016\033\017\030\001\001\000\002\001\001\000\002" +
+    "\001\001\000\022\010\033\011\022\012\024\013\031\014" +
+    "\026\015\036\016\032\017\030\001\001\000\022\010\142" +
+    "\011\022\012\024\013\031\014\026\015\036\016\032\017" +
+    "\030\001\001\000\002\001\001\000\002\001\001\000\002" +
     "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
+    "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
+    "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
+    "\002\001\001\000\002\001\001\000\014\012\042\013\044" +
+    "\014\043\015\047\025\046\001\001\000\002\001\001\000" +
+    "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
+    "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
+    "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
+    "\000\014\012\056\013\061\014\057\016\063\023\060\001" +
     "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
     "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
     "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
     "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
+    "\001\000\002\001\001\000\014\012\076\013\077\015\103" +
+    "\016\101\024\102\001\001\000\002\001\001\000\002\001" +
     "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
     "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
-    "\002\001\001\000\004\020\056\001\001\000\002\001\001" +
+    "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
+    "\001\001\000\016\013\117\014\112\015\121\016\120\020" +
+    "\115\021\114\001\001\000\002\001\001\000\002\001\001" +
     "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
     "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
-    "\001\001\000\002\001\001\000\002\001\001\000\004\007" +
-    "\071\001\001\000\002\001\001\000\002\001\001" });
+    "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
+    "\001\000\002\001\001\000\014\012\130\014\131\015\136" +
+    "\016\134\022\132\001\001\000\002\001\001\000\002\001" +
+    "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
+    "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
+    "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
+    "\001\001\000\004\007\145\001\001\000\002\001\001\000" +
+    "\002\001\001" });
 
   /** Access to <code>reduce_goto</code> table. */
   public short[][] reduce_table() {return _reduce_table;}
@@ -349,7 +421,268 @@ class CUP$ParserTL$actions {
           return CUP$ParserTL$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 17: // tipo_bool ::= BOOL IDENTIFICADOR ASIGNACION boleano PUNTO_COMA 
+          case 17: // dec_variable ::= tipo_bool error 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("dec_variable",7, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-1)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 18: // dec_variable ::= tipo_int error 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("dec_variable",7, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-1)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 19: // dec_variable ::= tipo_string error 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("dec_variable",7, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-1)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 20: // dec_variable ::= tipo_char error 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("dec_variable",7, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-1)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 21: // dec_variable ::= tipo_float error 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("dec_variable",7, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-1)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 22: // no_tipo_bool ::= tipo_int 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_bool",15, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 23: // no_tipo_bool ::= tipo_string 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_bool",15, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 24: // no_tipo_bool ::= tipo_char 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_bool",15, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 25: // no_tipo_bool ::= tipo_float 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_bool",15, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 26: // no_tipo_int ::= tipo_bool 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_int",16, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 27: // no_tipo_int ::= tipo_string 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_int",16, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 28: // no_tipo_int ::= tipo_char 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_int",16, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 29: // no_tipo_int ::= tipo_float 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_int",16, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 30: // no_tipo_int ::= error 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_int",16, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 31: // no_tipo_string ::= tipo_int 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_string",18, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 32: // no_tipo_string ::= tipo_bool 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_string",18, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 33: // no_tipo_string ::= tipo_char 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_string",18, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 34: // no_tipo_string ::= tipo_float 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_string",18, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 35: // no_tipo_string ::= error 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_string",18, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 36: // no_tipo_char ::= tipo_int 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_char",17, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 37: // no_tipo_char ::= tipo_string 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_char",17, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 38: // no_tipo_char ::= tipo_bool 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_char",17, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 39: // no_tipo_char ::= tipo_float 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_char",17, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 40: // no_tipo_char ::= error 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_char",17, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 41: // no_tipo_float ::= tipo_int 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_float",19, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 42: // no_tipo_float ::= tipo_string 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_float",19, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 43: // no_tipo_float ::= tipo_char 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_float",19, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 44: // no_tipo_float ::= tipo_bool 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_float",19, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 45: // no_tipo_float ::= error 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("no_tipo_float",19, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 46: // tipo_bool ::= BOOL IDENTIFICADOR ASIGNACION boleano PUNTO_COMA 
             {
               Object RESULT =null;
 		
@@ -360,7 +693,29 @@ class CUP$ParserTL$actions {
           return CUP$ParserTL$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 18: // boleano ::= TRUE 
+          case 47: // tipo_bool ::= BOOL IDENTIFICADOR ASIGNACION boleano error 
+            {
+              Object RESULT =null;
+		
+                System.err.println("Error: falta punto y coma al final de la declaracion de variable booleana.");
+            
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("tipo_bool",8, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-4)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 48: // tipo_bool ::= BOOL IDENTIFICADOR ASIGNACION no_tipo_bool PUNTO_COMA 
+            {
+              Object RESULT =null;
+		
+                System.err.println(" Error: Se esperaba true o false");
+            
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("tipo_bool",8, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-4)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 49: // boleano ::= TRUE 
             {
               Object RESULT =null;
 
@@ -369,7 +724,7 @@ class CUP$ParserTL$actions {
           return CUP$ParserTL$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 19: // boleano ::= FALSE 
+          case 50: // boleano ::= FALSE 
             {
               Object RESULT =null;
 
@@ -378,7 +733,7 @@ class CUP$ParserTL$actions {
           return CUP$ParserTL$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 20: // tipo_int ::= INT IDENTIFICADOR ASIGNACION NENTERO PUNTO_COMA 
+          case 51: // tipo_int ::= INT IDENTIFICADOR ASIGNACION NENTERO PUNTO_COMA 
             {
               Object RESULT =null;
 		
@@ -389,7 +744,29 @@ class CUP$ParserTL$actions {
           return CUP$ParserTL$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 21: // tipo_float ::= FLOAT IDENTIFICADOR ASIGNACION NDECIMAL PUNTO_COMA 
+          case 52: // tipo_int ::= INT IDENTIFICADOR ASIGNACION NENTERO error 
+            {
+              Object RESULT =null;
+		
+                System.err.println("Error: falta punto y coma al final de la declaracion de variable entera.");
+            
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("tipo_int",9, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-4)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 53: // tipo_int ::= INT IDENTIFICADOR ASIGNACION no_tipo_int PUNTO_COMA 
+            {
+              Object RESULT =null;
+		
+                System.err.println(" Error: Se esperaba tipo entero");
+            
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("tipo_int",9, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-4)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 54: // tipo_float ::= FLOAT IDENTIFICADOR ASIGNACION NDECIMAL PUNTO_COMA 
             {
               Object RESULT =null;
 		
@@ -400,7 +777,29 @@ class CUP$ParserTL$actions {
           return CUP$ParserTL$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 22: // tipo_string ::= STRING IDENTIFICADOR ASIGNACION CADENA PUNTO_COMA 
+          case 55: // tipo_float ::= FLOAT IDENTIFICADOR ASIGNACION NDECIMAL error 
+            {
+              Object RESULT =null;
+		
+                System.err.println("Error: falta punto y coma al final de la declaracion de variable flotante.");
+            
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("tipo_float",12, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-4)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 56: // tipo_float ::= FLOAT IDENTIFICADOR ASIGNACION no_tipo_float PUNTO_COMA 
+            {
+              Object RESULT =null;
+		
+                System.err.println(" Error: Se esperaba tipo flotante");
+            
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("tipo_float",12, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-4)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 57: // tipo_string ::= STRING IDENTIFICADOR ASIGNACION CADENA PUNTO_COMA 
             {
               Object RESULT =null;
 		
@@ -411,11 +810,55 @@ class CUP$ParserTL$actions {
           return CUP$ParserTL$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 23: // tipo_char ::= CHAR IDENTIFICADOR ASIGNACION CARACTER PUNTO_COMA 
+          case 58: // tipo_string ::= STRING IDENTIFICADOR ASIGNACION CADENA error 
+            {
+              Object RESULT =null;
+		
+                System.err.println("Error: falta punto y coma al final de la declaracion de variable cadena.");
+            
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("tipo_string",10, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-4)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 59: // tipo_string ::= STRING IDENTIFICADOR ASIGNACION no_tipo_string PUNTO_COMA 
+            {
+              Object RESULT =null;
+		
+                System.err.println(" Error: Se esperaba cadena");
+            
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("tipo_string",10, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-4)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 60: // tipo_char ::= CHAR IDENTIFICADOR ASIGNACION CARACTER PUNTO_COMA 
             {
               Object RESULT =null;
 		
                 System.out.println("--Variable caracter--");
+            
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("tipo_char",11, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-4)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 61: // tipo_char ::= CHAR IDENTIFICADOR ASIGNACION CARACTER error 
+            {
+              Object RESULT =null;
+		
+                System.err.println("Error: falta punto y coma al final de la declaracion de variable caracter.");
+            
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("tipo_char",11, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-4)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 62: // tipo_char ::= CHAR IDENTIFICADOR ASIGNACION no_tipo_char PUNTO_COMA 
+            {
+              Object RESULT =null;
+		
+                System.err.println(" Error: Se esperaba true o false");
             
               CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("tipo_char",11, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-4)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
             }
