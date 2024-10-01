@@ -22,5 +22,6 @@ public class sym {
   public static final int error = 1;
   public static final int BYTE = 4;
   public static final int CHAR = 5;
+  public static final int FLOAT = 13;
 }
 

@@ -2,16 +2,14 @@ using System;
 
 namespace hola{
     class hola{
-        //Validos
         int x = 1;
-        float y = 2.5;
+        float y = 1.2;
         bool activo = true;
-        string cadena = "hola";
+        string cadena = "nombre";
 
-        //No validos
-        int entero = 'g';
-        float y = false;
-        char d = "hola";
-        bool gol = true
-    }
+        //int 123x = 1;
+        //float y = y;
+        //string 123 = "hola";
+        //bool activo = true
+   }
 }

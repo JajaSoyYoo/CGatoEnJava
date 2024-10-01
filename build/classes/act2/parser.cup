@@ -55,17 +55,42 @@ declaracion ::= dec_using dec_namespace
 dec_using ::= USING IDENTIFICADOR PUNTO_COMA 
             {:
                 System.out.println("---Declaracion de uso---");
-            :};
+            :}
+            | USING IDENTIFICADOR error
+            {:
+                System.err.println(" Error: Se esperaba punto y coma");
+            :}
+            ;
 
 dec_namespace ::= NAMESPACE IDENTIFICADOR LLAVE_IZQUIERDA dec_clase LLAVE_DERECHA 
                 {:
                     System.out.println("---Declaracion de espacio de nombre---");
+                :}
+                |
+                NAMESPACE IDENTIFICADOR error dec_clase LLAVE_DERECHA   
+                {:
+                    System.err.println(" Error: Se esperaba {");
+                :}
+                |
+                NAMESPACE IDENTIFICADOR LLAVE_IZQUIERDA dec_clase error  
+                {:
+                    System.err.println(" Error: Se esperaba }");
                 :}
                 ;
 
 dec_clase ::= CLASS IDENTIFICADOR LLAVE_IZQUIERDA expresiones LLAVE_DERECHA 
             {:
                 System.out.println("---Declaracion de clase---");
+            :}
+            |
+            CLASS IDENTIFICADOR error expresiones LLAVE_DERECHA   
+            {:
+                System.err.println(" Error: Se esperaba {");
+            :}
+            |
+            CLASS IDENTIFICADOR LLAVE_IZQUIERDA expresiones error  
+            {:
+                System.err.println(" Error: Se esperaba }");
             :}
             ;
 
@@ -78,46 +103,7 @@ dec_variable ::= tipo_bool
                 | tipo_int 
                 | tipo_string 
                 | tipo_char
-                | tipo_float
-                | tipo_bool error 
-                | tipo_int error 
-                | tipo_string error 
-                | tipo_char error 
-                | tipo_float error 
-                ;
-
-no_tipo_bool ::= tipo_int 
-                | tipo_string 
-                | tipo_char 
                 | tipo_float 
-                ;
-
-no_tipo_int ::= tipo_bool 
-                | tipo_string 
-                | tipo_char 
-                | tipo_float 
-                | error 
-                ;
-
-no_tipo_string ::= tipo_int
-                | tipo_bool
-                | tipo_char 
-                | tipo_float 
-                | error 
-                ;
-
-no_tipo_char ::= tipo_int
-                | tipo_string 
-                | tipo_bool 
-                | tipo_float 
-                | error 
-                ;
-
-no_tipo_float ::= tipo_int 
-                | tipo_string 
-                | tipo_char 
-                | tipo_bool 
-                | error 
                 ;
 
 
@@ -129,9 +115,13 @@ tipo_bool ::= BOOL IDENTIFICADOR ASIGNACION boleano PUNTO_COMA
             {:
                 System.err.println("Error: falta punto y coma al final de la declaracion de variable booleana.");
             :}
-            | BOOL IDENTIFICADOR ASIGNACION no_tipo_bool PUNTO_COMA
+            | BOOL IDENTIFICADOR ASIGNACION error
             {:
                 System.err.println(" Error: Se esperaba true o false");
+            :}
+            | BOOL error
+            {:
+                System.err.println(" Error: Identificador no valido");
             :}
             ;
 
@@ -147,9 +137,13 @@ tipo_int ::= INT IDENTIFICADOR ASIGNACION NENTERO PUNTO_COMA
             {:
                 System.err.println("Error: falta punto y coma al final de la declaracion de variable entera.");
             :}
-            | INT IDENTIFICADOR ASIGNACION no_tipo_int PUNTO_COMA
+            | INT IDENTIFICADOR ASIGNACION error
             {:
                 System.err.println(" Error: Se esperaba tipo entero");
+            :}
+            | INT error
+            {:
+                System.err.println(" Error: Identificador no valido");
             :}
             ;
 
@@ -161,9 +155,13 @@ tipo_float ::= FLOAT IDENTIFICADOR ASIGNACION NDECIMAL PUNTO_COMA
             {:
                 System.err.println("Error: falta punto y coma al final de la declaracion de variable flotante.");
             :}
-            | FLOAT IDENTIFICADOR ASIGNACION no_tipo_float PUNTO_COMA
+            | FLOAT IDENTIFICADOR ASIGNACION error
             {:
                 System.err.println(" Error: Se esperaba tipo flotante");
+            :}
+            | FLOAT error
+            {:
+                System.err.println(" Error: Identificador no valido");
             :}
             ;
 
@@ -175,9 +173,13 @@ tipo_string ::= STRING IDENTIFICADOR ASIGNACION CADENA PUNTO_COMA
             {:
                 System.err.println("Error: falta punto y coma al final de la declaracion de variable cadena.");
             :}
-            | STRING IDENTIFICADOR ASIGNACION no_tipo_string PUNTO_COMA
+            | STRING IDENTIFICADOR ASIGNACION error 
             {:
                 System.err.println(" Error: Se esperaba cadena");
+            :}
+            | STRING error
+            {:
+                System.err.println(" Error: Identificador no valido");
             :}
             ;
 
@@ -189,8 +191,12 @@ tipo_char ::= CHAR IDENTIFICADOR ASIGNACION CARACTER PUNTO_COMA
             {:
                 System.err.println("Error: falta punto y coma al final de la declaracion de variable caracter.");
             :}
-            | CHAR IDENTIFICADOR ASIGNACION no_tipo_char PUNTO_COMA
+            | CHAR IDENTIFICADOR ASIGNACION error
             {:
-                System.err.println(" Error: Se esperaba true o false");
+                System.err.println(" Error: Se esperaba caracter ' '");
+            :}
+            | CHAR error
+            {:
+                System.err.println(" Error: Identificador no valido");
             :}
             ;
