@@ -35,7 +35,7 @@ terminal IDENTIFICADOR, NDECIMAL, NENTERO, CADENA, CARACTER;
 
 // No terminales //
 non terminal programa, declaraciones, declaracion, dec_namespace, dec_using, dec_clase, expresiones, dec_variable, tipo_bool, tipo_int, tipo_string, tipo_char, tipo_float,
-            expresion, boleano, no_tipo_bool, no_tipo_int, no_tipo_char, no_tipo_string, no_tipo_float
+            expresion, boleano, no_tipo_bool, no_tipo_int, no_tipo_char, no_tipo_string, no_tipo_float, expression_mat, operaciones, parentesis, numeros, signo, expression_mat_parentesis
             ;
 
 
@@ -94,10 +94,67 @@ dec_clase ::= CLASS IDENTIFICADOR LLAVE_IZQUIERDA expresiones LLAVE_DERECHA
             :}
             ;
 
-expresiones ::= dec_variable expresiones
-                | expresion
-                | dec_variable
-                ;
+    expresiones ::= dec_variable expresiones
+                    |expression_mat expresiones
+                    |expression_mat 
+                    | dec_variable
+                    ;
+
+    expression_mat ::= numeros operaciones
+                        {:
+                            System.out.println("---Declaracion de operacion---");
+                        :}
+    ;
+
+    operaciones ::= signo numeros PUNTO_COMA 
+                    | signo numeros operaciones
+                    | signo signo error PUNTO_COMA
+                {:
+                    System.err.println(" Error: Doble operacion");
+                :}
+                    | signo PUNTO_COMA
+                {:
+                    System.err.println(" Error: Falta un numero o indentificador despues del signo");
+                :}
+                    | signo error
+                {:
+                    System.err.println(" Error: Operacion no valida");
+                :}
+    ;
+
+    expression_mat_parentesis ::= signo numeros expression_mat_parentesis
+                    | signo numeros PARENTESIS_DERECHO
+                    | signo signo
+                {:
+                    System.err.println(" Error: Doble operacion");
+                :}
+    ;
+
+    numeros ::= NDECIMAL
+                | NENTERO
+                | IDENTIFICADOR
+                | parentesis
+    ;
+
+    parentesis ::= PARENTESIS_IZQUIERDO numeros expression_mat_parentesis
+                    | PARENTESIS_IZQUIERDO error
+                {:
+                    System.err.println("Error: Error en operacion parentesis.");
+                :}
+    ;
+                
+
+signo ::=   SUMA
+            | RESTA
+            | MULTIPLICACION
+            | DIVISION
+            | MENOR_QUE
+            | MAYOR_QUE
+            | MENOR_O_IGUAL_QUE
+            | MAYOR_O_IGUAL_QUE
+            | Y_LOGICO
+            | O_LOGICO
+            ;
 
 dec_variable ::= tipo_bool 
                 | tipo_int 
