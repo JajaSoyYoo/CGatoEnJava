@@ -3,200 +3,211 @@ import java_cup.runtime.*;
 
 parser code
 {:
-    public void syntax_error(Symbol s)
-    {
-        report_error("Error de sintaxis en linea: " + (s.left)+" , columna: "+(s.right+1)+", simbolo: "+s.value, null);
+    public void syntax_error(Symbol s) {
+        report_error("Error de sintaxis en linea: " + (s.left) + " , columna: " + (s.right + 1) + ", simbolo: " + s.value, null);
     }
-    public void unrecovered_syntax_error(Symbol s) throws java.lang.Exception
-    {
-        report_fatal_error("",null);
+    public void unrecovered_syntax_error(Symbol s) throws java.lang.Exception {
+        report_fatal_error("", null);
     }
 :}
 
-
-// Reservadas terminales //
+// Reservadas terminales
 terminal PACKAGE, USING, NAMESPACE, CLASS;
 terminal PUBLIC, PRIVATE, PROTECTED, INTERNAL;
 terminal VOID, INT, STRING, BOOL, FLOAT, CHAR, TRUE, FALSE;
 terminal IF, ELSE, FOR, WHILE, RETURN;
 terminal STATIC, NEW;
 
-//simbolos terminales//
+// Símbolos terminales
 terminal PUNTO_COMA, PUNTO, COMA, PARENTESIS_IZQUIERDO, PARENTESIS_DERECHO;
 terminal LLAVE_IZQUIERDA, LLAVE_DERECHA, CORCHETE_IZQUIERDO, CORCHETE_DERECHO;
 terminal SUMA, RESTA, MULTIPLICACION, DIVISION;
 terminal ASIGNACION, IGUALDAD, DESIGUALDAD;
 terminal MENOR_QUE, MAYOR_QUE, MENOR_O_IGUAL_QUE, MAYOR_O_IGUAL_QUE;
-terminal Y_LOGICO, O_LOGICO, NEGACION;
+terminal Y_LOGICO, O_LOGICO;
 
-//otros terminales//
+// Otros terminales
 terminal IDENTIFICADOR, NDECIMAL, NENTERO, CADENA, CARACTER;
 
-
-// No terminales //
+// No terminales
 non terminal programa, declaraciones, declaracion, dec_namespace, dec_using, dec_clase, expresiones, dec_variable, tipo_bool, tipo_int, tipo_string, tipo_char, tipo_float,
-            expresion, boleano, no_tipo_bool, no_tipo_int, no_tipo_char, no_tipo_string, no_tipo_float
-            ;
+            expresion, condicion, terminos, factor, estructura_control, sentencia_if, sentencia_while, sentencia_for, boleano, logica_and, logica_or, comparacion, aritmetica, termino, logica;
 
-
-// Reglas gramaticales //
+// Reglas gramaticales
 start with programa;
 
-programa ::=declaraciones;
+programa ::= declaraciones;
 
 declaraciones ::= declaracion
-    | declaracion declaraciones
-    ;
+                | declaracion declaraciones;
 
-declaracion ::= dec_using dec_namespace
-                | dec_using dec_clase
-                ;
+declaracion ::= dec_using
+              | dec_namespace
+              | dec_clase;
 
-dec_using ::= USING IDENTIFICADOR PUNTO_COMA 
+// Declaraciones usando y espacio de nombres
+dec_using ::= USING IDENTIFICADOR PUNTO_COMA
             {:
                 System.out.println("---Declaracion de uso---");
             :}
             | USING IDENTIFICADOR error
             {:
-                System.err.println(" Error: Se esperaba punto y coma");
-            :}
-            ;
+                System.err.println("Error: Se esperaba punto y coma");
+            :};
 
-dec_namespace ::= NAMESPACE IDENTIFICADOR LLAVE_IZQUIERDA dec_clase LLAVE_DERECHA 
+dec_namespace ::= NAMESPACE IDENTIFICADOR LLAVE_IZQUIERDA declaraciones LLAVE_DERECHA
                 {:
                     System.out.println("---Declaracion de espacio de nombre---");
                 :}
-                |
-                NAMESPACE IDENTIFICADOR error dec_clase LLAVE_DERECHA   
+                | NAMESPACE IDENTIFICADOR error declaraciones LLAVE_DERECHA   
                 {:
-                    System.err.println(" Error: Se esperaba {");
+                    System.err.println("Error: Se esperaba {");
                 :}
-                |
-                NAMESPACE IDENTIFICADOR LLAVE_IZQUIERDA dec_clase error  
+                | NAMESPACE IDENTIFICADOR LLAVE_IZQUIERDA declaraciones error  
                 {:
-                    System.err.println(" Error: Se esperaba }");
-                :}
-                ;
+                    System.err.println("Error: Se esperaba }");
+                :};
 
-dec_clase ::= CLASS IDENTIFICADOR LLAVE_IZQUIERDA expresiones LLAVE_DERECHA 
+dec_clase ::= CLASS IDENTIFICADOR LLAVE_IZQUIERDA expresiones LLAVE_DERECHA
             {:
                 System.out.println("---Declaracion de clase---");
             :}
-            |
-            CLASS IDENTIFICADOR error expresiones LLAVE_DERECHA   
+            | CLASS IDENTIFICADOR error expresiones LLAVE_DERECHA   
             {:
-                System.err.println(" Error: Se esperaba {");
+                System.err.println("Error: Se esperaba {");
             :}
-            |
-            CLASS IDENTIFICADOR LLAVE_IZQUIERDA expresiones error  
+            | CLASS IDENTIFICADOR LLAVE_IZQUIERDA expresiones error  
             {:
-                System.err.println(" Error: Se esperaba }");
-            :}
-            ;
+                System.err.println("Error: Se esperaba }");
+            :};
 
+// Reglas para expresiones
 expresiones ::= dec_variable expresiones
-                | expresion
-                | dec_variable
-                ;
+               | estructura_control expresiones
+               | expresion PUNTO_COMA expresiones
+               | expresion PUNTO_COMA
+               | dec_variable
+               | estructura_control 
+               ;
 
+// Expresiones
+expresion ::= logica;
+
+// Expresiones lógicas
+logica ::= logica_or;
+
+// Lógica OR
+logica_or ::= logica_and O_LOGICO logica_or
+            | logica_and;
+
+// Lógica AND
+logica_and ::= comparacion Y_LOGICO logica_and
+             | comparacion;
+
+// Comparaciones
+comparacion ::= aritmetica IGUALDAD aritmetica
+              | aritmetica DESIGUALDAD aritmetica
+              | aritmetica MENOR_QUE aritmetica
+              | aritmetica MAYOR_QUE aritmetica
+              | aritmetica MENOR_O_IGUAL_QUE aritmetica
+              | aritmetica MAYOR_O_IGUAL_QUE aritmetica
+              | TRUE
+              | FALSE
+              | PARENTESIS_IZQUIERDO logica PARENTESIS_DERECHO;
+
+// Expresiones aritméticas
+aritmetica ::= termino
+             | aritmetica SUMA termino
+             | aritmetica RESTA termino;
+
+// Términos
+termino ::= factor
+          | termino MULTIPLICACION factor
+          | termino DIVISION factor;
+
+// Factor
+factor ::= IDENTIFICADOR
+         | NENTERO
+         | NDECIMAL
+         | PARENTESIS_IZQUIERDO aritmetica PARENTESIS_DERECHO;
+
+// Estructuras de control
+estructura_control ::= sentencia_if
+                     | sentencia_while
+                     | sentencia_for;
+
+// Sentencias de control
+sentencia_if ::= IF PARENTESIS_IZQUIERDO condicion PARENTESIS_DERECHO LLAVE_IZQUIERDA expresiones LLAVE_DERECHA
+               {:
+                   System.out.println("---Sentencia if---");
+               :}
+               | IF PARENTESIS_IZQUIERDO condicion PARENTESIS_DERECHO LLAVE_IZQUIERDA expresiones LLAVE_DERECHA ELSE LLAVE_IZQUIERDA expresiones LLAVE_DERECHA 
+               {:
+                   System.out.println("---Sentencia if con else---");
+               :};
+
+sentencia_while ::= WHILE PARENTESIS_IZQUIERDO condicion PARENTESIS_DERECHO LLAVE_IZQUIERDA expresiones LLAVE_DERECHA
+                  {:
+                      System.out.println("---Sentencia while---");
+                  :};
+
+sentencia_for ::= FOR PARENTESIS_IZQUIERDO dec_variable PARENTESIS_DERECHO LLAVE_IZQUIERDA expresiones LLAVE_DERECHA
+                {:
+                    System.out.println("---Sentencia for---");
+                :};
+
+// Declaraciones de variables
 dec_variable ::= tipo_bool 
-                | tipo_int 
-                | tipo_string 
-                | tipo_char
-                | tipo_float 
-                ;
+               | tipo_int 
+               | tipo_string 
+               | tipo_char 
+               | tipo_float;
 
-
+// Tipos de datos
 tipo_bool ::= BOOL IDENTIFICADOR ASIGNACION boleano PUNTO_COMA 
             {:
-                System.out.println("--Variable boleana--");
+                System.out.println("--Variable booleana--");
             :}
-            | BOOL IDENTIFICADOR ASIGNACION boleano error 
+            | BOOL IDENTIFICADOR ASIGNACION error 
             {:
                 System.err.println("Error: falta punto y coma al final de la declaracion de variable booleana.");
-            :}
-            | BOOL IDENTIFICADOR ASIGNACION error
-            {:
-                System.err.println(" Error: Se esperaba true o false");
-            :}
-            | BOOL error
-            {:
-                System.err.println(" Error: Identificador no valido");
-            :}
-            ;
+            :};
 
 boleano ::= TRUE 
-            | FALSE
-            ;
+           | FALSE;
 
-tipo_int ::= INT IDENTIFICADOR ASIGNACION NENTERO PUNTO_COMA 
+tipo_int ::= INT IDENTIFICADOR ASIGNACION aritmetica PUNTO_COMA 
             {:
                 System.out.println("--Variable entera--");
             :}
-            | INT IDENTIFICADOR ASIGNACION NENTERO error 
+            | INT IDENTIFICADOR ASIGNACION error 
             {:
                 System.err.println("Error: falta punto y coma al final de la declaracion de variable entera.");
-            :}
-            | INT IDENTIFICADOR ASIGNACION error
-            {:
-                System.err.println(" Error: Se esperaba tipo entero");
-            :}
-            | INT error
-            {:
-                System.err.println(" Error: Identificador no valido");
-            :}
-            ;
+            :};
 
-tipo_float ::= FLOAT IDENTIFICADOR ASIGNACION NDECIMAL PUNTO_COMA 
-            {:
-                System.out.println("--Variable flotante--");
-            :}
-            | FLOAT IDENTIFICADOR ASIGNACION NDECIMAL error 
-            {:
-                System.err.println("Error: falta punto y coma al final de la declaracion de variable flotante.");
-            :}
-            | FLOAT IDENTIFICADOR ASIGNACION error
-            {:
-                System.err.println(" Error: Se esperaba tipo flotante");
-            :}
-            | FLOAT error
-            {:
-                System.err.println(" Error: Identificador no valido");
-            :}
-            ;
+tipo_float ::= FLOAT IDENTIFICADOR ASIGNACION aritmetica PUNTO_COMA 
+              {:
+                  System.out.println("--Variable flotante--");
+              :}
+              | FLOAT IDENTIFICADOR ASIGNACION error 
+              {:
+                  System.err.println("Error: falta punto y coma al final de la declaracion de variable flotante.");
+              :};
 
 tipo_string ::= STRING IDENTIFICADOR ASIGNACION CADENA PUNTO_COMA 
-            {:
-                System.out.println("--Variable cadena--");
-            :}
-            | STRING IDENTIFICADOR ASIGNACION CADENA error 
-            {:
-                System.err.println("Error: falta punto y coma al final de la declaracion de variable cadena.");
-            :}
-            | STRING IDENTIFICADOR ASIGNACION error 
-            {:
-                System.err.println(" Error: Se esperaba cadena");
-            :}
-            | STRING error
-            {:
-                System.err.println(" Error: Identificador no valido");
-            :}
-            ;
+               {:
+                   System.out.println("--Variable cadena--");
+               :}
+               | STRING IDENTIFICADOR ASIGNACION error 
+               {:
+                   System.err.println("Error: falta punto y coma al final de la declaracion de variable cadena.");
+               :};
 
 tipo_char ::= CHAR IDENTIFICADOR ASIGNACION CARACTER PUNTO_COMA 
-            {:
-                System.out.println("--Variable caracter--");
-            :}
-            | CHAR IDENTIFICADOR ASIGNACION CARACTER error 
-            {:
-                System.err.println("Error: falta punto y coma al final de la declaracion de variable caracter.");
-            :}
-            | CHAR IDENTIFICADOR ASIGNACION error
-            {:
-                System.err.println(" Error: Se esperaba caracter ' '");
-            :}
-            | CHAR error
-            {:
-                System.err.println(" Error: Identificador no valido");
-            :}
-            ;
+             {:
+                 System.out.println("--Variable caracter--");
+             :}
+             | CHAR IDENTIFICADOR ASIGNACION error 
+             {:
+                 System.err.println("Error: falta punto y coma al final de la declaracion de variable caracter.");
+             :};

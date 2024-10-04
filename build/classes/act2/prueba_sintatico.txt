@@ -2,14 +2,9 @@ using System;
 
 namespace hola{
     class hola{
-        int x = 1;
-        float y = 1.2;
-        bool activo = true;
-        string cadena = "nombre";
-
-        //int 123x = 1;
-        //float y = y;
-        //string 123 = "hola";
-        //bool activo = true
+        int hola = 1+1;
+        while ( hola == 1){
+            int adios = 1+1;
+        }
    }
 }
