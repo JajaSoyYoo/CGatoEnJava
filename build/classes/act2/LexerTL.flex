@@ -90,6 +90,7 @@ import java_cup.runtime.*;
 "&&"            {description(yytext(),"Y logico"); return symbol(sym.Y_LOGICO, yytext());}
 "||"            {description(yytext(),"O logico"); return symbol(sym.O_LOGICO, yytext());}
 "!"             {description(yytext(),"Negacion"); return symbol(sym.NEGACION, yytext());}
+"++"             {description(yytext(),"Negacion"); return symbol(sym.INCREMENTO, yytext());}
 
 
 

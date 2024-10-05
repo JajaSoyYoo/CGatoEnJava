@@ -21,12 +21,13 @@ public class sym {
   public static final int FOR = 20;
   public static final int CORCHETE_DERECHO = 33;
   public static final int STATIC = 23;
-  public static final int IDENTIFICADOR = 47;
-  public static final int CARACTER = 51;
+  public static final int IDENTIFICADOR = 48;
+  public static final int CARACTER = 52;
   public static final int IGUALDAD = 39;
-  public static final int NENTERO = 49;
+  public static final int NENTERO = 50;
   public static final int BOOL = 13;
   public static final int CLASS = 5;
+  public static final int INCREMENTO = 47;
   public static final int SUMA = 34;
   public static final int CORCHETE_IZQUIERDO = 32;
   public static final int IF = 18;
@@ -37,8 +38,8 @@ public class sym {
   public static final int NEW = 24;
   public static final int error = 1;
   public static final int COMA = 27;
-  public static final int CADENA = 50;
-  public static final int NDECIMAL = 48;
+  public static final int CADENA = 51;
+  public static final int NDECIMAL = 49;
   public static final int MAYOR_QUE = 42;
   public static final int VOID = 10;
   public static final int ASIGNACION = 38;
@@ -108,6 +109,7 @@ public class sym {
   "MAYOR_O_IGUAL_QUE",
   "Y_LOGICO",
   "O_LOGICO",
+  "INCREMENTO",
   "IDENTIFICADOR",
   "NDECIMAL",
   "NENTERO",

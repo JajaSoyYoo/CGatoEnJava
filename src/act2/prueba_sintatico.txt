@@ -2,9 +2,8 @@ using System;
 
 namespace hola{
     class hola{
-        int hola = 1+1;
-        while ( hola == 1){
-            int adios = 1+1;
+        for (int i = 0; i < 10; i ++) { 
+            int hola = 1;
         }
    }
 }
