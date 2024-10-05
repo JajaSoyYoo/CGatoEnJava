@@ -1,0 +1,228 @@
+package act5;
+import java_cup.runtime.*;
+
+parser code
+{:
+    public void syntax_error(Symbol s) {
+        report_error("Error de sintaxis en linea: " + (s.left) + " , columna: " + (s.right + 1) + ", simbolo: " + s.value, null);
+    }
+    public void unrecovered_syntax_error(Symbol s) throws java.lang.Exception {
+        report_fatal_error("", null);
+    }
+:}
+
+// Reservadas terminales
+terminal PACKAGE, USING, NAMESPACE, CLASS;
+terminal PUBLIC, PRIVATE, PROTECTED, INTERNAL;
+terminal VOID, INT, STRING, BOOL, FLOAT, CHAR, TRUE, FALSE;
+terminal IF, ELSE, FOR, WHILE, RETURN;
+terminal STATIC, NEW;
+
+// Simbolos terminales
+terminal PUNTO_COMA, PUNTO, COMA, PARENTESIS_IZQUIERDO, PARENTESIS_DERECHO;
+terminal LLAVE_IZQUIERDA, LLAVE_DERECHA, CORCHETE_IZQUIERDO, CORCHETE_DERECHO;
+terminal SUMA, RESTA, MULTIPLICACION, DIVISION;
+terminal ASIGNACION, IGUALDAD, DESIGUALDAD;
+terminal MENOR_QUE, MAYOR_QUE, MENOR_O_IGUAL_QUE, MAYOR_O_IGUAL_QUE;
+terminal Y_LOGICO, O_LOGICO, INCREMENTO, NEGACION, DECREMENTO;
+
+// Otros terminales
+terminal IDENTIFICADOR, NDECIMAL, NENTERO, CADENA, CARACTER;
+
+non terminal programa, dec_using, dec_namespace, dec_clase, cuerpo, declaraciones, dec_variables, tipo_variable, tipo_int, tipo_string, tipo_char, tipo_bool, tipo_float, valor_int, valor_float,
+            valor_bool, expresion, exp_aritmetica, exp_logica, termino, factor, termino_logico, estructura_control, sentencia_if, sentencia_while, sentencia_for, expresion_incremento, for_init,
+            for_update;
+
+start with declaraciones;
+
+declaraciones ::= dec_using dec_namespace
+                | dec_using dec_clase 
+                ;
+
+dec_using ::= USING IDENTIFICADOR PUNTO_COMA 
+            {:
+                System.out.println("---Declaracion de using---");
+            :}
+            | USING IDENTIFICADOR error
+            {:
+                System.err.println("  Error: Falta ';'");
+            :}            
+            ;
+
+dec_namespace ::= NAMESPACE IDENTIFICADOR LLAVE_IZQUIERDA dec_clase LLAVE_DERECHA 
+                {:
+                    System.out.println("---Declaracion de namespace---");
+                :}
+                | NAMESPACE IDENTIFICADOR LLAVE_IZQUIERDA dec_clase error
+                {:
+                    System.err.println("  Error: Falta '}' en namespace");
+                :}
+                | NAMESPACE IDENTIFICADOR dec_clase LLAVE_DERECHA error
+                {:
+                    System.err.println("  Error: Falta '{' en namespace");
+                :}
+                ;
+
+dec_clase ::= CLASS IDENTIFICADOR LLAVE_IZQUIERDA cuerpo LLAVE_DERECHA 
+            {:
+                System.out.println("---Declaracion de clase---");
+            :}
+            | CLASS IDENTIFICADOR LLAVE_IZQUIERDA cuerpo error
+            {:
+                System.err.println("  Error: Falta '}' en clase");
+            :}
+            | CLASS IDENTIFICADOR cuerpo error
+            {:
+                System.err.println("  Error: Falta '{' en clase");
+            :}
+            ;
+
+
+cuerpo ::= estructura_control cuerpo
+        | estructura_control
+        | dec_variables
+        | dec_variables cuerpo
+        ;
+
+dec_variables ::= tipo_variable PUNTO_COMA 
+                | tipo_variable error 
+                {:
+                    System.err.println("  Error: Falta ';' en variable");
+                :}
+                ;
+
+tipo_variable ::= tipo_int
+                | tipo_float 
+                | tipo_char 
+                | tipo_string 
+                | tipo_bool 
+                ;
+
+tipo_int ::= INT IDENTIFICADOR ASIGNACION NENTERO 
+        {:
+            System.out.println("--Variable entera--");
+        :}
+        | INT IDENTIFICADOR ASIGNACION valor_int  
+        {:
+            System.out.println("--Variable entera--");
+        :}
+        | INT IDENTIFICADOR ASIGNACION error
+        {:
+            System.err.println(" Error: Se esperaba valor entero");
+        :}
+        ;
+
+tipo_float ::= FLOAT IDENTIFICADOR ASIGNACION exp_aritmetica  
+        {:
+            System.out.println("--Variable flotante--");
+        :}
+        | FLOAT IDENTIFICADOR ASIGNACION error
+        {:
+            System.err.println(" Error: Se esperaba valor flotante");
+        :}
+        ;
+
+tipo_bool ::= BOOL IDENTIFICADOR ASIGNACION valor_bool 
+        {:
+            System.out.println("--Variable boleana--");
+        :}
+        | BOOL IDENTIFICADOR ASIGNACION error
+        {:
+            System.err.println(" Error: Se esperaba valor boleano");
+        :}
+        ;
+
+valor_bool ::= TRUE
+            | FALSE
+            ;
+
+tipo_char ::= CHAR IDENTIFICADOR ASIGNACION CARACTER  
+        {:
+            System.out.println("--Variable caracter--");
+        :}
+        | CHAR IDENTIFICADOR ASIGNACION error
+        {:
+            System.err.println(" Error: Se esperaba valor caracter");
+        :}
+        ;
+
+tipo_string ::= STRING IDENTIFICADOR ASIGNACION CADENA 
+        {:
+            System.out.println("--Variable cadena--");
+        :}
+        | STRING IDENTIFICADOR ASIGNACION error
+        {:
+            System.err.println(" Error: Se esperaba valor cadena");
+        :}
+        ;
+
+
+
+estructura_control ::= sentencia_if
+                    | sentencia_while
+                    | sentencia_for;
+
+
+sentencia_if ::= IF PARENTESIS_IZQUIERDO termino_logico PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo LLAVE_DERECHA
+            {:
+                System.out.println("---Sentencia if---");
+            :}
+            | IF PARENTESIS_IZQUIERDO termino_logico PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo LLAVE_DERECHA ELSE LLAVE_IZQUIERDA cuerpo LLAVE_DERECHA
+            {:
+                System.out.println("---Sentencia if con else---");
+            :}
+            ;
+
+
+sentencia_while ::= WHILE PARENTESIS_IZQUIERDO termino_logico PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo LLAVE_DERECHA
+                {:
+                    System.out.println("---Sentencia while---");
+                :}
+                ;
+
+sentencia_for ::= FOR PARENTESIS_IZQUIERDO for_init PUNTO_COMA termino_logico PUNTO_COMA for_update PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo LLAVE_DERECHA
+    {:
+        System.out.println("---Sentencia for---");
+    :};
+
+for_init ::= INT IDENTIFICADOR ASIGNACION NENTERO;
+
+for_update ::= IDENTIFICADOR INCREMENTO 
+            | IDENTIFICADOR DECREMENTO
+            ;
+
+
+
+
+expresion ::= exp_aritmetica 
+            | exp_logica
+            ;
+
+exp_aritmetica ::= termino 
+                | exp_aritmetica SUMA termino 
+                | exp_aritmetica RESTA termino 
+                ;
+
+termino ::= factor 
+        | termino MULTIPLICACION factor 
+        | termino DIVISION factor 
+        ;
+
+factor ::= IDENTIFICADOR 
+        | NENTERO 
+        | NDECIMAL 
+        | PARENTESIS_IZQUIERDO exp_aritmetica PARENTESIS_DERECHO 
+        ;
+
+exp_logica ::= termino_logico Y_LOGICO termino_logico 
+            | termino_logico O_LOGICO termino_logico 
+            ;
+
+termino_logico ::= exp_aritmetica IGUALDAD exp_aritmetica 
+                | exp_aritmetica DESIGUALDAD exp_aritmetica 
+                | exp_aritmetica MAYOR_QUE exp_aritmetica 
+                | exp_aritmetica MENOR_QUE exp_aritmetica 
+                | exp_aritmetica MENOR_O_IGUAL_QUE exp_aritmetica 
+                | exp_aritmetica MAYOR_O_IGUAL_QUE exp_aritmetica 
+                ;
+
