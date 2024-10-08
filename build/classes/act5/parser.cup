@@ -215,7 +215,7 @@ factor ::= IDENTIFICADOR
         ;
 
 exp_logica ::= termino_logico Y_LOGICO termino_logico 
-            | termino_logico O_LOGICO termino_logico 
+            | termino_logico O_LOGICO termino_logico  
             ;
 
 termino_logico ::= exp_aritmetica IGUALDAD exp_aritmetica 

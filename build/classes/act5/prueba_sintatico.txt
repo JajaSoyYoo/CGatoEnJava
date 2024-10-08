@@ -2,8 +2,19 @@ using System;
 
 namespace adios{
     class hola{
-        for (int i = 1 ; i < 10; i ++){
-            float adios = 1;
+        if ( tres == 5 ){
+            string hola = "hola";
+            if ( cuatro == 4){
+                string hola = "hola";
+            }
+        }
+        while ( tres != 3 )
+        {
+            string hola = "adios";
+        }
+        for ( int i = 1; i < 10; i++)
+        {
+            string hola = "hola";
         }
     }
 }
