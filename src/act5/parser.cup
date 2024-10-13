@@ -31,7 +31,7 @@ terminal IDENTIFICADOR, NDECIMAL, NENTERO, CADENA, CARACTER;
 
 non terminal programa, dec_using, dec_namespace, dec_clase, cuerpo, declaraciones, dec_variables, tipo_variable, tipo_int, tipo_string, tipo_char, tipo_bool, tipo_float, valor_int, valor_float,
             valor_bool, expresion, exp_aritmetica, exp_logica, termino, factor, termino_logico, estructura_control, sentencia_if, sentencia_while, sentencia_for, expresion_incremento, for_init,
-            for_update;
+            for_update, metodo, tipo_metodo, parametros, cuerpo_clase, parametro;
 
 start with declaraciones;
 
@@ -63,26 +63,52 @@ dec_namespace ::= NAMESPACE IDENTIFICADOR LLAVE_IZQUIERDA dec_clase LLAVE_DERECH
                 :}
                 ;
 
-dec_clase ::= CLASS IDENTIFICADOR LLAVE_IZQUIERDA cuerpo LLAVE_DERECHA 
+dec_clase ::= CLASS IDENTIFICADOR LLAVE_IZQUIERDA cuerpo_clase LLAVE_DERECHA 
             {:
                 System.out.println("---Declaracion de clase---");
             :}
-            | CLASS IDENTIFICADOR LLAVE_IZQUIERDA cuerpo error
+            | CLASS IDENTIFICADOR LLAVE_IZQUIERDA cuerpo_clase error
             {:
                 System.err.println("  Error: Falta '}' en clase");
             :}
-            | CLASS IDENTIFICADOR cuerpo error
+            | CLASS IDENTIFICADOR cuerpo_clase error
             {:
                 System.err.println("  Error: Falta '{' en clase");
             :}
             ;
 
+cuerpo_clase ::= metodo cuerpo_clase
+            | cuerpo  
+            ;
 
 cuerpo ::= estructura_control cuerpo
         | estructura_control
         | dec_variables
         | dec_variables cuerpo
         ;
+
+
+//----------------------------------------------------------------------------//
+
+
+metodo ::= IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo LLAVE_DERECHA 
+        {:
+            System.out.println("---Declaracion de metodo---");
+        :}
+        ;
+
+tipo_metodo ::= INT | FLOAT | STRING | CHAR | BOOL | VOID 
+        ;
+
+parametros ::= parametro 
+            | parametro COMA parametros
+            ;
+
+parametro ::= tipo_metodo IDENTIFICADOR 
+            ;
+
+
+//----------------------------------------------------------------------------//
 
 dec_variables ::= tipo_variable PUNTO_COMA 
                 | tipo_variable error 
@@ -102,33 +128,17 @@ tipo_int ::= INT IDENTIFICADOR ASIGNACION NENTERO
         {:
             System.out.println("--Variable entera--");
         :}
-        | INT IDENTIFICADOR ASIGNACION valor_int  
-        {:
-            System.out.println("--Variable entera--");
-        :}
-        | INT IDENTIFICADOR ASIGNACION error
-        {:
-            System.err.println(" Error: Se esperaba valor entero");
-        :}
         ;
 
 tipo_float ::= FLOAT IDENTIFICADOR ASIGNACION exp_aritmetica  
         {:
             System.out.println("--Variable flotante--");
         :}
-        | FLOAT IDENTIFICADOR ASIGNACION error
-        {:
-            System.err.println(" Error: Se esperaba valor flotante");
-        :}
         ;
 
 tipo_bool ::= BOOL IDENTIFICADOR ASIGNACION valor_bool 
         {:
             System.out.println("--Variable boleana--");
-        :}
-        | BOOL IDENTIFICADOR ASIGNACION error
-        {:
-            System.err.println(" Error: Se esperaba valor boleano");
         :}
         ;
 
@@ -140,22 +150,18 @@ tipo_char ::= CHAR IDENTIFICADOR ASIGNACION CARACTER
         {:
             System.out.println("--Variable caracter--");
         :}
-        | CHAR IDENTIFICADOR ASIGNACION error
-        {:
-            System.err.println(" Error: Se esperaba valor caracter");
-        :}
         ;
 
 tipo_string ::= STRING IDENTIFICADOR ASIGNACION CADENA 
         {:
             System.out.println("--Variable cadena--");
         :}
-        | STRING IDENTIFICADOR ASIGNACION error
-        {:
-            System.err.println(" Error: Se esperaba valor cadena");
-        :}
         ;
 
+
+
+
+//----------------------------------------------------------------------------------//
 
 
 estructura_control ::= sentencia_if
@@ -192,6 +198,7 @@ for_update ::= IDENTIFICADOR INCREMENTO
             ;
 
 
+//----------------------------------------------------------------------------//
 
 
 expresion ::= exp_aritmetica 

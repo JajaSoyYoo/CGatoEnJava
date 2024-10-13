@@ -2,19 +2,10 @@ using System;
 
 namespace adios{
     class hola{
-        if ( tres == 5 ){
-            string hola = "hola";
-            if ( cuatro == 4){
-                string hola = "hola";
-            }
+        hola ( int adios ){
+            int hola = 10;
         }
-        while ( tres != 3 )
-        {
-            string hola = "adios";
-        }
-        for ( int i = 1; i < 10; i++)
-        {
-            string hola = "hola";
-        }
+
+        int adios = 10;
     }
 }
