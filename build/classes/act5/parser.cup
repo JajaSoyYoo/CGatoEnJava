@@ -29,9 +29,9 @@ terminal Y_LOGICO, O_LOGICO, INCREMENTO, NEGACION, DECREMENTO;
 // Otros terminales
 terminal IDENTIFICADOR, NDECIMAL, NENTERO, CADENA, CARACTER;
 
-non terminal programa, dec_using, dec_namespace, dec_clase, cuerpo, declaraciones, dec_variables, tipo_variable, tipo_int, tipo_string, tipo_char, tipo_bool, tipo_float, valor_int, valor_float,
-            valor_bool, expresion, exp_aritmetica, exp_logica, termino, factor, termino_logico, estructura_control, sentencia_if, sentencia_while, sentencia_for, expresion_incremento, for_init,
-            for_update, metodo, tipo_metodo, parametros, cuerpo_clase, parametro;
+non terminal dec_using, dec_namespace, dec_clase, cuerpo, declaraciones, dec_variables, tipo_variable, tipo_int, tipo_string, tipo_char, tipo_bool, tipo_float,
+            valor_bool, expresion, exp_aritmetica, exp_logica, termino, factor, termino_logico, estructura_control, sentencia_if, sentencia_while, sentencia_for, for_init,
+            for_update, tipo_metodo, parametros, cuerpo_clase, parametro, metodos, metodo_int, metodo_char, metodo_string, metodo_bool, metodo_void, metodo_float;
 
 start with declaraciones;
 
@@ -77,8 +77,9 @@ dec_clase ::= CLASS IDENTIFICADOR LLAVE_IZQUIERDA cuerpo_clase LLAVE_DERECHA
             :}
             ;
 
-cuerpo_clase ::= metodo cuerpo_clase
-            | cuerpo  
+cuerpo_clase ::= metodos cuerpo_clase
+            | cuerpo 
+            | metodos 
             ;
 
 cuerpo ::= estructura_control cuerpo
@@ -90,10 +91,48 @@ cuerpo ::= estructura_control cuerpo
 
 //----------------------------------------------------------------------------//
 
+metodos ::= metodo_int 
+            | metodo_char 
+            | metodo_string 
+            | metodo_float 
+            | metodo_void 
+            | metodo_bool 
+            ;
 
-metodo ::= IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo LLAVE_DERECHA 
+
+metodo_int ::= INT IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo RETURN IDENTIFICADOR PUNTO_COMA LLAVE_DERECHA 
         {:
-            System.out.println("---Declaracion de metodo---");
+            System.out.println("---Declaracion de metodo entero---");
+        :}
+        ;
+
+metodo_string ::= STRING IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo RETURN IDENTIFICADOR PUNTO_COMA LLAVE_DERECHA 
+        {:
+            System.out.println("---Declaracion de metodo cadena---");
+        :}
+        ;
+
+metodo_float ::= FLOAT IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo RETURN IDENTIFICADOR PUNTO_COMA LLAVE_DERECHA 
+        {:
+            System.out.println("---Declaracion de metodo flotante---");
+        :}
+        ;
+
+metodo_bool ::= BOOL IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo RETURN IDENTIFICADOR PUNTO_COMA LLAVE_DERECHA 
+        {:
+            System.out.println("---Declaracion de metodo boleano---");
+        :}
+        ;
+
+metodo_char ::= CHAR IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo RETURN IDENTIFICADOR PUNTO_COMA LLAVE_DERECHA 
+        {:
+            System.out.println("---Declaracion de metodo caracter---");
+        :}
+        ;
+
+metodo_void ::= VOID IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo LLAVE_DERECHA 
+        {:
+            System.out.println("---Declaracion de metodo vacio---");
         :}
         ;
 

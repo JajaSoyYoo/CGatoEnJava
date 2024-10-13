@@ -2,10 +2,27 @@ using System;
 
 namespace adios{
     class hola{
-        hola ( int adios ){
+         void hola ( int adios, int jaja ){
             int hola = 10;
+            //return hola ;
+        }
+        
+        int adios ( int a )
+        {
+            int hola = 10;
+            return hola;
         }
 
-        int adios = 10;
+        int main (char jaja){
+            int holaaaaaaa = 123213;
+            
+            if (holaaaaaa == 123213){
+                char e = 'e';
+            }
+
+
+            return jaja;
+
+        }
     }
 }
