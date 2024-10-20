@@ -105,8 +105,8 @@ import java_cup.runtime.*;
 
 //Expresiones regulares//
 
-[A-Z_]+                     {description(yytext(),"IDConstante"); return symbol(sym.CONSTANTE, yytext());}
-[_A-Za-z]{1}[a-zA-Z0-9]*   {description(yytext(),"Identificador"); return symbol(sym.IDENTIFICADOR, yytext());}
+[A-Z_][A-Z0-9_]+            {description(yytext(),"IDConstante"); return symbol(sym.CONSTANTE, yytext());}
+[_A-Za-z]{1}[a-zA-Z0-9]*    {description(yytext(),"Identificador"); return symbol(sym.IDENTIFICADOR, yytext());}
 [0-9]{1,10}+\.[0-9]{1,2}+   {description(yytext(),"Numero decimal"); return symbol(sym.NDECIMAL, yytext());}
 [1-9]+                      {description(yytext(),"Numero entero"); return symbol(sym.NENTERO, yytext());}
 \"([^\"\\\n]|\\.)*\"        {description(yytext(),"Cadena"); return symbol(sym.CADENA, yytext());}

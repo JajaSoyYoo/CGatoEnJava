@@ -31,7 +31,7 @@ terminal IDENTIFICADOR, NDECIMAL, NENTERO, CADENA, CARACTER, CONSTANTE, CWRITE, 
 
 non terminal dec_using, dec_namespace, dec_clase, cuerpo, declaraciones, dec_variables, tipo_variable, expresion, exp_aritmetica, exp_logica, termino, factor, termino_logico, 
             estructura_control, sentencia_if, sentencia_while, sentencia_for, for_init, for_update, tipo_metodo, parametros, cuerpo_clase, parametro, metodos, metodo_int, metodo_char, 
-            metodo_string, metodo_bool, metodo_void, metodo_float, val, variables, dec_constantes, mod_acceso, impresion, imprimir, lecturas ;
+            metodo_string, metodo_bool, metodo_void, metodo_float, val, variables, dec_constantes, mod_acceso, impresion, imprimir, lecturas, llamar_funcion , pasar_parametros;
 
 start with declaraciones;
 
@@ -131,11 +131,13 @@ metodo_void ::= mod_acceso VOID IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PA
         :}
         ;
 
+
 tipo_metodo ::= INT | FLOAT | STRING | CHAR | BOOL | VOID 
         ;
 
 parametros ::= parametro 
             | parametro COMA parametros
+            |
             ;
 
 parametro ::= tipo_metodo IDENTIFICADOR 
@@ -147,6 +149,8 @@ cuerpo ::= estructura_control cuerpo
         | dec_variables cuerpo
         | impresion
         | impresion cuerpo
+        | llamar_funcion
+        | llamar_funcion cuerpo
         ;
 
 
@@ -296,6 +300,7 @@ termino ::= factor
         ;
 
 factor ::= IDENTIFICADOR 
+        | CONSTANTE
         | NENTERO 
         | NDECIMAL 
         | PARENTESIS_IZQUIERDO exp_aritmetica PARENTESIS_DERECHO 
@@ -313,3 +318,20 @@ termino_logico ::= exp_aritmetica IGUALDAD exp_aritmetica
                 | exp_aritmetica MAYOR_O_IGUAL_QUE exp_aritmetica 
                 ;
 
+//----------------------------------------------------------------------------//
+
+llamar_funcion ::= IDENTIFICADOR PARENTESIS_IZQUIERDO pasar_parametros PARENTESIS_DERECHO PUNTO_COMA 
+                {:
+                    System.out.println("---Se llama a funcion---");
+                :}
+                | IDENTIFICADOR ASIGNACION IDENTIFICADOR PARENTESIS_IZQUIERDO pasar_parametros PARENTESIS_DERECHO PUNTO_COMA
+                {:
+                    System.out.println("---Se llama a funcion y se asigna a variable---");
+                :}
+                ;
+
+pasar_parametros ::= IDENTIFICADOR
+                    | CONSTANTE
+                    | IDENTIFICADOR COMA pasar_parametros
+                    | CONSTANTE COMA pasar_parametros
+                    ;

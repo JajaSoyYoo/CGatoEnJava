@@ -2,11 +2,35 @@ using System;
 
 namespace adios{
     class hola{
-        public void hola ( int adios, int jaja ){
-            int hola = 10;
-            Console.WriteLine("resultado: " + hola  + " pesos" );
-            Console.Write("Impresion sin salto de linea");
-            string adios = Console.ReadLine();
+        public const int NUM1 = 10;
+        public const int NUM2 = 15;
+
+        public int suma ( int num1, int num2 ){
+            
+            int suma = num1 + num2;
+
+            return suma;
+        }
+
+        public void suma2 (){
+            
+            int resultado = NUM1 + NUM2;
+            Console.WriteLine("Resultado de suma de constantes: " + resultado );
+            
+        }
+
+        public int main () {
+            Console.Write("Introduce numero 1 -> ");
+            int num1 = Console.ReadLine();
+            Console.Write("Introduce numero 2 -> ");
+            int num2 = Console.ReadLine();
+            
+            int resultado;
+            resultado = suma(num1, num2);
+            
+            Console.WriteLine("Resultado: " + resultado );
+            
+            return jaja;
         }
         
     }
