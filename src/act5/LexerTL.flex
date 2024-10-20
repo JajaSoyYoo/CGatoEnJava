@@ -61,6 +61,7 @@ import java_cup.runtime.*;
 "char"            {description(yytext(),"Tipo caracter"); return symbol(sym.CHAR, yytext());}
 "true"            {description(yytext(),"Verdadero"); return symbol(sym.TRUE, yytext());}
 "false"           {description(yytext(),"Falso"); return symbol(sym.FALSE, yytext());}
+"const"           {description(yytext(),"Constante"); return symbol(sym.CONST, yytext());}
 
 
 
@@ -92,13 +93,19 @@ import java_cup.runtime.*;
 "!"             {description(yytext(),"Negacion"); return symbol(sym.NEGACION, yytext());}
 "++"            {description(yytext(),"Negacion"); return symbol(sym.INCREMENTO, yytext());}
 "--"            {description(yytext(),"Negacion"); return symbol(sym.DECREMENTO, yytext());}
-"&&"            {description(yytext(),"Negacion"); return symbol(sym.Y_LOGICO, yytext());}
-"||"            {description(yytext(),"Negacion"); return symbol(sym.O_LOGICO, yytext());}
 
+
+
+
+//Impresiones
+"Console.WriteLine"      {description(yytext(),"Imrpimir con salto"); return symbol(sym.CWLINE, yytext());}
+"Console.Write"          {description(yytext(),"Imrpimir sin salto"); return symbol(sym.CWRITE, yytext());}
+"Console.ReadLine"     {description(yytext(),"Leer consola"); return symbol(sym.CRLINE, yytext());}
 
 
 //Expresiones regulares//
 
+[A-Z_]+                     {description(yytext(),"IDConstante"); return symbol(sym.CONSTANTE, yytext());}
 [_A-Za-z]{1}[a-zA-Z0-9]*   {description(yytext(),"Identificador"); return symbol(sym.IDENTIFICADOR, yytext());}
 [0-9]{1,10}+\.[0-9]{1,2}+   {description(yytext(),"Numero decimal"); return symbol(sym.NDECIMAL, yytext());}
 [1-9]+                      {description(yytext(),"Numero entero"); return symbol(sym.NENTERO, yytext());}

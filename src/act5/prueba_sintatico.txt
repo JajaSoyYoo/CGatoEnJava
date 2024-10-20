@@ -2,42 +2,12 @@ using System;
 
 namespace adios{
     class hola{
-         void hola ( int adios, int jaja ){
+        public void hola ( int adios, int jaja ){
             int hola = 10;
-            //return hola ;
+            Console.WriteLine("resultado: " + hola  + " pesos" );
+            Console.Write("Impresion sin salto de linea");
+            string adios = Console.ReadLine();
         }
         
-        int adios ( int a )
-        {
-            int hola = 10;
-            return hola;
-        }
-
-        int main (char jaja){
-            int holaaaaaaa = 123213;
-            
-            if (holaaaaaa == 123213){
-                char e = 'e';
-            }
-
-
-            return jaja;
-
-        }
-
-        char a (char e, char a, char j, int f, float t, string hola ){
-            
-                int hola = 100;
-                if (e == e){
-                int hola = 120;
-                }
-                char e = 'a';
-
-                while (hola == 100){
-                    char e= 'b';
-                }
-
-                return e;
-        }
     }
 }

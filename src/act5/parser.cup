@@ -16,7 +16,7 @@ terminal PACKAGE, USING, NAMESPACE, CLASS;
 terminal PUBLIC, PRIVATE, PROTECTED, INTERNAL;
 terminal VOID, INT, STRING, BOOL, FLOAT, CHAR, TRUE, FALSE;
 terminal IF, ELSE, FOR, WHILE, RETURN;
-terminal STATIC, NEW;
+terminal STATIC, NEW, CONST;
 
 // Simbolos terminales
 terminal PUNTO_COMA, PUNTO, COMA, PARENTESIS_IZQUIERDO, PARENTESIS_DERECHO;
@@ -27,11 +27,11 @@ terminal MENOR_QUE, MAYOR_QUE, MENOR_O_IGUAL_QUE, MAYOR_O_IGUAL_QUE;
 terminal Y_LOGICO, O_LOGICO, INCREMENTO, NEGACION, DECREMENTO;
 
 // Otros terminales
-terminal IDENTIFICADOR, NDECIMAL, NENTERO, CADENA, CARACTER;
+terminal IDENTIFICADOR, NDECIMAL, NENTERO, CADENA, CARACTER, CONSTANTE, CWRITE, CWLINE, CRLINE;
 
-non terminal dec_using, dec_namespace, dec_clase, cuerpo, declaraciones, dec_variables, tipo_variable, tipo_int, tipo_string, tipo_char, tipo_bool, tipo_float,
-            valor_bool, expresion, exp_aritmetica, exp_logica, termino, factor, termino_logico, estructura_control, sentencia_if, sentencia_while, sentencia_for, for_init,
-            for_update, tipo_metodo, parametros, cuerpo_clase, parametro, metodos, metodo_int, metodo_char, metodo_string, metodo_bool, metodo_void, metodo_float;
+non terminal dec_using, dec_namespace, dec_clase, cuerpo, declaraciones, dec_variables, tipo_variable, expresion, exp_aritmetica, exp_logica, termino, factor, termino_logico, 
+            estructura_control, sentencia_if, sentencia_while, sentencia_for, for_init, for_update, tipo_metodo, parametros, cuerpo_clase, parametro, metodos, metodo_int, metodo_char, 
+            metodo_string, metodo_bool, metodo_void, metodo_float, val, variables, dec_constantes, mod_acceso, impresion, imprimir, lecturas ;
 
 start with declaraciones;
 
@@ -79,13 +79,9 @@ dec_clase ::= CLASS IDENTIFICADOR LLAVE_IZQUIERDA cuerpo_clase LLAVE_DERECHA
 
 cuerpo_clase ::= metodos cuerpo_clase
             | metodos 
+            | dec_constantes 
+            | dec_constantes cuerpo_clase 
             ;
-
-cuerpo ::= estructura_control cuerpo
-        | estructura_control
-        | dec_variables
-        | dec_variables cuerpo
-        ;
 
 
 //----------------------------------------------------------------------------//
@@ -99,37 +95,37 @@ metodos ::= metodo_int
             ;
 
 
-metodo_int ::= INT IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo RETURN IDENTIFICADOR PUNTO_COMA LLAVE_DERECHA 
+metodo_int ::= mod_acceso INT IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo RETURN IDENTIFICADOR PUNTO_COMA LLAVE_DERECHA 
         {:
             System.out.println("\n\n------------------DECLARACION DE FUNCION ENTERA----------------\n\n");
         :}
         ;
 
-metodo_string ::= STRING IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo RETURN IDENTIFICADOR PUNTO_COMA LLAVE_DERECHA 
+metodo_string ::= mod_acceso STRING IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo RETURN IDENTIFICADOR PUNTO_COMA LLAVE_DERECHA 
         {:
             System.out.println("\n\n------------------DECLARACION DE FUNCION STRING----------------\n\n");
         :}
         ;
 
-metodo_float ::= FLOAT IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo RETURN IDENTIFICADOR PUNTO_COMA LLAVE_DERECHA 
+metodo_float ::= mod_acceso FLOAT IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo RETURN IDENTIFICADOR PUNTO_COMA LLAVE_DERECHA 
         {:
             System.out.println("\n\n------------------DECLARACION DE FUNCION FLOAT----------------\n\n");
         :}
         ;
 
-metodo_bool ::= BOOL IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo RETURN IDENTIFICADOR PUNTO_COMA LLAVE_DERECHA 
+metodo_bool ::= mod_acceso BOOL IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo RETURN IDENTIFICADOR PUNTO_COMA LLAVE_DERECHA 
         {:
             System.out.println("\n\n------------------DECLARACION DE FUNCION BOLEANO----------------\n\n");
         :}
         ;
 
-metodo_char ::= CHAR IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo RETURN IDENTIFICADOR PUNTO_COMA LLAVE_DERECHA 
+metodo_char ::= mod_acceso CHAR IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo RETURN IDENTIFICADOR PUNTO_COMA LLAVE_DERECHA 
         {:
             System.out.println("\n\n------------------DECLARACION DE FUNCION CARACTER----------------\n\n");
         :}
         ;
 
-metodo_void ::= VOID IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo LLAVE_DERECHA 
+metodo_void ::= mod_acceso VOID IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo LLAVE_DERECHA 
         {:
             System.out.println("\n\n------------------DECLARACION DE FUNCION VACIA----------------\n\n");;
         :}
@@ -145,55 +141,101 @@ parametros ::= parametro
 parametro ::= tipo_metodo IDENTIFICADOR 
             ;
 
+cuerpo ::= estructura_control cuerpo
+        | estructura_control
+        | dec_variables
+        | dec_variables cuerpo
+        | impresion
+        | impresion cuerpo
+        ;
+
+
 
 //----------------------------------------------------------------------------//
 
-dec_variables ::= tipo_variable PUNTO_COMA 
-                | tipo_variable error 
+
+
+dec_constantes ::= mod_acceso CONST tipo_variable CONSTANTE ASIGNACION val PUNTO_COMA
+                {:
+                    System.out.println("Declaracion de constante");
+                :}
+                ;
+
+mod_acceso ::= PUBLIC
+            | PRIVATE
+            | PROTECTED
+            ;
+
+//----------------------------------------------------------------------------//
+
+impresion ::= CWLINE PARENTESIS_IZQUIERDO imprimir PARENTESIS_DERECHO PUNTO_COMA 
+            {:
+                System.out.println("---Impresion de consola con salto de linea---");
+            :}
+            | CWRITE PARENTESIS_IZQUIERDO imprimir PARENTESIS_DERECHO PUNTO_COMA 
+            {:
+                System.out.println("---Impresion de consola sin salto de linea---");
+            :}
+            ;
+
+imprimir ::= CADENA
+            | IDENTIFICADOR 
+            | CADENA SUMA imprimir
+            | IDENTIFICADOR SUMA imprimir
+            ;
+
+
+lecturas ::= CRLINE PARENTESIS_IZQUIERDO PARENTESIS_DERECHO;
+            
+
+
+//----------------------------------------------------------------------------//
+
+
+
+dec_variables ::= tipo_variable IDENTIFICADOR ASIGNACION val PUNTO_COMA 
+                {:
+                    System.out.println("Declaracion de variable con asignacion");
+                :}
+                |
+                tipo_variable IDENTIFICADOR PUNTO_COMA 
+                {:
+                    System.out.println("Declaracion de variable");
+                :}
+                | tipo_variable IDENTIFICADOR variables PUNTO_COMA 
+                {:
+                    System.out.println("Declaracion de multiples variables");
+                :}
+                | tipo_variable IDENTIFICADOR ASIGNACION lecturas PUNTO_COMA 
+                {:
+                    System.out.println("---Lectura de consola---");
+                :}
+                | tipo_variable IDENTIFICADOR error
+                {:
+                    System.err.println("  Error: Falta ';' en variable");
+                :}
+                | tipo_variable IDENTIFICADOR variables error
                 {:
                     System.err.println("  Error: Falta ';' en variable");
                 :}
                 ;
 
-tipo_variable ::= tipo_int
-                | tipo_float 
-                | tipo_char 
-                | tipo_string 
-                | tipo_bool 
-                ;
-
-tipo_int ::= INT IDENTIFICADOR ASIGNACION NENTERO 
-        {:
-            System.out.println("--Variable entera--");
-        :}
-        ;
-
-tipo_float ::= FLOAT IDENTIFICADOR ASIGNACION exp_aritmetica  
-        {:
-            System.out.println("--Variable flotante--");
-        :}
-        ;
-
-tipo_bool ::= BOOL IDENTIFICADOR ASIGNACION valor_bool 
-        {:
-            System.out.println("--Variable boleana--");
-        :}
-        ;
-
-valor_bool ::= TRUE
-            | FALSE
+variables ::= COMA IDENTIFICADOR variables
+            | COMA IDENTIFICADOR
             ;
 
-tipo_char ::= CHAR IDENTIFICADOR ASIGNACION CARACTER  
-        {:
-            System.out.println("--Variable caracter--");
-        :}
-        ;
+tipo_variable ::= INT
+                | FLOAT 
+                | CHAR 
+                | STRING 
+                | BOOL 
+                ;
 
-tipo_string ::= STRING IDENTIFICADOR ASIGNACION CADENA 
-        {:
-            System.out.println("--Variable cadena--");
-        :}
+val ::= exp_aritmetica 
+        | CADENA 
+        | CARACTER
+        | TRUE
+        | FALSE
         ;
 
 
