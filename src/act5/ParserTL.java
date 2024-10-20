@@ -682,7 +682,7 @@ class CUP$ParserTL$actions {
             {
               Object RESULT =null;
 		
-            System.out.println("---Declaracion de metodo entero---");
+            System.out.println("\n\n------------------DECLARACION DE FUNCION ENTERA----------------\n\n");
         
               CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("metodo_int",30, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-10)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
             }
@@ -693,7 +693,7 @@ class CUP$ParserTL$actions {
             {
               Object RESULT =null;
 		
-            System.out.println("---Declaracion de metodo cadena---");
+            System.out.println("\n\n------------------DECLARACION DE FUNCION STRING----------------\n\n");
         
               CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("metodo_string",32, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-10)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
             }
@@ -704,7 +704,7 @@ class CUP$ParserTL$actions {
             {
               Object RESULT =null;
 		
-            System.out.println("---Declaracion de metodo flotante---");
+            System.out.println("\n\n------------------DECLARACION DE FUNCION FLOAT----------------\n\n");
         
               CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("metodo_float",35, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-10)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
             }
@@ -715,7 +715,7 @@ class CUP$ParserTL$actions {
             {
               Object RESULT =null;
 		
-            System.out.println("---Declaracion de metodo boleano---");
+            System.out.println("\n\n------------------DECLARACION DE FUNCION BOLEANO----------------\n\n");
         
               CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("metodo_bool",33, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-10)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
             }
@@ -726,7 +726,7 @@ class CUP$ParserTL$actions {
             {
               Object RESULT =null;
 		
-            System.out.println("---Declaracion de metodo caracter---");
+            System.out.println("\n\n------------------DECLARACION DE FUNCION CARACTER----------------\n\n");
         
               CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("metodo_char",31, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-10)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
             }
@@ -737,7 +737,7 @@ class CUP$ParserTL$actions {
             {
               Object RESULT =null;
 		
-            System.out.println("---Declaracion de metodo vacio---");
+            System.out.println("\n\n------------------DECLARACION DE FUNCION VACIA----------------\n\n");;
         
               CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("metodo_void",34, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-7)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
             }

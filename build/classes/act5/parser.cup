@@ -78,7 +78,6 @@ dec_clase ::= CLASS IDENTIFICADOR LLAVE_IZQUIERDA cuerpo_clase LLAVE_DERECHA
             ;
 
 cuerpo_clase ::= metodos cuerpo_clase
-            | cuerpo 
             | metodos 
             ;
 
@@ -102,37 +101,37 @@ metodos ::= metodo_int
 
 metodo_int ::= INT IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo RETURN IDENTIFICADOR PUNTO_COMA LLAVE_DERECHA 
         {:
-            System.out.println("---Declaracion de metodo entero---");
+            System.out.println("\n\n------------------DECLARACION DE FUNCION ENTERA----------------\n\n");
         :}
         ;
 
 metodo_string ::= STRING IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo RETURN IDENTIFICADOR PUNTO_COMA LLAVE_DERECHA 
         {:
-            System.out.println("---Declaracion de metodo cadena---");
+            System.out.println("\n\n------------------DECLARACION DE FUNCION STRING----------------\n\n");
         :}
         ;
 
 metodo_float ::= FLOAT IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo RETURN IDENTIFICADOR PUNTO_COMA LLAVE_DERECHA 
         {:
-            System.out.println("---Declaracion de metodo flotante---");
+            System.out.println("\n\n------------------DECLARACION DE FUNCION FLOAT----------------\n\n");
         :}
         ;
 
 metodo_bool ::= BOOL IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo RETURN IDENTIFICADOR PUNTO_COMA LLAVE_DERECHA 
         {:
-            System.out.println("---Declaracion de metodo boleano---");
+            System.out.println("\n\n------------------DECLARACION DE FUNCION BOLEANO----------------\n\n");
         :}
         ;
 
 metodo_char ::= CHAR IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo RETURN IDENTIFICADOR PUNTO_COMA LLAVE_DERECHA 
         {:
-            System.out.println("---Declaracion de metodo caracter---");
+            System.out.println("\n\n------------------DECLARACION DE FUNCION CARACTER----------------\n\n");
         :}
         ;
 
 metodo_void ::= VOID IDENTIFICADOR PARENTESIS_IZQUIERDO parametros PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo LLAVE_DERECHA 
         {:
-            System.out.println("---Declaracion de metodo vacio---");
+            System.out.println("\n\n------------------DECLARACION DE FUNCION VACIA----------------\n\n");;
         :}
         ;
 

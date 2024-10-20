@@ -24,5 +24,20 @@ namespace adios{
             return jaja;
 
         }
+
+        char a (char e, char a, char j, int f, float t, string hola ){
+            
+                int hola = 100;
+                if (e == e){
+                int hola = 120;
+                }
+                char e = 'a';
+
+                while (hola == 100){
+                    char e= 'b';
+                }
+
+                return e;
+        }
     }
 }
