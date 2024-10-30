@@ -1,8 +1,11 @@
 package act5;
 import java_cup.runtime.*;
-
+ 
 parser code
 {:
+    public static TablaSimbolos tabla=new TablaSimbolos();
+    public static Simbolo simbolos;
+
     public void syntax_error(Symbol s) {
         report_error("Error de sintaxis en linea: " + (s.left) + " , columna: " + (s.right + 1) + ", simbolo: " + s.value, null);
     }
@@ -31,7 +34,8 @@ terminal IDENTIFICADOR, NDECIMAL, NENTERO, CADENA, CARACTER, CONSTANTE, CWRITE, 
 
 non terminal dec_using, dec_namespace, dec_clase, cuerpo, declaraciones, dec_variables, tipo_variable, expresion, exp_aritmetica, exp_logica, termino, factor, termino_logico, 
             estructura_control, sentencia_if, sentencia_while, sentencia_for, for_init, for_update, tipo_metodo, parametros, cuerpo_clase, parametro, metodos, metodo_int, metodo_char, 
-            metodo_string, metodo_bool, metodo_void, metodo_float, val, variables, dec_constantes, mod_acceso, impresion, imprimir, lecturas, llamar_funcion , pasar_parametros;
+            metodo_string, metodo_bool, metodo_void, metodo_float, val, variables, dec_constantes, mod_acceso, impresion, imprimir, lecturas, llamar_funcion , pasar_parametros,
+            varias_dec, tipo_int, tipo_char, tipo_float, tipo_string, tipo_bool, boleano;
 
 start with declaraciones;
 
@@ -159,7 +163,7 @@ cuerpo ::= estructura_control cuerpo
 
 
 
-dec_constantes ::= mod_acceso CONST tipo_variable CONSTANTE ASIGNACION val PUNTO_COMA
+dec_constantes ::= mod_acceso CONST INT CONSTANTE ASIGNACION val PUNTO_COMA
                 {:
                     System.out.println("Declaracion de constante");
                 :}
@@ -169,6 +173,10 @@ mod_acceso ::= PUBLIC
             | PRIVATE
             | PROTECTED
             ;
+
+val ::= NENTERO
+    | NDECIMAL
+    ;
 
 //----------------------------------------------------------------------------//
 
@@ -196,54 +204,54 @@ lecturas ::= CRLINE PARENTESIS_IZQUIERDO PARENTESIS_DERECHO;
 //----------------------------------------------------------------------------//
 
 
-
-dec_variables ::= tipo_variable IDENTIFICADOR ASIGNACION val PUNTO_COMA 
-                {:
-                    System.out.println("Declaracion de variable con asignacion");
-                :}
-                |
-                tipo_variable IDENTIFICADOR PUNTO_COMA 
-                {:
-                    System.out.println("Declaracion de variable");
-                :}
-                | tipo_variable IDENTIFICADOR variables PUNTO_COMA 
-                {:
-                    System.out.println("Declaracion de multiples variables");
-                :}
-                | tipo_variable IDENTIFICADOR ASIGNACION lecturas PUNTO_COMA 
-                {:
-                    System.out.println("---Lectura de consola---");
-                :}
-                | tipo_variable IDENTIFICADOR error
-                {:
-                    System.err.println("  Error: Falta ';' en variable");
-                :}
-                | tipo_variable IDENTIFICADOR variables error
-                {:
-                    System.err.println("  Error: Falta ';' en variable");
-                :}
+dec_variables ::= tipo_int
+                | tipo_string
+                | tipo_char
+                | tipo_float
+                | tipo_bool
                 ;
 
-variables ::= COMA IDENTIFICADOR variables
-            | COMA IDENTIFICADOR
-            ;
-
-tipo_variable ::= INT
-                | FLOAT 
-                | CHAR 
-                | STRING 
-                | BOOL 
-                ;
-
-val ::= exp_aritmetica 
-        | CADENA 
-        | CARACTER
-        | TRUE
-        | FALSE
+tipo_int ::= INT IDENTIFICADOR ASIGNACION exp_aritmetica PUNTO_COMA
+        {:
+            System.out.println("--Variable entera--");
+        :}
+        | INT IDENTIFICADOR ASIGNACION lecturas PUNTO_COMA
+        | INT IDENTIFICADOR PUNTO_COMA
         ;
 
+tipo_float ::= FLOAT IDENTIFICADOR ASIGNACION exp_aritmetica PUNTO_COMA
+        {:
+            System.out.println("--Variable entera--");
+        :}
+        | FLOAT IDENTIFICADOR ASIGNACION lecturas PUNTO_COMA
+        | FLOAT IDENTIFICADOR PUNTO_COMA
+        ;
 
+tipo_bool ::= BOOL IDENTIFICADOR ASIGNACION boleano PUNTO_COMA
+        {:
+            System.out.println("--Variable entera--");
+        :}
+        | BOOL IDENTIFICADOR ASIGNACION lecturas PUNTO_COMA
+        | BOOL IDENTIFICADOR PUNTO_COMA
+        ;
 
+boleano ::= TRUE | FALSE ;
+
+tipo_string ::= STRING IDENTIFICADOR ASIGNACION CADENA PUNTO_COMA
+        {:
+            System.out.println("--Variable entera--");
+        :}
+        | STRING IDENTIFICADOR ASIGNACION lecturas PUNTO_COMA
+        | STRING IDENTIFICADOR PUNTO_COMA
+        ;
+
+tipo_char ::= CHAR IDENTIFICADOR ASIGNACION CARACTER PUNTO_COMA
+        {:
+            System.out.println("--Variable entera--");
+        :}
+        | CHAR IDENTIFICADOR ASIGNACION lecturas PUNTO_COMA
+        | CHAR IDENTIFICADOR PUNTO_COMA
+        ;
 
 //----------------------------------------------------------------------------------//
 

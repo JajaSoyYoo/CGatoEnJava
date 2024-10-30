@@ -5,7 +5,7 @@ namespace adios{
         public const int NUM1 = 10;
         public const int NUM2 = 15;
 
-        public int suma ( int num1, int num2 ){
+        public int suma ( int num1, int num2 , int num3){
             
             int suma = num1 + num2;
 
@@ -25,11 +25,13 @@ namespace adios{
             Console.Write("Introduce numero 2 -> ");
             int num2 = Console.ReadLine();
             
+            
             int resultado;
             resultado = suma(num1, num2);
             
             Console.WriteLine("Resultado: " + resultado );
-            
+            int num5 = 56;
+            char verdadero = '5';
             return jaja;
         }
         
