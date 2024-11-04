@@ -34,6 +34,6 @@ public class TablaSimbolos {//nombres de variables, constantes, metodos, clases
         for (Simbolo value : tabla.values()) {
             simbolos+=value;
         }
-        return null;
+        return simbolos;
     }
 }

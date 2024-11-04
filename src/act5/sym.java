@@ -22,12 +22,12 @@ public class sym {
   public static final int FOR = 20;
   public static final int CORCHETE_DERECHO = 34;
   public static final int STATIC = 23;
-  public static final int CONSTANTE = 56;
-  public static final int IDENTIFICADOR = 51;
-  public static final int CWLINE = 58;
-  public static final int CARACTER = 55;
+  public static final int CONSTANTE = 53;
+  public static final int IDENTIFICADOR = 59;
+  public static final int CWLINE = 55;
+  public static final int CARACTER = 52;
   public static final int IGUALDAD = 40;
-  public static final int NENTERO = 53;
+  public static final int NENTERO = 57;
   public static final int BOOL = 13;
   public static final int CLASS = 5;
   public static final int INCREMENTO = 48;
@@ -42,13 +42,13 @@ public class sym {
   public static final int NEW = 24;
   public static final int error = 1;
   public static final int COMA = 28;
-  public static final int CADENA = 54;
+  public static final int CADENA = 51;
   public static final int NEGACION = 49;
-  public static final int NDECIMAL = 52;
+  public static final int NDECIMAL = 58;
   public static final int MAYOR_QUE = 43;
   public static final int VOID = 10;
   public static final int ASIGNACION = 39;
-  public static final int CRLINE = 59;
+  public static final int CRLINE = 56;
   public static final int ELSE = 19;
   public static final int PROTECTED = 8;
   public static final int PUNTO = 27;
@@ -58,7 +58,7 @@ public class sym {
   public static final int Y_LOGICO = 46;
   public static final int FLOAT = 14;
   public static final int PUBLIC = 6;
-  public static final int CWRITE = 57;
+  public static final int CWRITE = 54;
   public static final int MAYOR_O_IGUAL_QUE = 45;
   public static final int LLAVE_IZQUIERDA = 31;
   public static final int STRING = 12;
@@ -120,15 +120,15 @@ public class sym {
   "INCREMENTO",
   "NEGACION",
   "DECREMENTO",
-  "IDENTIFICADOR",
-  "NDECIMAL",
-  "NENTERO",
   "CADENA",
   "CARACTER",
   "CONSTANTE",
   "CWRITE",
   "CWLINE",
-  "CRLINE"
+  "CRLINE",
+  "NENTERO",
+  "NDECIMAL",
+  "IDENTIFICADOR"
   };
 }
 

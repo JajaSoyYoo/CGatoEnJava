@@ -4,7 +4,7 @@ import java_cup.runtime.*;
 parser code
 {:
     public static TablaSimbolos tabla=new TablaSimbolos();
-    public static Simbolo simbolos;
+    public static Simbolo simbolo;
 
     public void syntax_error(Symbol s) {
         report_error("Error de sintaxis en linea: " + (s.left) + " , columna: " + (s.right + 1) + ", simbolo: " + s.value, null);
@@ -30,7 +30,9 @@ terminal MENOR_QUE, MAYOR_QUE, MENOR_O_IGUAL_QUE, MAYOR_O_IGUAL_QUE;
 terminal Y_LOGICO, O_LOGICO, INCREMENTO, NEGACION, DECREMENTO;
 
 // Otros terminales
-terminal IDENTIFICADOR, NDECIMAL, NENTERO, CADENA, CARACTER, CONSTANTE, CWRITE, CWLINE, CRLINE;
+terminal CADENA, CARACTER, CONSTANTE, CWRITE, CWLINE, CRLINE;
+terminal String NENTERO, NDECIMAL;
+terminal String IDENTIFICADOR;
 
 non terminal dec_using, dec_namespace, dec_clase, cuerpo, declaraciones, dec_variables, tipo_variable, expresion, exp_aritmetica, exp_logica, termino, factor, termino_logico, 
             estructura_control, sentencia_if, sentencia_while, sentencia_for, for_init, for_update, tipo_metodo, parametros, cuerpo_clase, parametro, metodos, metodo_int, metodo_char, 
@@ -211,46 +213,134 @@ dec_variables ::= tipo_int
                 | tipo_bool
                 ;
 
-tipo_int ::= INT IDENTIFICADOR ASIGNACION exp_aritmetica PUNTO_COMA
+tipo_int ::= INT IDENTIFICADOR:id ASIGNACION NENTERO:entero PUNTO_COMA
         {:
-            System.out.println("--Variable entera--");
+            System.out.println("--Variable entera inicializada--");
+            parser.simbolo=new Simbolo(id, "int", ""+entero , "metodo", false);
+            if(parser.tabla.agregar(id, parser.simbolo)){
+                System.out.println("Variable agregada correctamente " + id);
+                System.out.println(tabla.mostrar());
+            }else{
+                System.out.println("Variable NO agregada");
+            }
         :}
         | INT IDENTIFICADOR ASIGNACION lecturas PUNTO_COMA
-        | INT IDENTIFICADOR PUNTO_COMA
-        ;
-
-tipo_float ::= FLOAT IDENTIFICADOR ASIGNACION exp_aritmetica PUNTO_COMA
+        {:
+            System.out.println("--Variable entera de lectura--");
+        :}
+        | INT IDENTIFICADOR:id PUNTO_COMA
         {:
             System.out.println("--Variable entera--");
+            parser.simbolo=new Simbolo(id, "int", "0" , "metodo", false);
+            if(parser.tabla.agregar(id, parser.simbolo)){
+                System.out.println("Variable agregada correctamente " + id);
+                System.out.println(tabla.mostrar());
+            }else{
+                System.out.println("Variable NO agregada");
+            }
+        :}
+        ;
+
+tipo_float ::= FLOAT IDENTIFICADOR:id ASIGNACION NDECIMAL:flotante PUNTO_COMA
+        {:
+            System.out.println("--Variable flotante--");
+            parser.simbolo=new Simbolo(id, "float", ""+flotante , "metodo", false);
+            if(parser.tabla.agregar(id, parser.simbolo)){
+                System.out.println("Variable agregada correctamente " + id);
+                System.out.println(tabla.mostrar());
+            }else{
+                System.out.println("Variable NO agregada");
+            }
         :}
         | FLOAT IDENTIFICADOR ASIGNACION lecturas PUNTO_COMA
-        | FLOAT IDENTIFICADOR PUNTO_COMA
+        {:
+            System.out.println("--Variable flotante de lectura--");
+        :}
+        | FLOAT IDENTIFICADOR:id PUNTO_COMA
+        {:
+            System.out.println("--Variable flotante--");
+            parser.simbolo=new Simbolo(id, "float", "0" , "metodo", false);
+            if(parser.tabla.agregar(id, parser.simbolo)){
+                System.out.println("Variable agregada correctamente " + id);
+                System.out.println(tabla.mostrar());
+            }else{
+                System.out.println("Variable NO agregada");
+            }
+        :}
         ;
 
 tipo_bool ::= BOOL IDENTIFICADOR ASIGNACION boleano PUNTO_COMA
         {:
-            System.out.println("--Variable entera--");
+            System.out.println("--Variable boleano--");
+            
         :}
         | BOOL IDENTIFICADOR ASIGNACION lecturas PUNTO_COMA
-        | BOOL IDENTIFICADOR PUNTO_COMA
+        {:
+            System.out.println("--Variable boleano de lectura--");
+        :}
+        | BOOL IDENTIFICADOR:id PUNTO_COMA
+        {:
+            System.out.println("--Variable boleano--");
+            
+        :}
         ;
 
 boleano ::= TRUE | FALSE ;
 
-tipo_string ::= STRING IDENTIFICADOR ASIGNACION CADENA PUNTO_COMA
+tipo_string ::= STRING IDENTIFICADOR:id ASIGNACION CADENA:cadena PUNTO_COMA
         {:
-            System.out.println("--Variable entera--");
+            System.out.println("--Variable cadena--");
+            parser.simbolo=new Simbolo(id, "string", ""+cadena , "metodo", false);
+            if(parser.tabla.agregar(id, parser.simbolo)){
+                System.out.println("Variable agregada correctamente " + id);
+                System.out.println(tabla.mostrar());
+            }else{
+                System.out.println("Variable NO agregada");
+            }
         :}
         | STRING IDENTIFICADOR ASIGNACION lecturas PUNTO_COMA
-        | STRING IDENTIFICADOR PUNTO_COMA
+        {:
+            System.out.println("--Variable boleano de lectura--");
+        :}
+        | STRING IDENTIFICADOR:id PUNTO_COMA
+        {:
+            System.out.println("--Variable cadena--");
+            parser.simbolo=new Simbolo(id, "string", "" , "metodo", false);
+            if(parser.tabla.agregar(id, parser.simbolo)){
+                System.out.println("Variable agregada correctamente " + id);
+                System.out.println(tabla.mostrar());
+            }else{
+                System.out.println("Variable NO agregada");
+            }
+        :}
         ;
 
-tipo_char ::= CHAR IDENTIFICADOR ASIGNACION CARACTER PUNTO_COMA
+tipo_char ::= CHAR IDENTIFICADOR:id ASIGNACION CARACTER:caracter PUNTO_COMA
         {:
-            System.out.println("--Variable entera--");
+            System.out.println("--Variable caracter--");
+            parser.simbolo=new Simbolo(id, "char", ""+caracter , "metodo", false);
+            if(parser.tabla.agregar(id, parser.simbolo)){
+                System.out.println("Variable agregada correctamente " + id);
+                System.out.println(tabla.mostrar());
+            }else{
+                System.out.println("Variable NO agregada");
+            }
         :}
         | CHAR IDENTIFICADOR ASIGNACION lecturas PUNTO_COMA
-        | CHAR IDENTIFICADOR PUNTO_COMA
+        {:
+            System.out.println("--Variable caracter de lectura--");
+        :}
+        | CHAR IDENTIFICADOR:id PUNTO_COMA
+        {:
+            System.out.println("--Variable caracter--");
+            parser.simbolo=new Simbolo(id, "char", "" , "metodo", false);
+            if(parser.tabla.agregar(id, parser.simbolo)){
+                System.out.println("Variable agregada correctamente " + id);
+                System.out.println(tabla.mostrar());
+            }else{
+                System.out.println("Variable NO agregada");
+            }
+        :}
         ;
 
 //----------------------------------------------------------------------------------//

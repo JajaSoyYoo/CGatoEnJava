@@ -82,7 +82,7 @@ public class Simbolo {
 
     @Override
     public String toString() {
-        return "Simbolo{" + "nombre=" + nombre + ", tipo=" + tipo + ", valor=" + valor + ", ambito=" + ambito + ", constante=" + constante + '}';
+        return "Simbolo{" + "nombre=" + nombre + ", tipo=" + tipo + ", valor=" + valor + ", ambito=" + ambito + ", constante=" + constante + '}' + '\n';
     }
 
     
