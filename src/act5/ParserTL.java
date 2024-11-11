@@ -31,7 +31,7 @@ public class ParserTL extends java_cup.runtime.lr_parser {
   /** Production table. */
   protected static final short _production_table[][] = 
     unpackFromStrings(new String[] {
-    "\000\165\000\002\002\004\000\002\006\004\000\002\006" +
+    "\000\204\000\002\002\004\000\002\006\004\000\002\006" +
     "\004\000\002\002\005\000\002\002\005\000\002\003\007" +
     "\000\002\003\007\000\002\003\007\000\002\004\007\000" +
     "\002\004\007\000\002\004\006\000\002\027\004\000\002" +
@@ -67,7 +67,11 @@ public class ParserTL extends java_cup.runtime.lr_parser {
     "\005\000\002\016\005\000\002\016\005\000\002\016\005" +
     "\000\002\016\005\000\002\047\007\000\002\047\011\000" +
     "\002\050\003\000\002\050\003\000\002\050\005\000\002" +
-    "\050\005" });
+    "\050\005\000\002\060\003\000\002\060\003\000\002\061" +
+    "\005\000\002\061\007\000\002\061\003\000\002\062\005" +
+    "\000\002\062\007\000\002\062\005\000\002\062\005\000" +
+    "\002\064\003\000\002\064\003\000\002\064\003\000\002" +
+    "\064\003\000\002\063\003\000\002\063\003" });
 
   /** Access to production table. */
   public short[][] production_table() {return _production_table;}
@@ -534,6 +538,14 @@ public class ParserTL extends java_cup.runtime.lr_parser {
     public void unrecovered_syntax_error(Symbol s) throws java.lang.Exception {
         report_fatal_error("", null);
     }
+
+    Object resultado;
+
+
+    public static int contador = 0;
+
+
+    
 
 
 /** Cup generated class to encapsulate user supplied action code.*/
@@ -1178,10 +1190,17 @@ class CUP$ParserTL$actions {
 		String entero = (String)((java_cup.runtime.Symbol) CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-1)).value;
 		
             System.out.println("--Variable entera inicializada--");
-            parser.simbolo=new Simbolo(id, "int", ""+entero , "metodo", false);
+            //String ent = String.valueOf(resultado);
+            parser.simbolo=new Simbolo(id, "int", entero , "metodo", false);
             if(parser.tabla.agregar(id, parser.simbolo)){
                 System.out.println("Variable agregada correctamente " + id);
                 System.out.println(tabla.mostrar());
+                System.out.println("");
+                parser.contador++;
+                System.out.println("t"+ (parser.contador) + " = "+entero);
+                System.out.println(""+id+" = " + "t" + (parser.contador));
+                System.out.println("");
+                
             }else{
                 System.out.println("Variable NO agregada");
             }
@@ -1214,6 +1233,12 @@ class CUP$ParserTL$actions {
             if(parser.tabla.agregar(id, parser.simbolo)){
                 System.out.println("Variable agregada correctamente " + id);
                 System.out.println(tabla.mostrar());
+                System.out.println("");
+                parser.contador++;
+                System.out.println("t"+ (parser.contador) + " = 0");
+                System.out.println(""+id+" = " + "t" + (parser.contador));
+                System.out.println("");
+                
             }else{
                 System.out.println("Variable NO agregada");
             }
@@ -1788,6 +1813,176 @@ class CUP$ParserTL$actions {
               Object RESULT =null;
 
               CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("pasar_parametros",38, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-2)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 117: // exp_int ::= NENTERO 
+            {
+              Object RESULT =null;
+		int enteroleft = ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()).left;
+		int enteroright = ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()).right;
+		String entero = (String)((java_cup.runtime.Symbol) CUP$ParserTL$stack.peek()).value;
+		
+            resultado = entero;
+        
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("exp_int",46, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 118: // exp_int ::= IDENTIFICADOR 
+            {
+              Object RESULT =null;
+		int valorleft = ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()).left;
+		int valorright = ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()).right;
+		String valor = (String)((java_cup.runtime.Symbol) CUP$ParserTL$stack.peek()).value;
+		
+            
+        
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("exp_int",46, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 119: // ope_int ::= exp_int operador exp_int 
+            {
+              Object RESULT =null;
+		int entero1left = ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-2)).left;
+		int entero1right = ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-2)).right;
+		Object entero1 = (Object)((java_cup.runtime.Symbol) CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-2)).value;
+		int opleft = ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-1)).left;
+		int opright = ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-1)).right;
+		Object op = (Object)((java_cup.runtime.Symbol) CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-1)).value;
+		int entero2left = ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()).left;
+		int entero2right = ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()).right;
+		Object entero2 = (Object)((java_cup.runtime.Symbol) CUP$ParserTL$stack.peek()).value;
+		
+                
+                System.out.println("entero1");
+                resultado = ((Integer) entero1).intValue() + ((Integer) entero2).intValue();
+            
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("ope_int",47, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-2)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 120: // ope_int ::= exp_int operador exp_int operador ope_int 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("ope_int",47, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-4)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 121: // ope_int ::= exp_int 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("ope_int",47, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 122: // parente ::= PARENTESIS_IZQUIERDO ope_int PARENTESIS_DERECHO 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("parente",48, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-2)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 123: // parente ::= PARENTESIS_IZQUIERDO ope_int PARENTESIS_DERECHO operador parente 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("parente",48, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-4)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 124: // parente ::= operador exp_int parente 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("parente",48, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-2)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 125: // parente ::= exp_int operador parente 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("parente",48, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.elementAt(CUP$ParserTL$top-2)), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 126: // operador ::= SUMA 
+            {
+              Object RESULT =null;
+		int sumaleft = ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()).left;
+		int sumaright = ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()).right;
+		Object suma = (Object)((java_cup.runtime.Symbol) CUP$ParserTL$stack.peek()).value;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("operador",50, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 127: // operador ::= RESTA 
+            {
+              Object RESULT =null;
+		int restaleft = ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()).left;
+		int restaright = ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()).right;
+		Object resta = (Object)((java_cup.runtime.Symbol) CUP$ParserTL$stack.peek()).value;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("operador",50, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 128: // operador ::= MULTIPLICACION 
+            {
+              Object RESULT =null;
+		int multileft = ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()).left;
+		int multiright = ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()).right;
+		Object multi = (Object)((java_cup.runtime.Symbol) CUP$ParserTL$stack.peek()).value;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("operador",50, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 129: // operador ::= DIVISION 
+            {
+              Object RESULT =null;
+		int divileft = ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()).left;
+		int diviright = ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()).right;
+		Object divi = (Object)((java_cup.runtime.Symbol) CUP$ParserTL$stack.peek()).value;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("operador",50, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 130: // uso_exp ::= ope_int 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("uso_exp",49, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
+            }
+          return CUP$ParserTL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 131: // uso_exp ::= parente 
+            {
+              Object RESULT =null;
+
+              CUP$ParserTL$result = parser.getSymbolFactory().newSymbol("uso_exp",49, ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), ((java_cup.runtime.Symbol)CUP$ParserTL$stack.peek()), RESULT);
             }
           return CUP$ParserTL$result;
 

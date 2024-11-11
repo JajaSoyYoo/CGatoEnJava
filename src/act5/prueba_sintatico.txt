@@ -3,12 +3,12 @@ using System;
 namespace adios{
     class hola{
         public void main(){
-            int hola = 10;
-            int hol = 20;
-            float ho = 10.1;
-            string h = "saddasd";
-            char caracter = 'a';
-            char b;
+            
+            int hola = 1;
+            int adios = 1;
+            int ajaja = 2;
+            int x;
+            int y;
         }
         
     }

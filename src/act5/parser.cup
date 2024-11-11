@@ -12,6 +12,14 @@ parser code
     public void unrecovered_syntax_error(Symbol s) throws java.lang.Exception {
         report_fatal_error("", null);
     }
+
+    Object resultado;
+
+
+    public static int contador = 0;
+
+
+    
 :}
 
 // Reservadas terminales
@@ -31,13 +39,16 @@ terminal Y_LOGICO, O_LOGICO, INCREMENTO, NEGACION, DECREMENTO;
 
 // Otros terminales
 terminal CADENA, CARACTER, CONSTANTE, CWRITE, CWLINE, CRLINE;
-terminal String NENTERO, NDECIMAL;
+terminal String NENTERO; 
+terminal String NDECIMAL;
 terminal String IDENTIFICADOR;
 
 non terminal dec_using, dec_namespace, dec_clase, cuerpo, declaraciones, dec_variables, tipo_variable, expresion, exp_aritmetica, exp_logica, termino, factor, termino_logico, 
             estructura_control, sentencia_if, sentencia_while, sentencia_for, for_init, for_update, tipo_metodo, parametros, cuerpo_clase, parametro, metodos, metodo_int, metodo_char, 
             metodo_string, metodo_bool, metodo_void, metodo_float, val, variables, dec_constantes, mod_acceso, impresion, imprimir, lecturas, llamar_funcion , pasar_parametros,
             varias_dec, tipo_int, tipo_char, tipo_float, tipo_string, tipo_bool, boleano;
+
+non terminal exp_int, ope_int, parente, uso_exp, operador; 
 
 start with declaraciones;
 
@@ -216,10 +227,17 @@ dec_variables ::= tipo_int
 tipo_int ::= INT IDENTIFICADOR:id ASIGNACION NENTERO:entero PUNTO_COMA
         {:
             System.out.println("--Variable entera inicializada--");
-            parser.simbolo=new Simbolo(id, "int", ""+entero , "metodo", false);
+            //String ent = String.valueOf(resultado);
+            parser.simbolo=new Simbolo(id, "int", entero , "metodo", false);
             if(parser.tabla.agregar(id, parser.simbolo)){
                 System.out.println("Variable agregada correctamente " + id);
                 System.out.println(tabla.mostrar());
+                System.out.println("");
+                parser.contador++;
+                System.out.println("t"+ (parser.contador) + " = "+entero);
+                System.out.println(""+id+" = " + "t" + (parser.contador));
+                System.out.println("");
+                
             }else{
                 System.out.println("Variable NO agregada");
             }
@@ -235,6 +253,12 @@ tipo_int ::= INT IDENTIFICADOR:id ASIGNACION NENTERO:entero PUNTO_COMA
             if(parser.tabla.agregar(id, parser.simbolo)){
                 System.out.println("Variable agregada correctamente " + id);
                 System.out.println(tabla.mostrar());
+                System.out.println("");
+                parser.contador++;
+                System.out.println("t"+ (parser.contador) + " = 0");
+                System.out.println(""+id+" = " + "t" + (parser.contador));
+                System.out.println("");
+                
             }else{
                 System.out.println("Variable NO agregada");
             }
@@ -433,3 +457,41 @@ pasar_parametros ::= IDENTIFICADOR
                     | IDENTIFICADOR COMA pasar_parametros
                     | CONSTANTE COMA pasar_parametros
                     ;
+
+//----------------------------------------------------------------------------//
+
+exp_int ::=NENTERO:entero
+        {:
+            resultado = entero;
+        :}
+        | IDENTIFICADOR:valor
+        {:
+            
+        :}
+        ;
+
+ope_int ::= exp_int:entero1 operador:op exp_int:entero2
+            {:
+                
+                System.out.println("entero1");
+                resultado = ((Integer) entero1).intValue() + ((Integer) entero2).intValue();
+            :}
+            | exp_int operador exp_int operador ope_int
+            | exp_int
+            ;
+
+parente ::= PARENTESIS_IZQUIERDO ope_int PARENTESIS_DERECHO
+            | PARENTESIS_IZQUIERDO ope_int PARENTESIS_DERECHO operador parente
+            | operador exp_int parente
+            | exp_int operador parente
+            ;
+
+operador ::= SUMA:suma
+            | RESTA:resta
+            | MULTIPLICACION:multi
+            | DIVISION:divi
+            ;
+
+uso_exp ::= ope_int
+            | parente
+            ;
