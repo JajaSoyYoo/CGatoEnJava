@@ -36,4 +36,12 @@ public class TablaSimbolos {//nombres de variables, constantes, metodos, clases
         }
         return simbolos;
     }
+    public String consultaValor(String nombre) {
+        Simbolo simbolo = tabla.get(nombre);
+        if (simbolo != null) {
+            return simbolo.getValor(); 
+        } else {
+            return "error"; 
+        }
+    }
 }

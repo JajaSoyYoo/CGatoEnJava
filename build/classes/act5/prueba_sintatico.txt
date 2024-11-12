@@ -4,11 +4,19 @@ namespace adios{
     class hola{
         public void main(){
             
-            int hola = 1;
-            int adios = 1;
-            int ajaja = 2;
-            int x;
-            int y;
+            int diez = 10;
+
+            int uno = 1+10;
+
+            if(diez <= uno){
+                int hola = 1+1;
+                
+            }
+
+            while(diez != uno){
+                int verdadero = 10 * 50;
+                float diviion = 12/1.3;
+            }
         }
         
     }

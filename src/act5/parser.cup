@@ -17,13 +17,13 @@ parser code
 
 
     public static int contador = 0;
-
-
+    public static String ope;
+    public static Boolean siono;
     
 :}
 
 // Reservadas terminales
-terminal PACKAGE, USING, NAMESPACE, CLASS;
+terminal PACKAGE,USING, NAMESPACE, CLASS;
 terminal PUBLIC, PRIVATE, PROTECTED, INTERNAL;
 terminal VOID, INT, STRING, BOOL, FLOAT, CHAR, TRUE, FALSE;
 terminal IF, ELSE, FOR, WHILE, RETURN;
@@ -43,12 +43,12 @@ terminal String NENTERO;
 terminal String NDECIMAL;
 terminal String IDENTIFICADOR;
 
-non terminal dec_using, dec_namespace, dec_clase, cuerpo, declaraciones, dec_variables, tipo_variable, expresion, exp_aritmetica, exp_logica, termino, factor, termino_logico, 
+non terminal dec_using, dec_namespace, dec_clase, cuerpo, declaraciones, dec_variables, termino_logico, 
             estructura_control, sentencia_if, sentencia_while, sentencia_for, for_init, for_update, tipo_metodo, parametros, cuerpo_clase, parametro, metodos, metodo_int, metodo_char, 
-            metodo_string, metodo_bool, metodo_void, metodo_float, val, variables, dec_constantes, mod_acceso, impresion, imprimir, lecturas, llamar_funcion , pasar_parametros,
-            varias_dec, tipo_int, tipo_char, tipo_float, tipo_string, tipo_bool, boleano;
+            metodo_string, metodo_bool, metodo_void, metodo_float, val, dec_constantes, mod_acceso, impresion, imprimir, lecturas, llamar_funcion , pasar_parametros,
+            tipo_int, tipo_char, tipo_float, tipo_string, tipo_bool, boleano;
 
-non terminal exp_int, ope_int, parente, uso_exp, operador; 
+non terminal ope_int, operador, ope_float, compa, exp_log; 
 
 start with declaraciones;
 
@@ -227,7 +227,7 @@ dec_variables ::= tipo_int
 tipo_int ::= INT IDENTIFICADOR:id ASIGNACION NENTERO:entero PUNTO_COMA
         {:
             System.out.println("--Variable entera inicializada--");
-            //String ent = String.valueOf(resultado);
+            
             parser.simbolo=new Simbolo(id, "int", entero , "metodo", false);
             if(parser.tabla.agregar(id, parser.simbolo)){
                 System.out.println("Variable agregada correctamente " + id);
@@ -240,6 +240,27 @@ tipo_int ::= INT IDENTIFICADOR:id ASIGNACION NENTERO:entero PUNTO_COMA
                 
             }else{
                 System.out.println("Variable NO agregada");
+            }
+        :}
+        | INT IDENTIFICADOR:id ASIGNACION ope_int PUNTO_COMA
+        {:
+            System.out.println("--Variable entera inicializada con operacion--");
+            if("error".equals(resultado)){
+                System.err.println("Error division entre 0");
+            }else{
+                parser.simbolo=new Simbolo(id, "int", ""+resultado , "metodo", false);
+                if(parser.tabla.agregar(id, parser.simbolo)){
+                System.out.println("Variable agregada correctamente " + id);
+                System.out.println(tabla.mostrar());
+                System.out.println("");
+                parser.contador++;
+                System.out.println("t"+ (parser.contador) + " = "+resultado);
+                System.out.println(""+id+" = " + "t" + (parser.contador));
+                System.out.println("");
+                
+            }else{
+                System.out.println("Variable NO agregada");
+            }
             }
         :}
         | INT IDENTIFICADOR ASIGNACION lecturas PUNTO_COMA
@@ -275,6 +296,28 @@ tipo_float ::= FLOAT IDENTIFICADOR:id ASIGNACION NDECIMAL:flotante PUNTO_COMA
             }else{
                 System.out.println("Variable NO agregada");
             }
+        :}
+        | FLOAT IDENTIFICADOR:id ASIGNACION ope_float PUNTO_COMA
+        {:
+            System.out.println("--Variable float inicializada con operacion--");
+            if("error".equals(resultado)){
+                System.err.println("Error division entre 0");
+            }else{
+                parser.simbolo=new Simbolo(id, "float", ""+resultado , "metodo", false);
+                if(parser.tabla.agregar(id, parser.simbolo)){
+                System.out.println("Variable agregada correctamente " + id);
+                System.out.println(tabla.mostrar());
+                System.out.println("");
+                parser.contador++;
+                System.out.println("t"+ (parser.contador) + " = "+resultado);
+                System.out.println(""+id+" = " + "t" + (parser.contador));
+                System.out.println("");
+                
+            }else{
+                System.out.println("Variable NO agregada");
+            }
+            }
+            
         :}
         | FLOAT IDENTIFICADOR ASIGNACION lecturas PUNTO_COMA
         {:
@@ -375,20 +418,35 @@ estructura_control ::= sentencia_if
                     | sentencia_for;
 
 
-sentencia_if ::= IF PARENTESIS_IZQUIERDO termino_logico PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo LLAVE_DERECHA
+sentencia_if ::= IF PARENTESIS_IZQUIERDO exp_log PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo LLAVE_DERECHA
             {:
                 System.out.println("---Sentencia if---");
+                if(siono){
+                    System.out.println("expresion verdadera");
+                }
+                else
+                    System.out.println("expresion falsa");
             :}
-            | IF PARENTESIS_IZQUIERDO termino_logico PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo LLAVE_DERECHA ELSE LLAVE_IZQUIERDA cuerpo LLAVE_DERECHA
+            | IF PARENTESIS_IZQUIERDO exp_log PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo LLAVE_DERECHA ELSE LLAVE_IZQUIERDA cuerpo LLAVE_DERECHA
             {:
                 System.out.println("---Sentencia if con else---");
+                if(siono){
+                    System.out.println("expresion verdadera");
+                }
+                else
+                    System.out.println("expresion falsa");
             :}
             ;
 
 
-sentencia_while ::= WHILE PARENTESIS_IZQUIERDO termino_logico PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo LLAVE_DERECHA
+sentencia_while ::= WHILE PARENTESIS_IZQUIERDO exp_log PARENTESIS_DERECHO LLAVE_IZQUIERDA cuerpo LLAVE_DERECHA
                 {:
                     System.out.println("---Sentencia while---");
+                    if(siono){
+                    System.out.println("expresion verdadera");
+                }
+                else
+                    System.out.println("expresion falsa");
                 :}
                 ;
 
@@ -404,41 +462,7 @@ for_update ::= IDENTIFICADOR INCREMENTO
             ;
 
 
-//----------------------------------------------------------------------------//
 
-
-expresion ::= exp_aritmetica 
-            | exp_logica
-            ;
-
-exp_aritmetica ::= termino 
-                | exp_aritmetica SUMA termino 
-                | exp_aritmetica RESTA termino 
-                ;
-
-termino ::= factor 
-        | termino MULTIPLICACION factor 
-        | termino DIVISION factor 
-        ;
-
-factor ::= IDENTIFICADOR 
-        | CONSTANTE
-        | NENTERO 
-        | NDECIMAL 
-        | PARENTESIS_IZQUIERDO exp_aritmetica PARENTESIS_DERECHO 
-        ;
-
-exp_logica ::= termino_logico Y_LOGICO termino_logico 
-            | termino_logico O_LOGICO termino_logico  
-            ;
-
-termino_logico ::= exp_aritmetica IGUALDAD exp_aritmetica 
-                | exp_aritmetica DESIGUALDAD exp_aritmetica 
-                | exp_aritmetica MAYOR_QUE exp_aritmetica 
-                | exp_aritmetica MENOR_QUE exp_aritmetica 
-                | exp_aritmetica MENOR_O_IGUAL_QUE exp_aritmetica 
-                | exp_aritmetica MAYOR_O_IGUAL_QUE exp_aritmetica 
-                ;
 
 //----------------------------------------------------------------------------//
 
@@ -460,38 +484,81 @@ pasar_parametros ::= IDENTIFICADOR
 
 //----------------------------------------------------------------------------//
 
-exp_int ::=NENTERO:entero
-        {:
-            resultado = entero;
-        :}
-        | IDENTIFICADOR:valor
-        {:
-            
-        :}
-        ;
 
-ope_int ::= exp_int:entero1 operador:op exp_int:entero2
+ope_int ::= NENTERO:entero1 operador NENTERO:entero2
             {:
+                resultado = Operacion.convInt(entero1, ""+ope, entero2);
                 
-                System.out.println("entero1");
-                resultado = ((Integer) entero1).intValue() + ((Integer) entero2).intValue();
             :}
-            | exp_int operador exp_int operador ope_int
-            | exp_int
             ;
 
-parente ::= PARENTESIS_IZQUIERDO ope_int PARENTESIS_DERECHO
-            | PARENTESIS_IZQUIERDO ope_int PARENTESIS_DERECHO operador parente
-            | operador exp_int parente
-            | exp_int operador parente
+ope_float ::= NDECIMAL:decimal1 operador NDECIMAL:decimal2
+            {:
+                resultado = Operacion.convFloat(decimal1, ""+ope, decimal2);
+                
+            :}
+            | NENTERO:decimal1 operador NDECIMAL:decimal2
+            {:
+                resultado = Operacion.convFloat(decimal1, ""+ope, decimal2);
+                
+            :}
+            | NDECIMAL:decimal1 operador NENTERO:decimal2
+            {:
+                resultado = Operacion.convFloat(decimal1, ""+ope, decimal2);
+                
+            :}
+            | NENTERO:decimal1 operador NENTERO:decimal2
+            {:
+                resultado = Operacion.convFloat(decimal1, ""+ope, decimal2);
+                
+            :}
             ;
+
 
 operador ::= SUMA:suma
+            {:ope = ""+suma;:}
             | RESTA:resta
+            {:ope = ""+resta;:}
             | MULTIPLICACION:multi
+            {:ope = ""+multi;:}
             | DIVISION:divi
+            {:ope = ""+divi;:}
             ;
 
-uso_exp ::= ope_int
-            | parente
+
+termino_logico ::= IGUALDAD:igual
+                {:ope = ""+igual;:}
+                | DESIGUALDAD:noigual
+                {:ope = ""+noigual;:}
+                | MAYOR_QUE:mayor
+                {:ope = ""+mayor;:}
+                | MENOR_QUE:menor
+                {:ope = ""+menor;:}
+                | MENOR_O_IGUAL_QUE:menigual
+                {:ope = ""+menigual;:}
+                | MAYOR_O_IGUAL_QUE:maigual
+                {:ope = ""+maigual;:}
+                ;
+
+
+exp_log ::= NENTERO:num1 termino_logico NENTERO:num2
+            {:
+                siono = Operacion.verifico(num1, ""+ope, num2);
+            :}
+            | NENTERO:num1 termino_logico IDENTIFICADOR:id
+            {:
+                String nombre = parser.tabla.consultaValor(""+id);
+                siono = Operacion.verifico(num1, ""+ope, nombre);
+            :}
+            | IDENTIFICADOR:id termino_logico NENTERO:num1
+            {:
+                String nombre = parser.tabla.consultaValor(""+id);
+                siono = Operacion.verifico(nombre, ""+ope, num1);
+            :}
+            | IDENTIFICADOR:id1 termino_logico IDENTIFICADOR:id2
+            {:
+                String nombre1 = parser.tabla.consultaValor(""+id1);
+                String nombre2 = parser.tabla.consultaValor(""+id2);
+                siono = Operacion.verifico(nombre1, ""+ope, nombre2);
+            :}
             ;
