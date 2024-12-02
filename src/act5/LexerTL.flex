@@ -62,9 +62,11 @@ import java_cup.runtime.*;
 "true"            {description(yytext(),"Verdadero"); return symbol(sym.TRUE, yytext());}
 "false"           {description(yytext(),"Falso"); return symbol(sym.FALSE, yytext());}
 "const"           {description(yytext(),"Constante"); return symbol(sym.CONST, yytext());}
-
-
-
+"switch"          {description(yytext(),"Switch"); return symbol(sym.SWITCH, yytext());}
+"case"            {description(yytext(),"Case"); return symbol(sym.CASE, yytext());}
+"default"         {description(yytext(),"Default"); return symbol(sym.DEFAULT, yytext());}
+"break"           {description(yytext(),"Break"); return symbol(sym.BREAK, yytext());}
+"main"            {description(yytext(),"Main"); return symbol(sym.MAIN, yytext());}
 
 //Simbolos//
 
@@ -91,9 +93,9 @@ import java_cup.runtime.*;
 "&&"            {description(yytext(),"Y logico"); return symbol(sym.Y_LOGICO, yytext());}
 "||"            {description(yytext(),"O logico"); return symbol(sym.O_LOGICO, yytext());}
 "!"             {description(yytext(),"Negacion"); return symbol(sym.NEGACION, yytext());}
-"++"            {description(yytext(),"Negacion"); return symbol(sym.INCREMENTO, yytext());}
-"--"            {description(yytext(),"Negacion"); return symbol(sym.DECREMENTO, yytext());}
-
+"++"            {description(yytext(),"Incremento"); return symbol(sym.INCREMENTO, yytext());}
+"--"            {description(yytext(),"Decremento"); return symbol(sym.DECREMENTO, yytext());}
+":"             {description(yytext(),"Dos puntos"); return symbol(sym.DOS_PUNTOS, yytext());}
 
 
 

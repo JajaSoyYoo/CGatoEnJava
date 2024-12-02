@@ -1,23 +1,71 @@
 using System;
+using System.Linq;
 
 namespace adios{
     class hola{
-        public void main(){
+        
+        public void altoGrandeVenti(){
+            int alto = 4;
+            int grande = 7;
+            int venti = 10;
             
-            int diez = 10;
-
-            int uno = 1+10;
-
-            if(diez <= uno){
-                int hola = 1+1;
-                
+            if(alto < grande){
+                Console.WriteLine("alto es chico y grande es mediano");
             }
+            if(grande < venti){
+                Console.WriteLine("venti es grande");
+            }
+        }
 
-            while(diez != uno){
-                int verdadero = 10 * 50;
-                float diviion = 12/1.3;
+
+        public void diasSemana(){
+            int dia = 5;
+            
+            switch (dia)
+		{
+		case 1:
+			Console.WriteLine("Hoy es Lunes.");
+			break;
+		case 2:
+			Console.WriteLine("Hoy es Martes.");
+			break;
+		case 3:
+			Console.WriteLine("Hoy es Miercoles.");
+			break;
+		case 4:
+			Console.WriteLine("Hoy es Jueves.");
+			break;
+		case 5:
+			Console.WriteLine("Hoy es Viernes.");
+			break;
+		case 6:
+			Console.WriteLine("Hoy es Sabado.");
+			break;
+		case 7:
+			Console.WriteLine("Hoy es Domingo.");
+			break;
+		default:
+			Console.WriteLine("No hay mas dias");
+			break;
+
+
+		}
+        }
+
+        public void sumaFor(){
+            int numeros = 1;
+            
+            for (int i = 0; i < 10; i++){
+                numeros++;
             }
         }
         
+        static void main(){
+            altoGrandeVenti();
+            diasSemana();
+            sumaFor();
+        }
     }
 }
+
+
